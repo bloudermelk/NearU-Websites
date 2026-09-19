@@ -1,0 +1,133 @@
+{
+  "business": {
+    "name": "Carolina Heating Service",
+    "legalName": "Carolina Heating Service Inc.",
+    "tagline": "Serving the Upstate for 40+ Years",
+    "phone": "(864) 362-6329",
+    "phoneHref": "tel:+18643626329",
+    "email": "info@carolinaheating.net",
+    "address": {
+      "street": "1507 Antioch Church Rd",
+      "city": "Greenville",
+      "state": "SC",
+      "zip": "29605"
+    },
+    "areaServed": "Greenville, SC and the Upstate",
+    "foundedYear": 1981,
+    "yearsInBusiness": 43,
+    "googleRating": 5,
+    "googleReviewCount": 18,
+    "social": {
+      "facebook": "https://www.facebook.com/CarolinaHeatingServiceGreenvilleSC/",
+      "instagram": "https://instagram.com/carolinaheatingservice/?hl=en"
+    },
+    "scheduleUrl": "/bookings/"
+  },
+  "nav": {
+    "primary": [
+      { "label": "About Us", "href": "/about-us" },
+      {
+        "label": "Services",
+        "href": "/services",
+        "children": [
+          { "label": "Heating", "href": "/services/greenville-sc-heating" },
+          { "label": "Cooling", "href": "/services/greenville-sc-cooling" },
+          { "label": "Indoor Air Quality", "href": "/services/greenville-sc-indoor-air-quality" },
+          { "label": "Plumbing", "href": "/services/greenville-sc-plumbing" },
+          { "label": "Drains", "href": "/services/greenville-sc-drains" },
+          { "label": "Electrical", "href": "/services/greenville-sc-electrical" },
+          { "label": "Generators", "href": "/services/greenville-sc-generators" }
+        ]
+      },
+      { "label": "Maintenance", "href": "/maintenance" },
+      { "label": "Financing", "href": "/financing" },
+      { "label": "Commercial", "href": "/commercial" },
+      { "label": "Careers", "href": "/careers" }
+    ],
+    "footer": [
+      { "label": "About Us", "href": "/about-us" },
+      { "label": "Maintenance", "href": "/maintenance" },
+      { "label": "Financing", "href": "/financing" },
+      { "label": "Worry-Free Service Program", "href": "/worry-free-service-program" },
+      { "label": "Commercial", "href": "/commercial" },
+      { "label": "Careers", "href": "/careers" },
+      { "label": "Privacy Policy", "href": "/privacy-policy" },
+      { "label": "Terms and Conditions", "href": "/terms-and-conditions" }
+    ]
+  },
+  "serviceCategories": [
+    {
+      "slug": "greenville-sc-heating",
+      "title": "Heating Services in Greenville, SC",
+      "shortTitle": "Heating",
+      "summary": "Furnace, heat pump, geothermal, and smart thermostat installation, repair, and maintenance.",
+      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/030624-CHS-37.jpg"
+    },
+    {
+      "slug": "greenville-sc-cooling",
+      "title": "Cooling Systems in Greenville, SC",
+      "shortTitle": "Cooling",
+      "summary": "Air conditioning, mini-splits, gas packs, dual fuel hybrid systems, and HVAC zoning.",
+      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/Trane_WRT_Unit_Shot1_0882_201022144525.jpg"
+    },
+    {
+      "slug": "greenville-sc-indoor-air-quality",
+      "title": "Indoor Air Quality Systems in Greenville, SC",
+      "shortTitle": "Indoor Air Quality",
+      "summary": "Air scrubbers, humidifiers, dehumidifiers, air ducts, dryer vent cleaning, and smoke/CO detection.",
+      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/indoor-air-quality-services.jpg"
+    },
+    {
+      "slug": "greenville-sc-plumbing",
+      "title": "Plumbing Company in Greenville, SC",
+      "shortTitle": "Plumbing",
+      "summary": "Water heaters, gas lines, water softeners, backflow testing, and general plumbing repair.",
+      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/plumbing-services.jpg"
+    },
+    {
+      "slug": "greenville-sc-drains",
+      "title": "Drain Services in Greenville, SC",
+      "shortTitle": "Drains",
+      "summary": "Drain clearing, rooter service, sewer and water lines, repiping, and camera inspections.",
+      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-inspecting-a-drain.jpg"
+    },
+    {
+      "slug": "greenville-sc-electrical",
+      "title": "Electrical Services in Greenville, SC",
+      "shortTitle": "Electrical",
+      "summary": "Wiring and rewiring, circuit breakers, outlets and switches, ceiling fans, and EV car chargers.",
+      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-circuit-box.jpg"
+    },
+    {
+      "slug": "greenville-sc-generators",
+      "title": "Home Generator Installation & Repair in Greenville, SC",
+      "shortTitle": "Generators",
+      "summary": "Whole-home Generac generator sales, installation, and repair for the Upstate.",
+      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/030624-CHS-13.jpg"
+    }
+  ],
+  "certifications": [
+    { "name": "Better Business Bureau - Accredited Business", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Better-Business-Bureau-Accredited-Business.png" },
+    { "name": "Esco Institute", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Esco-Institute-logo.png" },
+    { "name": "North American Technician Excellence (NATE)", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/North-American-Technician-Excellence-logo-NATE.png" },
+    { "name": "SCALT", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/SCALT-logo.png" },
+    { "name": "SHA", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/SHA-logo.jpg" }
+  ],
+  "testimonials": [
+    {
+      "author": "Stephanie Buccolo",
+      "rating": 5,
+      "body": "Furnace stopped working unexpectedly two days before the holiday weekend and Carolina had a tech out right away. Had to order a new blower motor but expedited it and got it installed next day! Excellent communication and a big thanks to the tech who fit me into his already busy schedule."
+    },
+    {
+      "author": "Sigrid McMahon",
+      "rating": 5,
+      "body": "Carolina Heating came out the very next day to attend to our problem and were thorough in solving it. Previously we called them for a tankless hot water heater that just stopped working. They came out that day, fixed the problem and did a complete maintenance of the system and took the time to explain how a tankless water heater works. We will definitely continue to use them. They respond quickly, their technicians are knowledgeable, courteous and prompt and they are reasonably priced."
+    },
+    {
+      "author": "Robert Elliott",
+      "rating": 5,
+      "body": "The technician fixed the problem in no time and gave me a reasonable estimate for the full repairs. We have heat again and me and my pregnant wife couldn't be happier! Definitely will stick with this service!"
+    }
+  ]
+}
