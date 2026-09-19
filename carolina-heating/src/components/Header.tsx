@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "./Icon";
 import type { NavTopItem, SiteData } from "@/lib/site";
@@ -57,15 +58,13 @@ export function Header({ site }: { site: SiteData }) {
       <div className="site-header-content">
         <div className="site-branding">
           <Link href="/" className="custom-logo-link" rel="home">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
+              priority
               width={3468}
               height={2120}
               src={business.logo}
               className="custom-logo"
               alt={`${business.name} Logo`}
-              decoding="async"
-              fetchPriority="high"
             />
           </Link>
           <p className="site-title">

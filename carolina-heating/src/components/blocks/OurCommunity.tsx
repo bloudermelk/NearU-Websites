@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ScheduleAndCallCta } from "../ScheduleAndCallCta";
 import { getSite } from "@/lib/db/site";
 
@@ -9,11 +10,12 @@ import { getSite } from "@/lib/db/site";
 export async function OurCommunity({
   heading = "Serving the communities in Greenville, South Carolina, for over 40 Years.",
   body = "Carolina Heating Service is known for reputable home comfort services throughout the Greenville, SC area. With a history dating back to 1981, our expertise initially focused on heating and air conditioning. Over time, we expanded to include plumbing, electrical, drains, generators, and indoor air quality systems. Our continued commitment to exceptional service and highly trained technicians reflects our dedication to customer satisfaction throughout the Upstate.",
-  mapImage = "/images/2024/03/CHS-Service-Area-Map-Highlighted-scaled.jpg",
+  mapImage,
 }: {
   heading?: string;
   body?: string;
-  mapImage?: string;
+  /** Required — always passed by page.tsx from the homepage's Supabase-stored data. */
+  mapImage: string;
 }) {
   const { business } = await getSite();
   return (
@@ -27,10 +29,7 @@ export async function OurCommunity({
           <div className="wp-block-group flow has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
             <div className="wp-block-site-logo">
               <Link href="/" className="custom-logo-link" rel="home">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   width={200}
                   height={122}
                   src={business.logo}
@@ -54,10 +53,7 @@ export async function OurCommunity({
       <div className="splitter-column splitter-column--right splitter-column--stretch">
         <div className="splitter-column-inner">
           <figure className="wp-block-image size-full">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              decoding="async"
-              loading="lazy"
+            <Image
               width={2560}
               height={1818}
               src={mapImage}

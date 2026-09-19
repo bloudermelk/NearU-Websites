@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "./Icon";
 import { getSite } from "@/lib/db/site";
 
@@ -13,15 +14,7 @@ export async function Footer() {
   const year = new Date().getFullYear();
 
   const logo = (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      width={3468}
-      height={2120}
-      src={business.logo}
-      className="custom-logo"
-      alt={`${business.name} Logo`}
-      decoding="async"
-    />
+    <Image width={3468} height={2120} src={business.logo} className="custom-logo" alt={`${business.name} Logo`} />
   );
 
   return (

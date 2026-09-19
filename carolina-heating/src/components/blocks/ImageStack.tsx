@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export type ImageStackItem = {
   src: string;
   alt: string;
@@ -19,11 +21,8 @@ export function ImageStack({ items }: { items: ImageStackItem[] }) {
   return (
     <div className="imagestack">
       {items.map((img) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           key={img.src}
-          decoding="async"
-          loading="lazy"
           width={img.width}
           height={img.height}
           src={img.src}

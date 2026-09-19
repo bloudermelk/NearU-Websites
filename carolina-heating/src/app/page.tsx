@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Cta } from "@/components/Cta";
 import { ScheduleAndCallCta } from "@/components/ScheduleAndCallCta";
@@ -78,10 +79,8 @@ export default async function Home() {
                 <div className="section--services-hero__main__row__right">
                   <Elevated>
                     <figure className="wp-block-post-featured-image">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        fetchPriority="high"
-                        decoding="async"
+                      <Image
+                        priority
                         width={2560}
                         height={1710}
                         src={hero.image}
@@ -98,9 +97,7 @@ export default async function Home() {
 
           {/* ---------- 10 Year Worry-Free cover ---------- */}
           <div className="wp-block-cover content-fullbleed mobile-gradient-full-cover" id="10-year-worry-free-system-coverage">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              decoding="async"
+            <Image
               width={2284}
               height={1280}
               className="wp-block-cover__image-background wp-image-5034"

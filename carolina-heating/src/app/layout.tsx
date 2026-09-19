@@ -110,6 +110,13 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/RobotoCondensed-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* Most page content (the 106 mirrored WordPress pages) embeds raw
+            <img src="https://<project>.supabase.co/..."> tags that the browser
+            fetches directly (they're not next/image-optimized — see AGENTS.md).
+            Opening the connection to Supabase Storage early shaves off the
+            DNS+TLS handshake latency that would otherwise happen at the first
+            image request. */}
+        {process.env.SUPABASE_URL && <link rel="preconnect" href={process.env.SUPABASE_URL} crossOrigin="anonymous" />}
         {/* Google Tag Manager — only fires if this site's `sites.gtm_id` is set.
             Using the raw snippet (matching the live site's own implementation)
             rather than @next/third-parties/google, which currently only

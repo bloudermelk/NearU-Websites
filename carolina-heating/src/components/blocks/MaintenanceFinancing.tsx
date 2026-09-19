@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Cta } from "../Cta";
 import { Elevated } from "./Elevated";
 
@@ -37,10 +38,7 @@ export function MaintenanceFinancing({
           <div className="wp-block-group flow w100 has-global-padding is-layout-constrained wp-container-core-group-is-layout-2468f3b8 wp-block-group-is-layout-constrained">
             <Elevated className="content-fullbleed-mobile w100 border-radius-lg">
               <figure className="wp-block-image size-full is-resized has-custom-border w100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   width={1916}
                   height={1280}
                   src={maintenanceImage}
@@ -73,10 +71,7 @@ export function MaintenanceFinancing({
           <div className="wp-block-group flow has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
             <Elevated className="content-fullbleed-mobile border-radius-lg">
               <figure className="wp-block-image size-full has-custom-border">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   width={1802}
                   height={1280}
                   src={financingImage}

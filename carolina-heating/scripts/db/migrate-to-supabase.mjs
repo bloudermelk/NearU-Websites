@@ -97,7 +97,14 @@ async function uploadImages(files, map) {
     const body = readFileSync(full);
     const { error } = await supabase.storage
       .from(BUCKET)
-      .upload(storagePath, body, { contentType, upsert: true });
+      .upload(storagePath, body, {
+        contentType,
+        upsert: true,
+        // 1 year, immutable: paths are stable and content only changes via
+        // this same upload step (upsert:true), so a long cache is safe and
+        // meaningfully speeds up repeat image loads (see AGENTS.md).
+        cacheControl: "31536000",
+      });
     if (error) {
       console.log(`  FAIL ${storagePath}: ${error.message}`);
       continue;

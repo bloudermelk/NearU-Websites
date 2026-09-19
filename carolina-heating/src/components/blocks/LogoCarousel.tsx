@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 
 export type LogoItem = {
   name: string;
@@ -33,10 +34,7 @@ export function LogoCarousel({ logos }: { logos: LogoItem[] }) {
         aria-hidden={clone ? "true" : undefined}
       >
         <div className="logocarousel-wrap">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            decoding="async"
-            loading="lazy"
+          <Image
             width={logo.width}
             height={logo.height}
             src={logo.image}
