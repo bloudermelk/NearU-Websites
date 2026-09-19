@@ -1,0 +1,117 @@
+{
+  "slug": "taylors-hvac-plumbing-electrical-generators",
+  "cityName": "Taylors",
+  "metaTitle": "Licensed HVAC, Electrical & Plumbing Services in Taylors, SC",
+  "metaDescription": "Carolina Heating Service delivers quality HVAC, plumbing, electrical, and home generator services in Taylors, SC. Licensed Upstate technicians since 1981.",
+  "heading": "Expert HVAC, Plumbing, Electrical & Home Generator Services in Taylors, SC",
+  "intro": [
+    "Taylors, SC runs on one of the widest home-age ranges in Greenville County, and Carolina Heating Service covers all of it with licensed heating, cooling, plumbing, electrical, and generator work under one name. From mid-century neighborhoods off Wade Hampton Boulevard to infill built this decade, the equipment differs street to street and the service has to keep up. No matter your home's situation, we're here to help.",
+    "The company has kept up since 1981. Diagnostics arrive documented, quotes are itemized and locked before work starts, and booking runs online or through website chat at any hour."
+  ],
+  "heroImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/10/A-Carolina-Heating-Service-company-portrait-featuring-all-of-the-employees-standing-in-front-of-the-Carolina-Heating-Service-building.jpg",
+  "serviceGroups": [
+    {
+      "groupIntro": "Taylors homes can call on cooling services across every system type in the mix, heating services from vintage furnaces to new hybrids, drain services when symptoms trace below the fixtures, and electrical services spanning sixty years of installed systems.",
+      "items": [
+        { "title": "Air Conditioning Services in Taylors", "body": "Air conditioning service across the full local spread, from mid-century homes on their fourth system to new builds on their first tune-up.", "href": "/services/greenville-sc-cooling/air-conditioning" },
+        { "title": "Furnace Installation & Repair in Taylors", "body": "Furnace repair and replacement with combustion safety verified every visit. Established Taylors neighborhoods run plenty of gas heat with real mileage on it.", "href": "/services/greenville-sc-heating/furnaces" },
+        { "title": "Heat Pump Installation & Repair in Taylors", "body": "Heat pump installation and repair, including conversions for homes consolidating heating and cooling onto one modern system sized by calculation.", "href": "/services/greenville-sc-heating/heat-pumps" },
+        { "title": "Air Duct Cleaning in Taylors", "body": "Duct cleaning for runs that have collected decades of Upstate pollen and dust. Removal is the only thing that stops recirculation.", "href": "/services/greenville-sc-indoor-air-quality/air-ducts" }
+      ],
+      "partnerHeading": "Your Trusted HVAC & Indoor Air Quality Partner in Taylors",
+      "partnerBody": "A sixty-year housing range means no single service playbook works here. What stays constant is the load calculation, the documented finding, and equipment matched to the actual structure."
+    },
+    {
+      "groupIntro": "Original mid-century lines and brand-new PEX share these streets, and the honest answer differs by house.",
+      "items": [
+        { "title": "Water Heater Installation & Repair in Taylors", "body": "Water heater repair and replacement across every configuration Taylors runs, with capacity sized to the household rather than the closet.", "href": "/services/greenville-sc-plumbing/water-heaters" },
+        { "title": "Repiping Services in Taylors", "body": "Repiping for the mid-century blocks whose original supply lines have reached their leak years. One planned project retires the drip-by-drip schedule.", "href": "/services/greenville-sc-drains/repiping" },
+        { "title": "Kitchen & Bathroom Plumbing in Taylors", "body": "Kitchen and bathroom plumbing from fixture repair through remodel rough-in, licensed at every step.", "href": "/services/greenville-sc-plumbing/kitchen-bathroom" },
+        { "title": "Trap & Pipe Cleaning in Taylors", "body": "Trap and pipe cleaning that restores flow and removes the buildup slow drains announce. Persistent cases graduate to camera inspection.", "href": "/services/greenville-sc-drains/trap-and-pipe-cleaning" }
+      ],
+      "partnerHeading": "Your Trusted Plumbing Partner in Taylors",
+      "partnerBody": "Licensed plumbers give it straight, with findings documented and numbers fixed first."
+    },
+    {
+      "groupIntro": "Electrical work in Taylors spans knob-era corrections to charger circuits, all under one accountable company.",
+      "items": [
+        { "title": "Circuit Breaker Services in Taylors", "body": "Breaker and panel service for electrical systems installed across six different decades. Capacity gets stated plainly before new load connects.", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+        { "title": "Ceiling Fan Installation in Taylors", "body": "Ceiling fan installation done to code on rated boxes, adding cheap comfort to the rooms Upstate summers occupy longest.", "href": "/services/greenville-sc-electrical/ceiling-fans" },
+        { "title": "EV Charger Installation in Taylors", "body": "EV charger installation with the panel evaluation first, because a sixty-year-old panel and an overnight charger need a formal introduction.", "href": "/services/greenville-sc-electrical/car-charger-installation" },
+        { "title": "Home Generator Installs & Repairs in Taylors", "body": "Standby generators sized by load calculation, installed with automatic transfer, and maintained annually so the readiness holds.", "href": "/services/greenville-sc-generators/home-generators" }
+      ],
+      "partnerHeading": "Your Trusted Electrical & Home Generator Partner in Taylors",
+      "partnerBody": "Licensed electricians carry the whole range beside the mechanical and plumbing trades under one accountable company."
+    }
+  ],
+  "sinceHeading": "Carolina Heating Service: Taylors Homes, Every Era, Since 1981",
+  "sinceIntro": "Carolina Heating Service has serviced Taylors since 1981, long enough to know its neighborhoods by their mechanical eras.",
+  "sinceCategories": [
+    {
+      "label": "HVAC",
+      "bullets": [
+        { "title": "Replacements", "body": "Load-calculated installations with duct condition tested first." },
+        { "title": "Documented Repairs", "body": "Cross-brand diagnostics with the evidence shown before approval is asked." },
+        { "title": "Steady Maintenance", "body": "Seasonal tune-ups through the maintenance plan, catching each season's failure modes early." }
+      ]
+    },
+    {
+      "label": "Electrical",
+      "bullets": [
+        { "title": "System Evaluations", "body": "Panel and wiring assessments that establish what exists and what it can carry." },
+        { "title": "Safety Updates", "body": "Grounding, GFCI, and receptacle corrections sequenced by risk." },
+        { "title": "Standby Power", "body": "Generator sizing, installation, and annual readiness service." }
+      ]
+    },
+    {
+      "label": "Plumbing",
+      "bullets": [
+        { "title": "Emergency Plumbing", "body": "Emergency plumbing service answers the failures that refuse to schedule themselves." },
+        { "title": "Repipe Decisions", "body": "Whole-home supply replacement priced against documented leak patterns." },
+        { "title": "Flow Restoration", "body": "Trap, pipe, and drain cleaning with causes identified." }
+      ]
+    },
+    {
+      "label": "Air Quality",
+      "bullets": [
+        { "title": "Stored-Load Clearing", "body": "Duct cleaning that removes what decades deposited." },
+        { "title": "Capture Improvement", "body": "Filtration upgrades matched to blower capability." },
+        { "title": "Moisture Balance", "body": "Humidity control for the months cooling alone cannot dry the air." }
+      ]
+    },
+    {
+      "label": "Process",
+      "bullets": [
+        { "title": "Evidence First", "body": "Findings documented before quotes are written." },
+        { "title": "Locked Numbers", "body": "Approved pricing survives to the invoice unchanged." },
+        { "title": "Always Open", "body": "Online booking and 24/7 chat, with member priority." }
+      ]
+    }
+  ],
+  "closing": [
+    "Whatever decade built the house, its systems age on their own clock, and financing options keep a failed furnace or a repiping project from waiting on a convenient month.",
+    "Book online or start in the chat at any hour. A licensed technician arrives knowing the housing mix, documents the diagnosis, sets the price before the work, and represents one company across all four trades."
+  ],
+  "faqs": [
+    {
+      "question": "Our Taylors ranch still has its original ductwork. Should new equipment reuse it?",
+      "answer": "Only after testing says it can. Original mid-century ducts often leak at seams, lack insulation, and were sized for different equipment entirely, and new systems inherit every one of those problems. A duct evaluation before replacement determines whether sealing, modification, or new runs protect the investment."
+    },
+    {
+      "question": "How disruptive is repiping an occupied house?",
+      "answer": "Less than most homeowners expect. Supply repiping typically runs a few days, water stays on each evening, and access openings are planned and patched as part of the job."
+    },
+    {
+      "question": "Can my older panel handle a modern HVAC replacement?",
+      "answer": "The evaluation answers it before the install does. New equipment draw gets totaled against the panel's documented capacity, and most replacements fit, but marginal panels get identified up front."
+    },
+    {
+      "question": "What is that persistent gurgle after my tub drains?",
+      "answer": "Gurgling means air is pulling through the trap, usually because a partial blockage or venting problem is starving the drain. Trap and pipe cleaning resolves the common version, and a stubborn recurrence means a video inspection is likely the best next step."
+    },
+    {
+      "question": "Which nearby communities do your Taylors routes cover?",
+      "answer": "Greer, Travelers Rest, and Duncan all sit on adjoining routes. The chat team can confirm any address between them in minutes."
+    }
+  ]
+}

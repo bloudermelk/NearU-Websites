@@ -1,0 +1,117 @@
+{
+  "slug": "duncan-hvac-plumbing-electrical-generators",
+  "cityName": "Duncan",
+  "metaTitle": "Licensed HVAC, Electrical & Plumbing Services in Duncan, SC",
+  "metaDescription": "HVAC, plumbing, electrical, and home generator services in Duncan, SC from Carolina Heating Service. Licensed technicians serving the Upstate since 1981.",
+  "heading": "HVAC, Plumbing, Electrical & Home Generator Services in Duncan, SC",
+  "intro": [
+    "Carolina Heating Service provides HVAC, plumbing, electrical, and home generator service in Duncan, SC, with one licensed team handling repair, replacement, and maintenance across all four trades. Duncan sits in the middle of western Spartanburg County's growth along I-85, where new subdivisions and long-standing homes now share the same streets and need very different work.",
+    "The company has served the Upstate since 1981. Every diagnosis comes with documented findings, every quote is itemized before work starts, and scheduling runs through online booking or website chat staffed around the clock."
+  ],
+  "heroImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/10/A-Carolina-Heating-Service-company-portrait-featuring-all-of-the-employees-standing-in-front-of-the-Carolina-Heating-Service-building.jpg",
+  "serviceGroups": [
+    {
+      "groupIntro": "In Duncan, we offer heating services covering furnaces, heat pumps, and smart controls, cooling services from central air to ductless systems, plumbing services for everything from water heaters to burst pipes, and electrical services through panel and wiring work.",
+      "items": [
+        { "title": "Furnace Installation & Repair in Duncan", "body": "Gas furnace repair, replacement, and maintenance across all major brands, with heat exchanger and venting checks on every heating call.", "href": "/services/greenville-sc-heating/furnaces" },
+        { "title": "Air Conditioning Services in Duncan", "body": "Cooling repairs, tune-ups, and full installations for Duncan's long air conditioning season.", "href": "/services/greenville-sc-cooling/air-conditioning" },
+        { "title": "Mini-Split Installation & Repair in Duncan", "body": "Ductless systems for bonus rooms, garages, and additions that the main system never reached.", "href": "/services/greenville-sc-cooling/mini-split" },
+        { "title": "Air Duct Cleaning in Duncan", "body": "Duct cleaning that removes the dust, pollen, and debris a system pulls in over years of Upstate service.", "href": "/services/greenville-sc-indoor-air-quality/air-ducts" }
+      ],
+      "partnerHeading": "Your Trusted HVAC & Indoor Air Quality Partner in Duncan",
+      "partnerBody": "Duncan's cooling season runs long and its pollen season runs heavy, which keeps both equipment and air quality on the same service ticket."
+    },
+    {
+      "groupIntro": "Plumbing work in Duncan spans brand-new construction and homes that predate the interstate.",
+      "items": [
+        { "title": "Water Heater Installation & Repair in Duncan", "body": "Repair and replacement for tank and tankless water heaters, with honest guidance on when a repair still makes sense.", "href": "/services/greenville-sc-plumbing/water-heaters" },
+        { "title": "Repiping Services in Duncan", "body": "Whole-home repiping for houses whose original supply lines have started failing in sequence.", "href": "/services/greenville-sc-drains/repiping" },
+        { "title": "Frozen & Burst Pipe Repair in Duncan", "body": "Cold snaps reach the Upstate every winter, and an unprotected pipe that freezes can split before anyone notices.", "href": "/services/greenville-sc-plumbing/frozen-burst-pipe-repair" },
+        { "title": "Kitchen & Bathroom Plumbing in Duncan", "body": "Faucets, fixtures, disposals, and toilet repairs for the two rooms plumbing serves hardest.", "href": "/services/greenville-sc-plumbing/kitchen-bathroom" }
+      ],
+      "partnerHeading": "Your Trusted Plumbing Partner in Duncan",
+      "partnerBody": "The response is the same for new construction and homes that predate the interstate: a licensed plumber, a clear quote, and a repair that holds."
+    },
+    {
+      "groupIntro": "Licensed electricians handle Duncan's panel, wiring, and generator work under the same roof as its HVAC and plumbing.",
+      "items": [
+        { "title": "EV Charger Installation in Duncan", "body": "Home EV charger installation with the panel evaluation done first, so the circuit matches the charger and the house's actual capacity.", "href": "/services/greenville-sc-electrical/car-charger-installation" },
+        { "title": "Ceiling Fan Installation in Duncan", "body": "Ceiling fan installation with proper box mounting and switch wiring, not a fan hung from a fixture box that was never rated for one.", "href": "/services/greenville-sc-electrical/ceiling-fans" },
+        { "title": "Circuit Breaker Services in Duncan", "body": "Breaker replacement and panel service for homes whose electrical demand has outgrown the original equipment.", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+        { "title": "Home Generator Installs & Repairs in Duncan", "body": "Standby generator installation, repair, and maintenance sized to what the household actually needs powered.", "href": "/services/greenville-sc-generators/home-generators" }
+      ],
+      "partnerHeading": "Your Trusted Electrical & Home Generator Partner in Duncan",
+      "partnerBody": "One accountable company when a project crosses trades."
+    }
+  ],
+  "sinceHeading": "Carolina Heating Service: Serving Duncan and the Upstate Since 1981",
+  "sinceIntro": "Carolina Heating Service has worked in Spartanburg County's western corridor through every stage of its growth.",
+  "sinceCategories": [
+    {
+      "label": "HVAC",
+      "bullets": [
+        { "title": "Heating and Cooling Installation", "body": "Systems sized by load calculation for the specific house, whether it replaces a worn-out unit or corrects a builder install that was never verified." },
+        { "title": "System Repairs", "body": "Diagnosis with documented findings across all major brands, with repair and replacement quoted side by side when age makes it a real question." },
+        { "title": "Routine Maintenance", "body": "Seasonal tune-ups through the maintenance program that catch summer-killer failures before July finds them." }
+      ]
+    },
+    {
+      "label": "Electrical",
+      "bullets": [
+        { "title": "Panel and Circuit Work", "body": "Evaluations and breaker service for homes adding EV chargers, workshops, or additions beyond the original design load." },
+        { "title": "Wiring Repairs", "body": "Troubleshooting for dead circuits, warm outlets, and flickering that has an electrical cause rather than a utility one." },
+        { "title": "Generator Service", "body": "Standby generator installation and annual service, so storm-season outages along the I-85 corridor stay brief inside the house." }
+      ]
+    },
+    {
+      "label": "Plumbing",
+      "bullets": [
+        { "title": "Water Heater Service", "body": "Repair and replacement across tank and tankless equipment, with recovery capacity matched to the household." },
+        { "title": "Drain and Line Work", "body": "Clearing, camera inspection, and repiping when patching individual leaks stops being economical." },
+        { "title": "Emergency Response", "body": "Emergency cooling service covers the summer failures, and the plumbing side answers urgent calls the same way." }
+      ]
+    },
+    {
+      "label": "Air Quality",
+      "bullets": [
+        { "title": "Air Duct Cleaning", "body": "Removal of accumulated dust and pollen so the system stops recirculating past seasons." },
+        { "title": "Filtration Upgrades", "body": "Air treatment matched to the system's airflow, covering particles a standard filter passes." },
+        { "title": "Humidity Control", "body": "Whole-home equipment that manages the moisture load an Upstate summer pushes indoors." }
+      ]
+    },
+    {
+      "label": "Process",
+      "bullets": [
+        { "title": "Documented Diagnosis", "body": "Findings shown, not just described, so the decision rests on what the technician actually found." },
+        { "title": "Options at Quote Time", "body": "Repair and replacement priced together whenever both are defensible, with the trade-offs stated plainly." },
+        { "title": "Simple Scheduling", "body": "Online booking and website chat staffed 24/7, with priority scheduling for maintenance plan members." }
+      ]
+    }
+  ],
+  "closing": [
+    "Growth is changing Duncan block by block, and mechanical systems age on their own schedule regardless. Financing options keep the necessary work from waiting on the calendar.",
+    "Booking takes minutes online or through the website chat at any hour. A licensed technician arrives with the diagnosis documented, the quote itemized before work begins, and the same company standing behind HVAC, plumbing, electrical, and generator work alike."
+  ],
+  "faqs": [
+    {
+      "question": "My Duncan home is only a few years old. Why schedule HVAC maintenance already?",
+      "answer": "Most manufacturer warranties require documented annual service to stay enforceable, and a tune-up verifies what the builder's installer may not have, including refrigerant charge and airflow."
+    },
+    {
+      "question": "What size standby generator does a typical Duncan house need?",
+      "answer": "It comes down to what you want powered during an outage. Essential circuits need far less capacity than whole-home coverage that includes air conditioning."
+    },
+    {
+      "question": "How do I know if my water pressure problem is the house or the utility?",
+      "answer": "Pressure that is low at every fixture, hot and cold alike, points toward the supply side, the pressure reducing valve, or aging supply lines. Pressure that drops at one fixture points inside the house."
+    },
+    {
+      "question": "Does duct cleaning actually help with Upstate pollen?",
+      "answer": "It helps with the pollen already inside. Spring pollen that enters the house settles into duct runs and returns to circulation every time the blower starts."
+    },
+    {
+      "question": "Which nearby communities do you serve?",
+      "answer": "Greer, Woodruff, and Taylors all sit inside regular coverage, along with the rest of the Greenville and Spartanburg area."
+    }
+  ]
+}

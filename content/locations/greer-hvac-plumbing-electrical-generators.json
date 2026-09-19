@@ -1,0 +1,117 @@
+{
+  "slug": "greer-hvac-plumbing-electrical-generators",
+  "cityName": "Greer",
+  "metaTitle": "HVAC, Plumbing & Electrical in Greer, SC | Carolina Heating",
+  "metaDescription": "Full-service HVAC, plumbing, electrical, and home generator work in Greer, SC. Carolina Heating Service, serving Greenville and the Upstate since 1981.",
+  "heading": "Expert HVAC, Plumbing, Electrical & Home Generator Services in Greer, SC",
+  "intro": [
+    "Carolina Heating Service delivers heating, cooling, plumbing, electrical, and home generator work across Greer, SC with one licensed team accountable for all of it. Greer straddles the Greenville and Spartanburg county line and has added neighborhoods steadily for three decades, which means its earliest growth-era systems are now hitting replacement age while new ones come online every month. Whether your system needs repair or installation, we're here to help.",
+    "The company has served both counties since 1981. Every visit produces documented findings, every job starts from an itemized quote, and booking runs through online scheduling or website chat that never closes."
+  ],
+  "heroImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/10/A-Carolina-Heating-Service-company-portrait-featuring-all-of-the-employees-standing-in-front-of-the-Carolina-Heating-Service-building.jpg",
+  "serviceGroups": [
+    {
+      "groupIntro": "We serve Greer across cooling services through the long humid season, heating services from furnaces to hybrid systems, drain services when symptoms point below the fixtures, and electrical services for the capacity growth keeps demanding.",
+      "items": [
+        { "title": "Air Conditioning Services in Greer", "body": "Air conditioning repair, replacement, and maintenance for a town where cooling season starts early and quits late. Replacement sizing comes from a load calculation, because square footage alone gets it wrong.", "href": "/services/greenville-sc-cooling/air-conditioning" },
+        { "title": "Dual Fuel Hybrid Systems in Greer", "body": "Dual fuel hybrid systems that run the heat pump until deep cold makes gas the cheaper heat. The changeover point gets set for real Upstate winters, not a brochure's.", "href": "/services/greenville-sc-cooling/dual-fuel-hybrid-systems" },
+        { "title": "Smart Thermostat Installation in Greer", "body": "Smart thermostat installation with the configuration done, not just the mounting. Schedules built around occupancy and utility rates are where the actual savings live.", "href": "/services/greenville-sc-heating/smart-thermostats" },
+        { "title": "Air Duct Cleaning in Greer", "body": "Duct cleaning that clears the pollen and dust load Greer systems collect across heavy spring seasons. What sits in the runs keeps circulating until it is removed.", "href": "/services/greenville-sc-indoor-air-quality/air-ducts" }
+      ],
+      "partnerHeading": "Your Trusted HVAC & Indoor Air Quality Partner in Greer",
+      "partnerBody": "Thirty years of continuous building means Greer equipment ages in identifiable waves, street by street. Knowing where a neighborhood sits in that cycle shapes honest repair-or-replace advice."
+    },
+    {
+      "groupIntro": "Plumbing calls in Greer range from brand-new warranty questions to supply lines older than the airport expansion.",
+      "items": [
+        { "title": "Water Heater Installation & Repair in Greer", "body": "Water heater repair and replacement across tank and tankless designs. Households that outgrew their tank get recovery capacity sized to how the house actually uses hot water.", "href": "/services/greenville-sc-plumbing/water-heaters" },
+        { "title": "Repiping Services in Greer", "body": "Repiping for growth-era homes whose original supply lines have entered their failure years. One planned project replaces the leak-by-leak repair cycle.", "href": "/services/greenville-sc-drains/repiping" },
+        { "title": "Sump Pump Services in Greer", "body": "Sump pump installation and service for basements and crawl spaces that take on water during sustained Upstate rain. Battery backup options cover the storms that cut power and flood simultaneously.", "href": "/services/greenville-sc-plumbing/sump-pumps" },
+        { "title": "Kitchen & Bathroom Plumbing in Greer", "body": "Kitchen and bath plumbing from disposal swaps to remodel rough-ins. Licensed work in the rooms where a small leak does the most expensive damage.", "href": "/services/greenville-sc-plumbing/kitchen-bathroom" }
+      ],
+      "partnerHeading": "Your Trusted Plumbing Partner in Greer",
+      "partnerBody": "Greer plumbing calls range from brand-new warranty questions to supply lines older than the airport expansion. The response is uniform: licensed plumbers, documented findings, and pricing set before work begins."
+    },
+    {
+      "groupIntro": "Licensed electricians carry Greer's panel, wiring, charger, and generator work on the same dispatch as its HVAC and plumbing.",
+      "items": [
+        { "title": "EV Charger Installation in Greer", "body": "EV charger installation with panel capacity verified first. Greer garages are filling with vehicles that charge overnight, and the circuit behind the charger decides how well that goes.", "href": "/services/greenville-sc-electrical/car-charger-installation" },
+        { "title": "Circuit Breaker Services in Greer", "body": "Breaker and panel service for homes stacking modern load onto older equipment. An evaluation states plainly what the panel can carry and what upgrade the plans require.", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+        { "title": "Wiring & Rewiring Services in Greer", "body": "Wiring and rewiring where troubleshooting shows the runs themselves are the problem. Flickering, warm outlets, and repeated nuisance trips all get root-cause diagnosis.", "href": "/services/greenville-sc-electrical/wiring-rewiring-services" },
+        { "title": "Home Generator Installs & Repairs in Greer", "body": "Standby generator installation, repair, and annual maintenance with automatic transfer. Sizing runs from essential circuits to whole-home, priced side by side.", "href": "/services/greenville-sc-generators/home-generators" }
+      ],
+      "partnerHeading": "Your Trusted Electrical & Home Generator Partner in Greer",
+      "partnerBody": "Licensed electricians carry Greer's panel, wiring, charger, and generator work on the same dispatch as its HVAC and plumbing, which keeps multi-trade projects under one accountable roof."
+    }
+  ],
+  "sinceHeading": "Carolina Heating Service: Keeping Greer Comfortable Since 1981",
+  "sinceIntro": "Carolina Heating Service was working Greer addresses before most of its current subdivisions existed, and the HVAC catalog has grown with the town since 1981. The process is identical across trades.",
+  "sinceCategories": [
+    {
+      "label": "HVAC",
+      "bullets": [
+        { "title": "System Replacement", "body": "Load-calculated installations for the growth-era equipment now aging out in waves, with duct condition verified before new equipment depends on it." },
+        { "title": "Repair Service", "body": "Cross-brand diagnostics with findings documented and shown, so approval decisions rest on evidence." },
+        { "title": "Preventive Care", "body": "Twice-yearly tune-ups through the maintenance plan, scheduled ahead of the seasons that expose weak components." }
+      ]
+    },
+    {
+      "label": "Electrical",
+      "bullets": [
+        { "title": "Panel Work", "body": "Evaluations and upgrades for households adding chargers, additions, and workshop circuits." },
+        { "title": "Fault Diagnosis", "body": "Troubleshooting that traces symptoms to causes instead of resetting them." },
+        { "title": "Backup Power", "body": "Generator sizing, installation, and the annual service that keeps standby equipment ready." }
+      ]
+    },
+    {
+      "label": "Plumbing",
+      "bullets": [
+        { "title": "Emergency Response", "body": "Emergency plumbing service for the burst line or failed heater that will not wait." },
+        { "title": "Line Diagnostics", "body": "Camera inspection and pressure assessment that put measurements behind every quote." },
+        { "title": "Fixture and Heater Work", "body": "Kitchen, bath, and water heater service with repair and replacement priced together where honest." }
+      ]
+    },
+    {
+      "label": "Air Quality",
+      "bullets": [
+        { "title": "Duct Service", "body": "Cleaning that removes stored allergen load from the system's runs." },
+        { "title": "Filtration Strategy", "body": "Media matched to the blower's capability rather than stacked against it." },
+        { "title": "Humidity Response", "body": "Equipment that manages moisture through the months air conditioning alone falls short." }
+      ]
+    },
+    {
+      "label": "Process",
+      "bullets": [
+        { "title": "Show-the-Finding Diagnostics", "body": "Documentation before quotes, on every call." },
+        { "title": "Locked Pricing", "body": "The approved number and the invoiced number match." },
+        { "title": "Open Scheduling", "body": "Online booking and 24/7 chat, with plan members holding priority." }
+      ]
+    }
+  ],
+  "closing": [
+    "Greer's storefronts and light industrial spaces get licensed multi-trade coverage through commercial services, and homeowners facing an unplanned replacement can spread it through financing rather than absorb it in one month.",
+    "Book online at any hour or start with the website chat. A licensed technician arrives on schedule, documents the diagnosis, quotes the work before touching it, and represents the same company whether the problem is mechanical, electrical, or in the pipes."
+  ],
+  "faqs": [
+    {
+      "question": "Half the houses on my Greer street have replaced their AC. Should I think about replacing mine?",
+      "answer": "Same-vintage neighborhoods do fail in clusters, so nearby replacements are useful information rather than a verdict. An inspection establishes your unit's actual condition, and if replacement is close, planning it beats meeting it in July. Preemptive replacement of a healthy system, though, rarely pencils out."
+    },
+    {
+      "question": "Is a dual fuel system worth it over a standard heat pump in Greer?",
+      "answer": "It depends on gas availability and how you weight the coldest weeks, so the comparison gets run with your utility rates. The heat pump carries most of the winter economically either way; dual fuel adds gas heat for the stretch when heat pump output costs the most. The quote shows both configurations."
+    },
+    {
+      "question": "My sump pump only matters a few days a year. How do I know it will work?",
+      "answer": "Test it, and have it serviced annually. A pump that sits idle for months can seize or stick exactly when the rain arrives, and the failure announces itself as a flooded crawl space. Battery backup earns consideration here because the storms that flood are the storms that cut power."
+    },
+    {
+      "question": "What does an electrician check before installing an EV charger?",
+      "answer": "Panel capacity, available breaker space, and the run from panel to garage. The charger's circuit is a continuous high draw, so the evaluation confirms the panel can carry it alongside existing load. If it cannot, the upgrade gets quoted before the charger, not after it trips."
+    },
+    {
+      "question": "Which communities around Greer do you serve?",
+      "answer": "Regular routes cover Taylors, Duncan, and Five Forks, plus the rest of the Greenville and Spartanburg footprint. The chat team can verify any address."
+    }
+  ]
+}
