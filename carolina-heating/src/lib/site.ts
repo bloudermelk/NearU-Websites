@@ -27,6 +27,8 @@ export type ServiceCategorySummary = {
 export type Certification = {
   name: string;
   image: string;
+  width: number;
+  height: number;
 };
 
 export type Testimonial = {
@@ -60,8 +62,11 @@ export type SiteData = {
     social: {
       facebook: string;
       instagram: string;
+      linkedin: string;
+      youtube: string;
     };
     scheduleUrl: string;
+    youtubeVideoId: string;
   };
   topBanner: {
     text: string;
@@ -69,7 +74,9 @@ export type SiteData = {
   };
   nav: {
     primary: NavTopItem[];
-    footer: NavLink[];
+  };
+  footer: {
+    columns: NavLink[][];
   };
   serviceCategories: ServiceCategorySummary[];
   certifications: Certification[];

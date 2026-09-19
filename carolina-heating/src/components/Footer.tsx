@@ -1,78 +1,137 @@
 import Link from "next/link";
-import { Container } from "./Container";
+import { Icon } from "./Icon";
 import { site } from "@/lib/site";
 
+const LICENSE_LINES = [
+  "Com/Indust/Equip Repair/Maint 2023-56064",
+  "HVAC 2023-410",
+  "Electrical 2023-16672",
+];
+
 export function Footer() {
-  const { business, nav } = site;
+  const { business, footer } = site;
   const year = new Date().getFullYear();
 
+  const logo = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      width={3468}
+      height={2120}
+      src={business.logo}
+      className="custom-logo"
+      alt={`${business.name} Logo`}
+      decoding="async"
+    />
+  );
+
   return (
-    <footer className="bg-brand-secondary text-white">
-      <Container className="grid gap-10 py-12 md:grid-cols-3">
-        <div>
-          <h2 className="font-heading text-xl font-bold">{business.name}</h2>
-          <p className="mt-2 text-sm text-white/70">{business.tagline}</p>
-          <p className="mt-4 text-sm text-white/70">
-            {business.address.street}
-            <br />
-            {business.address.city}, {business.address.state} {business.address.zip}
-          </p>
-          <p className="mt-4 text-sm">
-            <a href={business.phoneHref} className="font-bold hover:text-brand-primary">
-              {business.phone}
-            </a>
-          </p>
-          <p className="mt-1 text-sm">
-            <a href={`mailto:${business.email}`} className="text-white/70 hover:text-brand-primary">
-              {business.email}
-            </a>
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-bold uppercase tracking-wide text-white/60">Company</h3>
-          <ul className="mt-4 flex flex-col gap-2">
-            {nav.footer.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="text-sm text-white/80 hover:text-brand-primary">
-                  {item.label}
-                </Link>
-              </li>
+    <footer id="colophon" className="site-footer | container">
+      <div className="site-footer-content">
+        <div className="site-footer-branding">
+          <Link href="/" className="custom-logo-link" rel="home">
+            {logo}
+          </Link>
+          <p className="site-footer-licence">
+            {LICENSE_LINES.map((line, i) => (
+              <span key={line}>
+                {line}
+                {i < LICENSE_LINES.length - 1 && <br />}
+              </span>
             ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-bold uppercase tracking-wide text-white/60">Services</h3>
-          <ul className="mt-4 flex flex-col gap-2">
-            {site.serviceCategories.map((cat) => (
-              <li key={cat.slug}>
-                <Link
-                  href={`/services/${cat.slug}`}
-                  className="text-sm text-white/80 hover:text-brand-primary"
-                >
-                  {cat.shortTitle}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Container>
-
-      <div className="border-t border-white/10 py-6">
-        <Container className="flex flex-col items-center justify-between gap-4 text-xs text-white/60 sm:flex-row">
-          <p>
-            &copy; {year} {business.legalName}. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            <a href={business.social.facebook} className="hover:text-white" target="_blank" rel="noreferrer">
-              Facebook
-            </a>
-            <a href={business.social.instagram} className="hover:text-white" target="_blank" rel="noreferrer">
-              Instagram
-            </a>
+        </div>
+
+        <div className="site-footer-nav">
+          {footer.columns.map((col, ci) => (
+            <div className="footer-menu" key={ci}>
+              <ul id={`secondary-menu-${ci + 1}`} className="menu-list">
+                {col.map((link) => (
+                  <li key={link.href + link.label} className="menu-item">
+                    {link.href.startsWith("http") ? (
+                      <a href={link.href} target="_blank" rel="noreferrer">
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link href={link.href}>{link.label}</Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="site-footer-contact | flex-col flex-gap">
+          <div className="paired-icon-text">
+            <Icon name="geopin" className="paired-icon" />
+            <p className="paired-text">
+              <a href={business.mapUrl} target="_blank" rel="noreferrer">
+                {business.address.street}, <br />
+                {business.address.city}, {business.address.state} {business.address.zip}
+              </a>
+            </p>
           </div>
-        </Container>
+          <div className="paired-icon-text">
+            <Icon name="phone" className="paired-icon" />
+            <p className="paired-text">
+              <a href={business.phoneHref} className="phone-link">
+                {business.phone}
+              </a>
+            </p>
+          </div>
+          <div className="paired-icon-text">
+            <Icon name="event" className="paired-icon" />
+            <p className="paired-text">
+              <Link href={business.scheduleUrl}>Schedule Online</Link>
+            </p>
+          </div>
+          <ul className="footer-social-list | flex-row flex-gap">
+            <li>
+              <a href={business.social.facebook} target="_blank" rel="noreferrer" title="Facebook">
+                <Icon name="facebook" /> <span className="visually-hidden">Find us on Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href={business.social.instagram} target="_blank" rel="noreferrer" title="Instagram">
+                <Icon name="instagram" /> <span className="visually-hidden">Find us on Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href={business.social.linkedin} target="_blank" rel="noreferrer" title="LinkedIn">
+                <Icon name="linkedin" /> <span className="visually-hidden">Find us on LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href={business.social.youtube} target="_blank" rel="noreferrer" title="Social Media">
+                <Icon name="web" /> <span className="visually-hidden">Find us on Social Media</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="site-footer-copyright">
+        <div className="site-footer-branding">
+          <Link href="/" className="custom-logo-link" rel="home">
+            {logo}
+          </Link>
+        </div>
+        <div className="site-footer-copyright__p">
+          Copyright &copy; {year} {business.legalName}, All Rights Reserved.
+          <Link className="inline-footer-menu-item" href="/privacy-policy">
+            Privacy Policy
+          </Link>
+          <Link className="inline-footer-menu-item" href="/privacy-policy#california-notice">
+            California Privacy Notice
+          </Link>
+          <Link className="inline-footer-menu-item" href="/terms-and-conditions">
+            Terms and Conditions
+          </Link>
+          <Link className="inline-footer-menu-item" href="/sitemap">
+            Sitemap
+          </Link>{" "}
+          <span className="site-footer-copyright__p__license">| {LICENSE_LINES.join(" ")}</span>
+        </div>
       </div>
     </footer>
   );

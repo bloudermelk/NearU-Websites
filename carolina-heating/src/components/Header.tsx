@@ -1,204 +1,285 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import { Container } from "./Container";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Icon } from "./Icon";
 import { site } from "@/lib/site";
+import type { NavTopItem } from "@/lib/site";
 
+/**
+ * Reproduces the NearU base theme's #masthead markup and the behavior of its
+ * navigation.js: a mobile menu-toggle button that flips `.toggled` on the nav
+ * and `data-header-nav-expanded` on <html>, plus per-item sub-menu toggle
+ * buttons controlled via aria-expanded (the theme CSS shows/hides sub-menus
+ * off those attributes).
+ */
 export function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileOpenItem, setMobileOpenItem] = useState<string | null>(null);
-  const { business, nav, topBanner } = site;
+  const { business, nav } = site;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openSub, setOpenSub] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-header-nav-expanded",
+      menuOpen ? "true" : "false"
+    );
+  }, [menuOpen]);
+
+  // Close sub-menus when clicking outside the nav (mirrors navigation.js).
+  useEffect(() => {
+    if (!openSub) return;
+    const onDown = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenSub(null);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenSub(null);
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [openSub]);
+
+  const closeAll = useCallback(() => {
+    setOpenSub(null);
+    setMenuOpen(false);
+  }, []);
 
   return (
-    <>
-      {/* Top promo banner */}
-      <div className="sticky top-0 z-50 bg-[#ffcc07] py-2 text-center text-sm font-bold">
-        <Link href={topBanner.href} className="text-[#ed1b2d] underline underline-offset-2">
-          {topBanner.text}
-        </Link>
-      </div>
-
-      {/* Location / phone strip */}
-      <div className="bg-brand-secondary py-1.5 text-xs text-white">
-        <Container className="flex items-center justify-end gap-6">
-          <a
-            href={business.mapUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1 hover:text-brand-primary"
-          >
-            {business.locationLabel}
-          </a>
-          <a href={business.phoneHref} className="flex items-center gap-1 hover:text-brand-primary">
-            {business.phone}
-          </a>
-        </Container>
-      </div>
-
-      <header className="sticky top-[calc(2.25rem)] z-40 bg-white shadow-sm">
-        <Container className="flex h-20 items-center justify-between gap-4">
-          <Link href="/" className="relative h-14 w-40 flex-shrink-0">
-            <Image
+    <header id="masthead" className="site-header | container">
+      <div className="site-header-content">
+        <div className="site-branding">
+          <Link href="/" className="custom-logo-link" rel="home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              width={3468}
+              height={2120}
               src={business.logo}
+              className="custom-logo"
               alt={`${business.name} Logo`}
-              fill
-              sizes="160px"
-              className="object-contain object-left"
-              priority
+              decoding="async"
+              fetchPriority="high"
             />
           </Link>
+          <p className="site-title">
+            <Link href="/" rel="home">
+              {business.legalName}
+            </Link>
+          </p>
+          <p className="site-description">
+            Greenville&rsquo;s Trusted HVAC &amp; Plumbing Services Since {business.foundedYear}
+          </p>
+        </div>
 
-          <nav className="hidden items-center gap-5 xl:flex">
-            {nav.primary.map((item) => (
-              <div
-                key={item.label}
-                className="group relative"
-                onMouseEnter={() => setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                {item.href ? (
-                  <Link
-                    href={item.href}
-                    className="text-sm font-semibold text-brand-secondary hover:text-brand-primary"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <span className="cursor-default text-sm font-semibold text-brand-secondary">
-                    {item.label}
-                  </span>
-                )}
-
-                {item.groups && openDropdown === item.label && (
-                  <div className="absolute left-0 top-full flex gap-8 rounded-md border border-black/10 bg-white p-6 shadow-lg">
-                    {item.groups.map((group, gi) => (
-                      <div key={group.label ?? gi} className="min-w-[200px]">
-                        {group.label && (
-                          <p className="mb-2 text-xs font-bold uppercase tracking-wide text-brand-primary">
-                            {group.label}
-                          </p>
-                        )}
-                        <ul className="flex flex-col gap-1.5">
-                          {group.items.map((link) => (
-                            <li key={link.href}>
-                              <Link
-                                href={link.href}
-                                className="whitespace-nowrap text-sm text-brand-secondary hover:text-brand-primary"
-                              >
-                                {link.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-
-          <div className="hidden items-center gap-4 xl:flex">
-            <a
-              href={business.phoneHref}
-              className="text-sm font-bold text-brand-secondary hover:text-brand-primary"
-            >
+        <div className="site-header-strip">
+          <span className="site-header-strip__item">
+            <Icon name="geopin" />
+            <a href={business.mapUrl} target="_blank" rel="noreferrer">
+              {business.locationLabel}
+            </a>
+          </span>
+          <span className="site-header-strip__item">
+            <Icon name="phone" />
+            <a className="phone-link" href={business.phoneHref}>
               {business.phone}
             </a>
-            <Link
-              href={business.scheduleUrl}
-              className="rounded-md bg-brand-primary px-5 py-2.5 text-sm font-bold uppercase text-white transition-colors hover:bg-brand-primary-active"
-            >
-              Schedule Now
-            </Link>
-          </div>
+          </span>
+        </div>
 
-          <button
-            type="button"
-            className="flex items-center justify-center rounded-md p-2 text-brand-secondary xl:hidden"
-            aria-label="Toggle menu"
-            onClick={() => setMobileOpen((open) => !open)}
+        <div className="header-mobile-cta">
+          <a
+            href={business.phoneHref}
+            data-cta-gap="md"
+            data-cta-type="solid"
+            data-cta-content="mixed"
+            data-cta-level="primary"
+            data-cta-minwidth="false"
+            className="cta"
           >
-            <span className="sr-only">Menu</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {mobileOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M3 6h18M3 12h18M3 18h18" />}
-            </svg>
+            <Icon name="phone" className="cta-icon" />
+            <span>{business.phone}</span>
+          </a>
+          <Link
+            href={business.scheduleUrl}
+            data-cta-gap="md"
+            data-cta-type="solid"
+            data-cta-content="mixed"
+            data-cta-level="primary"
+            data-cta-minwidth="false"
+            className="cta se-widget-button"
+          >
+            <Icon name="event" className="cta-icon" />
+            <span>Schedule</span>
+          </Link>
+        </div>
+
+        <nav
+          id="site-navigation"
+          ref={navRef}
+          className={`main-navigation${menuOpen ? " toggled" : ""}`}
+        >
+          <button
+            className="menu-toggle | reset-button | menu-toggle-button | cta"
+            data-cta-type="solid"
+            data-cta-level="primary"
+            data-cta-minwidth="false"
+            aria-controls="primary-menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            <span className="visually-hidden">Primary Menu</span>
+            <Icon name="menu" className="menu-toggle-button-icon menu-toggle-button-icon--off" />
+            <Icon name="close" className="menu-toggle-button-icon menu-toggle-button-icon--on" />
           </button>
-        </Container>
 
-        {mobileOpen && (
-          <div className="max-h-[75vh] overflow-y-auto border-t border-black/10 bg-white xl:hidden">
-            <Container className="flex flex-col gap-1 py-4">
+          <div className="header-nav-menu">
+            <ul id="primary-menu" className="menu nav-menu menu-list">
               {nav.primary.map((item) => (
-                <div key={item.label} className="border-b border-black/5 py-1">
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      className="block py-2 text-sm font-semibold text-brand-secondary"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button
-                      type="button"
-                      className="flex w-full items-center justify-between py-2 text-left text-sm font-semibold text-brand-secondary"
-                      onClick={() =>
-                        setMobileOpenItem((cur) => (cur === item.label ? null : item.label))
-                      }
-                    >
-                      {item.label}
-                      <span>{mobileOpenItem === item.label ? "\u2212" : "+"}</span>
-                    </button>
-                  )}
-
-                  {item.groups && mobileOpenItem === item.label && (
-                    <div className="ml-3 flex flex-col gap-3 border-l border-black/10 py-2 pl-3">
-                      {item.groups.map((group, gi) => (
-                        <div key={group.label ?? gi}>
-                          {group.label && (
-                            <p className="mb-1 text-xs font-bold uppercase tracking-wide text-brand-primary">
-                              {group.label}
-                            </p>
-                          )}
-                          <ul className="flex flex-col gap-1">
-                            {group.items.map((link) => (
-                              <li key={link.href}>
-                                <Link
-                                  href={link.href}
-                                  className="block py-1 text-sm text-brand-gray-medium"
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  {link.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <TopMenuItem
+                  key={item.label}
+                  item={item}
+                  open={openSub === item.label}
+                  onToggle={() => setOpenSub((cur) => (cur === item.label ? null : item.label))}
+                  onNavigate={closeAll}
+                />
               ))}
-              <div className="mt-3 flex flex-col gap-3 pt-3">
-                <a href={business.phoneHref} className="text-sm font-bold text-brand-secondary">
-                  {business.phone}
-                </a>
-                <Link
-                  href={business.scheduleUrl}
-                  className="rounded-md bg-brand-primary px-5 py-2.5 text-center text-sm font-bold uppercase text-white"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Schedule Now
-                </Link>
-              </div>
-            </Container>
+            </ul>
+            <div className="header-nav-cta">
+              <Link
+                href={business.scheduleUrl}
+                data-cta-gap="md"
+                data-cta-type="solid"
+                data-cta-content="mixed"
+                data-cta-level="primary"
+                data-cta-minwidth="true"
+                className="cta se-widget-button"
+                onClick={closeAll}
+              >
+                <Icon name="event" className="cta-icon" />
+                <span>Schedule Now</span>
+                <Icon name="chevronright" className="cta-icon" />
+              </Link>
+            </div>
           </div>
-        )}
-      </header>
-    </>
+        </nav>
+      </div>
+    </header>
   );
+}
+
+function TopMenuItem({
+  item,
+  open,
+  onToggle,
+  onNavigate,
+}: {
+  item: NavTopItem;
+  open: boolean;
+  onToggle: () => void;
+  onNavigate: () => void;
+}) {
+  const subId = `sub-menu-list-${slugify(item.label)}`;
+
+  if (!item.groups) {
+    const special = item.label === "Commercial" ? " menu-item-special" : "";
+    return (
+      <li
+        className={`main-menu-item menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page${special}`}
+      >
+        <Link
+          className="menu-interactive menu-link main-menu-link"
+          href={item.href ?? "#"}
+          onClick={onNavigate}
+        >
+          {item.label}
+        </Link>
+      </li>
+    );
+  }
+
+  return (
+    <li className="main-menu-item menu-item-depth-0 menu-interactive menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item--has-shell-link">
+      <span
+        className="menu-interactive menu-interactive--is-shell"
+        onClick={onToggle}
+        role="presentation"
+      >
+        {item.label}
+      </span>
+      <button
+        className="button-reset | menu-toggle-button menu-toggle-sub"
+        aria-controls={subId}
+        aria-expanded={open}
+        title={`Toggle ${item.label} sub menu`}
+        onClick={onToggle}
+      >
+        <span className="menu-toggle-sub-stretch-el" aria-hidden="true"></span>
+        <svg className="menu-toggle-button-icon--off" width="16" height="16" aria-hidden="true">
+          <use href="#icon-chevrondown" />
+        </svg>
+        <svg className="menu-toggle-button-icon--on" width="16" height="16" aria-hidden="true">
+          <use href="#icon-chevronup" />
+        </svg>
+        <span className="visually-hidden">Toggle Sub Menu</span>
+      </button>
+      <ul className="sub-menu menu-list menu-depth-1" id={subId}>
+        {item.groups.map((group, gi) => {
+          // Groups with a label render as depth-1 title items containing a depth-2 list
+          if (group.label) {
+            return (
+              <li
+                key={group.label}
+                className="sub-menu-item menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item--has-shell-link"
+              >
+                <span className="menu-interactive menu-interactive--is-title">{group.label}</span>
+                <ul className="sub-sub-menu menu-list menu-depth-2">
+                  {group.items.map((link) => (
+                    <li
+                      key={link.href + link.label}
+                      className="sub-menu-item sub-sub-menu-item menu-item-depth-2 menu-item menu-item-type-post_type menu-item-object-service"
+                    >
+                      <Link
+                        className="menu-interactive menu-link sub-menu-link"
+                        href={link.href}
+                        onClick={onNavigate}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          }
+          // Unlabeled groups render as flat depth-1 items (Electrical, About Us)
+          return group.items.map((link) => (
+            <li
+              key={`${gi}-${link.href}-${link.label}`}
+              className="sub-menu-item menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-service"
+            >
+              <Link
+                className="menu-interactive menu-link sub-menu-link"
+                href={link.href}
+                onClick={onNavigate}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ));
+        })}
+      </ul>
+    </li>
+  );
+}
+
+function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }

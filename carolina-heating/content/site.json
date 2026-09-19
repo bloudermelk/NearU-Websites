@@ -22,9 +22,12 @@
     "googleReviewCount": 18,
     "social": {
       "facebook": "https://www.facebook.com/CarolinaHeatingServiceGreenvilleSC/",
-      "instagram": "https://instagram.com/carolinaheatingservice/?hl=en"
+      "instagram": "https://instagram.com/carolinaheatingservice/",
+      "linkedin": "https://www.linkedin.com/company/carolina-heating-service",
+      "youtube": "https://www.youtube.com/channel/UCObVqvFDsHKkvjrG3fs318Q"
     },
-    "scheduleUrl": "/bookings/"
+    "scheduleUrl": "/bookings",
+    "youtubeVideoId": "rmtPmKx4NeY"
   },
   "topBanner": {
     "text": "Order Your Home Generator!",
@@ -177,16 +180,26 @@
           }
         ]
       }
-    ],
-    "footer": [
-      { "label": "About Us", "href": "/about-us" },
-      { "label": "Maintenance", "href": "/maintenance" },
-      { "label": "Financing", "href": "/financing" },
-      { "label": "Worry-Free Service Program", "href": "/worry-free-service-program" },
-      { "label": "Commercial", "href": "/commercial" },
-      { "label": "Careers", "href": "/careers" },
-      { "label": "Privacy Policy", "href": "/privacy-policy" },
-      { "label": "Terms and Conditions", "href": "/terms-and-conditions" }
+    ]
+  },
+  "footer": {
+    "columns": [
+      [
+        { "label": "Heating Services", "href": "/services/greenville-sc-heating" },
+        { "label": "Cooling Services", "href": "/services/greenville-sc-cooling" },
+        { "label": "Indoor Air Quality", "href": "/services/greenville-sc-indoor-air-quality" },
+        { "label": "Plumbing Services", "href": "/services/greenville-sc-plumbing" },
+        { "label": "Drain Services", "href": "/services/greenville-sc-drains" },
+        { "label": "Electrical Services", "href": "/services/greenville-sc-electrical" },
+        { "label": "Home Generator Services", "href": "/services/greenville-sc-generators" },
+        { "label": "Commercial", "href": "/commercial" }
+      ],
+      [
+        { "label": "Maintenance", "href": "/maintenance" },
+        { "label": "Financing", "href": "/financing" },
+        { "label": "About Us", "href": "/about-us" },
+        { "label": "Careers", "href": "https://jobs.dayforcehcm.com/en-US/nearu/CarolinaHeating" }
+      ]
     ]
   },
   "serviceCategories": [
@@ -241,11 +254,11 @@
     }
   ],
   "certifications": [
-    { "name": "Better Business Bureau - Accredited Business", "image": "/images/2024/03/Better-Business-Bureau-Accredited-Business.png" },
-    { "name": "Esco Institute", "image": "/images/2024/03/Esco-Institute-logo.png" },
-    { "name": "North American Technician Excellence (NATE)", "image": "/images/2024/03/North-American-Technician-Excellence-logo-NATE.png" },
-    { "name": "SCALT", "image": "/images/2024/03/SCALT-logo.png" },
-    { "name": "SHA", "image": "/images/2024/03/SHA-logo.jpg" }
+    { "name": "Better Business Bureau - Accredited Business", "image": "/images/2024/03/Better-Business-Bureau-Accredited-Business.png", "width": 300, "height": 113 },
+    { "name": "Esco Institute logo", "image": "/images/2024/03/Esco-Institute-logo.png", "width": 300, "height": 232 },
+    { "name": "North American Technician Excellence logo (NATE)", "image": "/images/2024/03/North-American-Technician-Excellence-logo-NATE.png", "width": 252, "height": 250 },
+    { "name": "SCALT logo", "image": "/images/2024/03/SCALT-logo.png", "width": 300, "height": 120 },
+    { "name": "SHA logo", "image": "/images/2024/03/SHA-logo.jpg", "width": 300, "height": 192 }
   ],
   "testimonials": [
     {

@@ -1,42 +1,13 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
-
-:root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-
-  /* Carolina Heating Service brand palette (extracted from live site) */
-  --color-brand-primary: #de252c;
-  --color-brand-primary-active: #b33330;
-  --color-brand-secondary: #1a1a1a;
-  --color-brand-secondary-active: #060606;
-  --color-brand-gray-dark: #323232;
-  --color-brand-gray-medium: #808080;
-  --color-brand-gray-light: #f2f2f2;
-  --color-brand-star: #fea500;
-  --color-brand-check: #5ac5a2;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --color-brand-primary: var(--color-brand-primary);
-  --color-brand-primary-active: var(--color-brand-primary-active);
-  --color-brand-secondary: var(--color-brand-secondary);
-  --color-brand-secondary-active: var(--color-brand-secondary-active);
-  --color-brand-gray-dark: var(--color-brand-gray-dark);
-  --color-brand-gray-medium: var(--color-brand-gray-medium);
-  --color-brand-gray-light: var(--color-brand-gray-light);
-  --color-brand-star: var(--color-brand-star);
-  --color-brand-check: var(--color-brand-check);
-
-  --font-sans: var(--font-roboto);
-  --font-heading: var(--font-roboto-condensed);
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-}
+/*
+ * Global styles for the Carolina Heating Service rebuild.
+ *
+ * theme.css is assembled by scripts/build-theme-css.mjs from the ORIGINAL
+ * stylesheets of the live WordPress site (core block styles, theme.json
+ * presets, NearU base theme, CHS child theme, plugins, customizer CSS), in
+ * WordPress' own enqueue order. Components in src/components reproduce the
+ * original DOM and class names so that CSS applies 1:1.
+ *
+ * Do not add Tailwind or other utility frameworks here: the theme ships its own
+ * reset and layout primitives and they would conflict.
+ */
+@import "./theme.css";
