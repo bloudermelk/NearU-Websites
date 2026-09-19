@@ -3,7 +3,7 @@
   "title": "Electrical Services in Greenville, SC",
   "metaTitle": "Electrical Services Greenville, SC | Carolina Heating",
   "metaDescription": "Electrical wiring, panel upgrades, and lighting services in Greenville, SC from Carolina Heating Service. Schedule today.",
-  "heroImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-circuit-box.jpg",
+  "heroImage": "/images/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-circuit-box.jpg",
   "heroSubtitle": "Electrical wiring, panel upgrades and replacement, and lighting maintenance from licensed electricians throughout Greenville, SC.",
   "intro": [
     "Whether you need electrical wiring services for a renovation, an electrical panel upgrade to support more power, or routine lighting maintenance, Carolina Heating Service provides licensed electrical services throughout Greenville, SC. Electricians diagnose the actual problem, explain your options, and complete the work safely and up to code.",
@@ -13,31 +13,31 @@
     {
       "title": "EV Charger Installation in Greenville, SC",
       "description": "Trust us for reliable and efficient car charger installations. We ensure a seamless installation process, from assessing your electrical system to selecting the right charger.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/09/electrical-services-car-charger-installation.jpg",
+      "image": "/images/2024/09/electrical-services-car-charger-installation.jpg",
       "href": "/services/greenville-sc-electrical/car-charger-installation"
     },
     {
       "title": "Switch and Outlet Repair in Greenville, SC",
       "description": "Are you in need of expert switch and outlet repair services in Greenville, SC? Look no further than Carolina Heating Services.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/11/outlet-switch-repair-image.jpg",
+      "image": "/images/2024/11/outlet-switch-repair-image.jpg",
       "href": "/services/greenville-sc-electrical/outlet-switch-repair-services"
     },
     {
       "title": "Wiring and Rewiring Services in Greenville, SC",
       "description": "When it comes to reliable wiring and rewiring services in Greenville, SC, Carolina Heating Services stands out as the go-to choice.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/10/rewiring-image.webp",
+      "image": "/images/2024/10/rewiring-image.webp",
       "href": "/services/greenville-sc-electrical/wiring-rewiring-services"
     },
     {
       "title": "Ceiling Fan Installation in Greenville, SC",
       "description": "Our electricians have the expertise to install ceiling fans efficiently and with precision. From wiring to mounting, we ensure a seamless installation.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-ceiling-fan-installed-on-the-ceiling-of-a-homes-room.jpg",
+      "image": "/images/2024/03/A-ceiling-fan-installed-on-the-ceiling-of-a-homes-room.jpg",
       "href": "/services/greenville-sc-electrical/ceiling-fans"
     },
     {
       "title": "Circuit Breaker Panel Services in Greenville, SC",
       "description": "We pride ourselves on precision work, using high-quality materials, and adhering to industry safety standards.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-panel.jpg",
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-panel.jpg",
       "href": "/services/greenville-sc-electrical/circuit-breakers"
     }
   ],
@@ -85,7 +85,7 @@
       "Extend your system's lifespan through regular maintenance",
       "Keep you and your family comfortable and safe during all seasons"
     ],
-    "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/030624-CHS-13.jpg"
+    "image": "/images/2024/04/030624-CHS-13.jpg"
   },
   "closing": {
     "heading": "Licensed Electricians Providing Electrical Services in Greenville and the Upstate of South Carolina",

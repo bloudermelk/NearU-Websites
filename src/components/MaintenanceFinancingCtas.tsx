@@ -24,7 +24,7 @@ export function MaintenanceFinancingCtas() {
       <div className="flex flex-col overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm md:flex-row">
         <div className="relative h-48 w-full md:h-auto md:w-2/5">
           <Image
-            src="https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg"
+            src="/images/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg"
             alt="Technician performing maintenance"
             fill
             sizes="(max-width: 768px) 100vw, 40vw"
@@ -52,7 +52,7 @@ export function MaintenanceFinancingCtas() {
       <div className="flex flex-col overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm md:flex-row">
         <div className="relative h-48 w-full md:h-auto md:w-2/5">
           <Image
-            src="https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-employee-smiling-while-sitting-at-a-desk-and-working-on-their-computer.jpg"
+            src="/images/2024/03/A-Carolina-Heating-Service-employee-smiling-while-sitting-at-a-desk-and-working-on-their-computer.jpg"
             alt="Employee smiling at a desk"
             fill
             sizes="(max-width: 768px) 100vw, 40vw"

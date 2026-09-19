@@ -3,7 +3,7 @@
   "metaDescription": "Carolina Heating Service is the trusted local provider of commercial heating, cooling, plumbing, and generator services.",
   "heading": "Commercial Services",
   "intro": "Carolina Heating Service is the trusted local provider of commercial heating, cooling, plumbing, and generator services. As specialists in HVAC services, we pride ourselves on delivering top-quality solutions to meet your specific needs. Whether it's a big or small project, from installation to maintenance and repairs, we have you covered. Our team of experts is here to serve all types of commercial customers, ensuring your comfort and efficiency every step of the way.",
-  "heroImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/An-aerial-view-of-a-commercial-building.jpg",
+  "heroImage": "/images/2024/03/An-aerial-view-of-a-commercial-building.jpg",
   "capabilities": [
     {
       "title": "Install & Repair",
@@ -26,9 +26,9 @@
   ],
   "closingHeading": "Reliable Comfort: Experts in HVAC, Electrical, Plumbing & Indoor Air Quality",
   "closingBody": "At Carolina Heating Service, we pride ourselves on delivering reliable comfort through our expert HVAC, electrical, plumbing, and indoor air quality solutions. With years of experience in the industry, our skilled technicians are dedicated to ensuring your home remains comfortable year-round.",
-  "closingImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-in-the-drivers-seat-of-a-service-truck.jpg",
+  "closingImage": "/images/2024/03/A-Carolina-Heating-Service-in-the-drivers-seat-of-a-service-truck.jpg",
   "maintenancePlans": ["15% Off Repair", "Heating & Cooling Tune-Up", "Reduced Dispatch Fees", "Priority Service"],
-  "maintenanceImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg",
+  "maintenanceImage": "/images/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg",
   "industries": [
     { "title": "Commercial Spaces", "body": "Offices, mixed-use, government, and retail" },
     { "title": "Food Service", "body": "Restaurants, ensuring optimal kitchen environments" },
@@ -37,5 +37,5 @@
     { "title": "Warehouse Solutions", "body": "Heaters and systems for efficient temperature regulation" },
     { "title": "Pre/Post-build", "body": "Comprehensive HVAC, plumbing, and generator solutions for construction projects at any stage" }
   ],
-  "industriesImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/An-exterior-photograph-of-a-commercial-building.jpg"
+  "industriesImage": "/images/2024/03/An-exterior-photograph-of-a-commercial-building.jpg"
 }

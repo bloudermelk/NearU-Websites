@@ -61,57 +61,57 @@
       "title": "Heating Services in Greenville, SC",
       "shortTitle": "Heating",
       "summary": "Furnace, heat pump, geothermal, and smart thermostat installation, repair, and maintenance.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/030624-CHS-37.jpg"
+      "image": "/images/2024/04/030624-CHS-37.jpg"
     },
     {
       "slug": "greenville-sc-cooling",
       "title": "Cooling Systems in Greenville, SC",
       "shortTitle": "Cooling",
       "summary": "Air conditioning, mini-splits, gas packs, dual fuel hybrid systems, and HVAC zoning.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/Trane_WRT_Unit_Shot1_0882_201022144525.jpg"
+      "image": "/images/2024/04/Trane_WRT_Unit_Shot1_0882_201022144525.jpg"
     },
     {
       "slug": "greenville-sc-indoor-air-quality",
       "title": "Indoor Air Quality Systems in Greenville, SC",
       "shortTitle": "Indoor Air Quality",
       "summary": "Air scrubbers, humidifiers, dehumidifiers, air ducts, dryer vent cleaning, and smoke/CO detection.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/indoor-air-quality-services.jpg"
+      "image": "/images/2024/02/indoor-air-quality-services.jpg"
     },
     {
       "slug": "greenville-sc-plumbing",
       "title": "Plumbing Company in Greenville, SC",
       "shortTitle": "Plumbing",
       "summary": "Water heaters, gas lines, water softeners, backflow testing, and general plumbing repair.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/plumbing-services.jpg"
+      "image": "/images/2024/02/plumbing-services.jpg"
     },
     {
       "slug": "greenville-sc-drains",
       "title": "Drain Services in Greenville, SC",
       "shortTitle": "Drains",
       "summary": "Drain clearing, rooter service, sewer and water lines, repiping, and camera inspections.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-inspecting-a-drain.jpg"
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-inspecting-a-drain.jpg"
     },
     {
       "slug": "greenville-sc-electrical",
       "title": "Electrical Services in Greenville, SC",
       "shortTitle": "Electrical",
       "summary": "Wiring and rewiring, circuit breakers, outlets and switches, ceiling fans, and EV car chargers.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-circuit-box.jpg"
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-circuit-box.jpg"
     },
     {
       "slug": "greenville-sc-generators",
       "title": "Home Generator Installation & Repair in Greenville, SC",
       "shortTitle": "Generators",
       "summary": "Whole-home Generac generator sales, installation, and repair for the Upstate.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/030624-CHS-13.jpg"
+      "image": "/images/2024/04/030624-CHS-13.jpg"
     }
   ],
   "certifications": [
-    { "name": "Better Business Bureau - Accredited Business", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Better-Business-Bureau-Accredited-Business.png" },
-    { "name": "Esco Institute", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Esco-Institute-logo.png" },
-    { "name": "North American Technician Excellence (NATE)", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/North-American-Technician-Excellence-logo-NATE.png" },
-    { "name": "SCALT", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/SCALT-logo.png" },
-    { "name": "SHA", "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/SHA-logo.jpg" }
+    { "name": "Better Business Bureau - Accredited Business", "image": "/images/2024/03/Better-Business-Bureau-Accredited-Business.png" },
+    { "name": "Esco Institute", "image": "/images/2024/03/Esco-Institute-logo.png" },
+    { "name": "North American Technician Excellence (NATE)", "image": "/images/2024/03/North-American-Technician-Excellence-logo-NATE.png" },
+    { "name": "SCALT", "image": "/images/2024/03/SCALT-logo.png" },
+    { "name": "SHA", "image": "/images/2024/03/SHA-logo.jpg" }
   ],
   "testimonials": [
     {

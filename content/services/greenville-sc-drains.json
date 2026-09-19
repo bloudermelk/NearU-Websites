@@ -3,7 +3,7 @@
   "title": "Drain Services in Greenville, SC",
   "metaTitle": "Installation & Repair of Drains | Carolina Heating Service",
   "metaDescription": "For over 40 years, Carolina Heating Service has offered services for Drains in Greenville and surrounding areas!",
-  "heroImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-inspecting-a-drain.jpg",
+  "heroImage": "/images/2024/03/A-Carolina-Heating-Service-technician-inspecting-a-drain.jpg",
   "heroSubtitle": "",
   "intro": [
     "Carolina Heating Service provides comprehensive Drain services in Greenville and the surrounding areas, from clearing clogs to performing routine maintenance to keep your plumbing running smoothly. Blocked drains can lead to inconvenient backups and even damage your pipes if not addressed promptly. Our experienced technicians use advanced equipment to diagnose and resolve any drain issues quickly and efficiently. Whether it's a kitchen sink, bathroom drain, or outdoor line, we ensure effective and lasting solutions."
@@ -12,43 +12,43 @@
     {
       "title": "Drain Cleaning in Greenville, SC",
       "description": "Our expert team excels in clearing even the toughest clogs. With state-of-the-art equipment and proven techniques, we guarantee prompt and efficient resolution.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Photo-of-a-drain-from-a-bathroom-sink.jpg",
+      "image": "/images/2024/03/Photo-of-a-drain-from-a-bathroom-sink.jpg",
       "href": "/services/greenville-sc-drains/drain-clearing"
     },
     {
       "title": "Trap and Pipe Cleaning in Greenville, SC",
       "description": "If you're searching for top-notch trap and pipe cleaning services in Greenville, SC, look no further than Carolina Heating Services.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/10/trap-and-pipe-image.jpg",
+      "image": "/images/2024/10/trap-and-pipe-image.jpg",
       "href": "/services/greenville-sc-drains/trap-and-pipe-cleaning"
     },
     {
       "title": "Rooter Drain Cleaning in Greenville, SC",
       "description": "Our company offers top-notch in-home drain rooter service, specializing in clearing clogs effectively and promptly.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-clearing-out-a-drain.jpg",
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-clearing-out-a-drain.jpg",
       "href": "/services/greenville-sc-drains/rooter-service"
     },
     {
       "title": "Sewer Camera & Plumbing Video Inspection in Greenville, SC",
       "description": "Our company specializes in camera/video drain inspections. With our advanced technology and skilled team, we diagnose issues accurately.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-watching-a-camera-inspection-on-a-digital-tablet-device.jpg",
+      "image": "/images/2024/03/A-Carolina-Heating-Service-watching-a-camera-inspection-on-a-digital-tablet-device.jpg",
       "href": "/services/greenville-sc-drains/camera-video-inspection"
     },
     {
       "title": "Water Line Leak Detection & Repair in Greenville, SC",
       "description": "Need water line repairs? We specialize in diagnosing and fixing water line issues, breaks, or low water pressure problems.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-inspecting-an-exposed-water-line.jpg",
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-inspecting-an-exposed-water-line.jpg",
       "href": "/services/greenville-sc-drains/water-lines"
     },
     {
       "title": "Sewer Line Repair & Replacement in Greenville, SC",
       "description": "Our technicians diagnose and repair sewer line issues with precision, ensuring efficient and effective solutions for restoring sewer lines.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Photo-of-a-blue-sewer-line-in-dirt.jpg",
+      "image": "/images/2024/03/Photo-of-a-blue-sewer-line-in-dirt.jpg",
       "href": "/services/greenville-sc-drains/sewer-lines"
     },
     {
       "title": "Repiping Services in Greenville, SC",
       "description": "Are you facing issues with old, corroded pipes in your home? Look no further than Carolina Heating Services for expert repiping.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/11/repiping-image.webp",
+      "image": "/images/2024/11/repiping-image.webp",
       "href": "/services/greenville-sc-drains/repiping"
     }
   ],
@@ -85,7 +85,7 @@
       "Extend your system's lifespan through regular maintenance",
       "Keep you and your family comfortable and safe during all seasons"
     ],
-    "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Two-Carolina-Heating-Service-technicians-reviewing-an-item-on-a-laptop.jpg"
+    "image": "/images/2024/03/Two-Carolina-Heating-Service-technicians-reviewing-an-item-on-a-laptop.jpg"
   },
   "closing": {
     "heading": "Drain Cleaning and Tackling Tough Clogs in Greenville and all Surrounding Areas",

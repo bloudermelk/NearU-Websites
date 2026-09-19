@@ -3,7 +3,7 @@
   "title": "Plumbing Company in Greenville, SC",
   "metaTitle": "Installation & Repair of Plumbing | Carolina Heating Service",
   "metaDescription": "For over 40 years, Carolina Heating Service has offered services for Plumbing in Greenville and surrounding areas!",
-  "heroImage": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/plumbing-services.jpg",
+  "heroImage": "/images/2024/02/plumbing-services.jpg",
   "heroSubtitle": "Plumbing repair, installation, and maintenance from a trusted local plumbing company throughout Greenville, SC.",
   "intro": [
     "Whether you need a quick plumbing repair, a full system installation, or routine maintenance, Carolina Heating Service is a trusted plumbing company serving homes and businesses throughout Greenville, SC. Certified plumbers diagnose the actual problem, walk you through your options, and get the job done right the first time.",
@@ -13,73 +13,73 @@
     {
       "title": "Pipes and General Plumbing in Greenville, SC",
       "description": "Our professionals take pride in thorough plumbing inspections to identify issues promptly. With precise repairs, we restore your plumbing system's functionality, ensuring long-lasting solutions.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/04/030624-CHS-25.jpg",
+      "image": "/images/2024/04/030624-CHS-25.jpg",
       "href": "/services/greenville-sc-plumbing/pipes-and-general-plumbing"
     },
     {
       "title": "Repiping Services in Greenville, SC",
       "description": "Are you facing issues with old, corroded pipes in your home? Look no further than Carolina Heating Services for expert repiping.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/11/repiping-image.webp",
+      "image": "/images/2024/11/repiping-image.webp",
       "href": "/services/greenville-sc-drains/repiping"
     },
     {
       "title": "Water Pressure Assessments in Greenville, SC",
       "description": "Are you experiencing inconsistent water pressure in your home in Greenville, SC, or nearby areas like Mauldin or Taylors? Carolina Heating can help.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/11/water-pressure-assessment-image.jpg",
+      "image": "/images/2024/11/water-pressure-assessment-image.jpg",
       "href": "/services/greenville-sc-plumbing/water-pressure-assessments"
     },
     {
       "title": "Appliance Plumbing Services",
       "description": "When it comes to expert appliance plumbing services in Greenville, SC, look no further than Carolina Heating. Our team is ready to help.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/11/appliance-plumbing-image.jpg",
+      "image": "/images/2024/11/appliance-plumbing-image.jpg",
       "href": "/services/greenville-sc-plumbing/appliance-plumbing-services"
     },
     {
       "title": "Water Heater Installation & Repair in Greenville, SC",
       "description": "Count on our plumbers for expert water heater installations. We provide tailored solutions, ensuring optimal performance and efficiency.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-servicing-a-water-heater.jpg",
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-servicing-a-water-heater.jpg",
       "href": "/services/greenville-sc-plumbing/water-heaters"
     },
     {
       "title": "Frozen Burst Pipe Repair",
       "description": "Our company excels in repairing frozen and burst pipes with unmatched expertise. Trust us for prompt, reliable repairs that restore your plumbing system's integrity.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/plumbing-services-frozen-burst-pipe-repair.jpg",
+      "image": "/images/2024/02/plumbing-services-frozen-burst-pipe-repair.jpg",
       "href": "/services/greenville-sc-plumbing/frozen-burst-pipe-repair"
     },
     {
       "title": "Sump Pump Installation & Repair in Greenville, SC",
       "description": "Count on our skilled team for expert sump pump repairs. We diagnose issues swiftly and restore your pump's functionality promptly.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Photo-of-a-Sump-Pump.jpg",
+      "image": "/images/2024/03/Photo-of-a-Sump-Pump.jpg",
       "href": "/services/greenville-sc-plumbing/sump-pumps"
     },
     {
       "title": "Gas Line Repair & Installation in Greenville, SC",
       "description": "Our technicians have the knowledge to identify issues and implement effective solutions, adhering to industry safety standards.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/plumbing-services-gas-lines.jpg",
+      "image": "/images/2024/02/plumbing-services-gas-lines.jpg",
       "href": "/services/greenville-sc-plumbing/gas-lines"
     },
     {
       "title": "Kitchen & Bathroom Plumbing in Greenville, SC",
       "description": "Our technicians have in-depth knowledge of plumbing systems to diagnose and fix issues effectively.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/A-Carolina-Heating-Service-technician-inspecting-a-bathroom-toilets-plumbing.jpg",
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-inspecting-a-bathroom-toilets-plumbing.jpg",
       "href": "/services/greenville-sc-plumbing/kitchen-bathroom"
     },
     {
       "title": "Water Filtration Systems in Greenville, SC",
       "description": "Our skilled technicians are experts at repairing water treatment/filtration systems, ensuring your system functions flawlessly.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Photo-of-a-woman-filling-up-a-glass-of-water-from-a-sink-tap.jpg",
+      "image": "/images/2024/03/Photo-of-a-woman-filling-up-a-glass-of-water-from-a-sink-tap.jpg",
       "href": "/services/greenville-sc-plumbing/water-treatment-filtration"
     },
     {
       "title": "Water Softener Systems in Greenville, SC",
       "description": "Need water softener repairs? Our seasoned technicians specialize in diagnosing and fixing water softener issues.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Photo-of-a-water-softener-unit-installed-in-a-building.jpg",
+      "image": "/images/2024/03/Photo-of-a-water-softener-unit-installed-in-a-building.jpg",
       "href": "/services/greenville-sc-plumbing/water-softeners"
     },
     {
       "title": "Backflow Testing & Prevention in Greenville, SC",
       "description": "Trust our technicians for comprehensive backflow testing. We use advanced equipment to detect and prevent water contamination risks.",
-      "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/02/plumbing-services-backflow-testing.jpg",
+      "image": "/images/2024/02/plumbing-services-backflow-testing.jpg",
       "href": "/services/greenville-sc-plumbing/backflow-testing"
     }
   ],
@@ -127,7 +127,7 @@
       "Extend your system's lifespan through regular maintenance",
       "Keep you and your family comfortable and safe during all seasons"
     ],
-    "image": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Two-Carolina-Heating-Service-technicians-inspecting-a-display-toilet.jpg"
+    "image": "/images/2024/03/Two-Carolina-Heating-Service-technicians-inspecting-a-display-toilet.jpg"
   },
   "closing": {
     "heading": "Plumbing Services for the Greenville and Upstate Region",
