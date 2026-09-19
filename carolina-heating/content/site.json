@@ -13,6 +13,9 @@
       "zip": "29605"
     },
     "areaServed": "Greenville, SC and the Upstate",
+    "locationLabel": "Greenville, SC",
+    "mapUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_cDNm_g6WIgRMdv4EH0y2rQ",
+    "logo": "/images/2024/08/Carolina-Heating_Logo-NearU-1-1.png",
     "foundedYear": 1981,
     "yearsInBusiness": 43,
     "googleRating": 5,
@@ -23,26 +26,157 @@
     },
     "scheduleUrl": "/bookings/"
   },
+  "topBanner": {
+    "text": "Order Your Home Generator!",
+    "href": "/generator-greenville-sc"
+  },
   "nav": {
     "primary": [
-      { "label": "About Us", "href": "/about-us" },
+      { "label": "Special Offers", "href": "/special-coupon-offers-and-promotions" },
       {
-        "label": "Services",
-        "href": "/services",
-        "children": [
-          { "label": "Heating", "href": "/services/greenville-sc-heating" },
-          { "label": "Cooling", "href": "/services/greenville-sc-cooling" },
-          { "label": "Indoor Air Quality", "href": "/services/greenville-sc-indoor-air-quality" },
-          { "label": "Plumbing", "href": "/services/greenville-sc-plumbing" },
-          { "label": "Drains", "href": "/services/greenville-sc-drains" },
-          { "label": "Electrical", "href": "/services/greenville-sc-electrical" },
-          { "label": "Generators", "href": "/services/greenville-sc-generators" }
+        "label": "HVAC Services",
+        "groups": [
+          {
+            "label": "Heating",
+            "items": [
+              { "label": "All Heating", "href": "/services/greenville-sc-heating" },
+              { "label": "Emergency Services", "href": "/emergency-hvac-heating-services" },
+              { "label": "Furnaces", "href": "/services/greenville-sc-heating/furnaces" },
+              { "label": "Geothermal Heat Pumps", "href": "/services/greenville-sc-heating/geothermal-systems" },
+              { "label": "Heat Pump Systems", "href": "/services/greenville-sc-heating/heat-pumps" },
+              { "label": "Smart Thermostats", "href": "/services/greenville-sc-heating/smart-thermostats" }
+            ]
+          },
+          {
+            "label": "Cooling",
+            "items": [
+              { "label": "All Cooling", "href": "/services/greenville-sc-cooling" },
+              { "label": "Emergency Services", "href": "/about-us/emergency-hvac-cooling-services" },
+              { "label": "Air Conditioning Systems", "href": "/services/greenville-sc-cooling/air-conditioning" },
+              { "label": "Mini Split Installation & Repair", "href": "/services/greenville-sc-cooling/mini-split" },
+              { "label": "Smart Thermostats", "href": "/services/greenville-sc-heating/smart-thermostats" }
+            ]
+          },
+          {
+            "label": "Indoor Air Quality",
+            "items": [
+              { "label": "All Indoor Air Quality", "href": "/services/greenville-sc-indoor-air-quality" },
+              { "label": "Air Duct Cleaning & Repair", "href": "/services/greenville-sc-indoor-air-quality/air-ducts" },
+              { "label": "Home Dehumidifier Services", "href": "/services/greenville-sc-indoor-air-quality/dehumidifiers" },
+              { "label": "Home Humidifier Services", "href": "/services/greenville-sc-indoor-air-quality/humidifiers" }
+            ]
+          }
         ]
       },
-      { "label": "Maintenance", "href": "/maintenance" },
-      { "label": "Financing", "href": "/financing" },
+      {
+        "label": "Plumbing",
+        "groups": [
+          {
+            "label": "Pipe Services",
+            "items": [
+              { "label": "All Plumbing", "href": "/services/greenville-sc-plumbing" },
+              { "label": "Emergency Services", "href": "/emergency-plumbing-services" },
+              { "label": "Pipes & General Plumbing", "href": "/services/greenville-sc-plumbing/pipes-and-general-plumbing" },
+              { "label": "Frozen Burst Pipe Repair", "href": "/services/greenville-sc-plumbing/frozen-burst-pipe-repair" },
+              { "label": "Gas Line Repair & Installation", "href": "/services/greenville-sc-plumbing/gas-lines" },
+              { "label": "Kitchen & Bathroom Plumbing", "href": "/services/greenville-sc-plumbing/kitchen-bathroom" },
+              { "label": "Sump Pumps", "href": "/services/greenville-sc-plumbing/sump-pumps" },
+              { "label": "Water Softener Systems", "href": "/services/greenville-sc-plumbing/water-softeners" },
+              { "label": "Water Filtration Systems", "href": "/services/greenville-sc-plumbing/water-treatment-filtration" },
+              { "label": "Backflow Testing & Prevention", "href": "/services/greenville-sc-plumbing/backflow-testing" },
+              { "label": "Water Line Leak Detection & Repair", "href": "/services/greenville-sc-drains/water-lines" }
+            ]
+          },
+          {
+            "label": "Water Heaters",
+            "items": [
+              { "label": "Water Heaters", "href": "/services/greenville-sc-plumbing/water-heaters" }
+            ]
+          },
+          {
+            "label": "Drain & Sewer",
+            "items": [
+              { "label": "All Drains", "href": "/services/greenville-sc-drains" },
+              { "label": "Rooter Drain Cleaning", "href": "/services/greenville-sc-drains/rooter-service" },
+              { "label": "Sewer Line Repair & Replacement", "href": "/services/greenville-sc-drains/sewer-lines" },
+              { "label": "Sewer & Plumbing Video Inspection", "href": "/services/greenville-sc-drains/camera-video-inspection" },
+              { "label": "Drain Cleaning", "href": "/services/greenville-sc-drains/drain-clearing" }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Electrical",
+        "groups": [
+          {
+            "items": [
+              { "label": "All Electrical", "href": "/services/greenville-sc-electrical" },
+              { "label": "EV Charger Installation", "href": "/services/greenville-sc-electrical/car-charger-installation" },
+              { "label": "Ceiling Fan Installation", "href": "/services/greenville-sc-electrical/ceiling-fans" },
+              { "label": "Circuit Breaker Panel Services", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+              { "label": "All Generators", "href": "/services/greenville-sc-generators" },
+              { "label": "Home Generators", "href": "/services/greenville-sc-generators/home-generators" }
+            ]
+          }
+        ]
+      },
       { "label": "Commercial", "href": "/commercial" },
-      { "label": "Careers", "href": "/careers" }
+      { "label": "Maintenance", "href": "/maintenance" },
+      {
+        "label": "Service Areas",
+        "groups": [
+          {
+            "label": "Greenville / Greenville County",
+            "items": [
+              { "label": "Berea", "href": "/berea-hvac-plumbing-electrical-generators" },
+              { "label": "Five Forks", "href": "/five-forks-hvac-plumbing-electrical-generators" },
+              { "label": "Fountain Inn", "href": "/fountain-inn-hvac-plumbing-electrical-generators" },
+              { "label": "Greer", "href": "/greer-hvac-plumbing-electrical-generators" },
+              { "label": "Marietta", "href": "/marietta-hvac-plumbing-electrical-generators" },
+              { "label": "Mauldin", "href": "/mauldin-hvac-plumbing-electrical-generators" },
+              { "label": "Piedmont", "href": "/piedmont-hvac-plumbing-electrical-generators" },
+              { "label": "Simpsonville", "href": "/simpsonville-hvac-plumbing-electrical-generators" },
+              { "label": "Slater-Marietta", "href": "/slater-marietta-hvac-plumbing-electrical-generators" },
+              { "label": "Taylors", "href": "/taylors-hvac-plumbing-electrical-generators" },
+              { "label": "Travelers Rest", "href": "/travelers-rest-hvac-plumbing-electrical-generators" }
+            ]
+          },
+          {
+            "label": "Spartanburg County",
+            "items": [
+              { "label": "Duncan", "href": "/duncan-hvac-plumbing-electrical-generators" },
+              { "label": "Woodruff", "href": "/woodruff-hvac-plumbing-electrical-generators" }
+            ]
+          },
+          {
+            "label": "Anderson County",
+            "items": [
+              { "label": "Easley", "href": "/easley-hvac-plumbing-electrical-generators" },
+              { "label": "Liberty", "href": "/liberty-hvac-plumbing-electrical-generators" }
+            ]
+          },
+          {
+            "label": "Pickens County",
+            "items": [
+              { "label": "Pelzer", "href": "/pelzer-hvac-plumbing-electrical-generators" },
+              { "label": "Powdersville", "href": "/powdersville-hvac-plumbing-electrical-generators" },
+              { "label": "Williamston", "href": "/williamston-hvac-plumbing-electrical-generators" }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "About Us",
+        "groups": [
+          {
+            "items": [
+              { "label": "About Us", "href": "/about-us" },
+              { "label": "Financing", "href": "/financing" },
+              { "label": "Careers", "href": "/careers" }
+            ]
+          }
+        ]
+      }
     ],
     "footer": [
       { "label": "About Us", "href": "/about-us" },

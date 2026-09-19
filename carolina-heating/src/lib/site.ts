@@ -3,7 +3,17 @@ import siteData from "../../content/site.json";
 export type NavLink = {
   label: string;
   href: string;
-  children?: NavLink[];
+};
+
+export type NavDropdownGroup = {
+  label?: string;
+  items: NavLink[];
+};
+
+export type NavTopItem = {
+  label: string;
+  href?: string;
+  groups?: NavDropdownGroup[];
 };
 
 export type ServiceCategorySummary = {
@@ -40,6 +50,9 @@ export type SiteData = {
       zip: string;
     };
     areaServed: string;
+    locationLabel: string;
+    mapUrl: string;
+    logo: string;
     foundedYear: number;
     yearsInBusiness: number;
     googleRating: number;
@@ -50,8 +63,12 @@ export type SiteData = {
     };
     scheduleUrl: string;
   };
+  topBanner: {
+    text: string;
+    href: string;
+  };
   nav: {
-    primary: NavLink[];
+    primary: NavTopItem[];
     footer: NavLink[];
   };
   serviceCategories: ServiceCategorySummary[];
