@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
 import type { IconName } from "@/lib/iconSprite";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/db/site";
 
 const CATEGORY_ICON: Record<string, IconName> = {
   "greenville-sc-heating": "heating",
@@ -17,13 +17,14 @@ const CATEGORY_ICON: Record<string, IconName> = {
  * The "Our Services" icon-card grid (#our-services on the homepage).
  * Mirrors the theme's services-list[data-layout=iconcards] block.
  */
-export function ServicesList({
+export async function ServicesList({
   heading = "Our Services",
   id = "our-services",
 }: {
   heading?: string;
   id?: string;
 }) {
+  const site = await getSite();
   return (
     <div
       id={id}

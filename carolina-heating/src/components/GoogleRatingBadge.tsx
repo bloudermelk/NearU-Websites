@@ -1,8 +1,8 @@
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/db/site";
 
 /** The small "Google Rating 5 ★★★★★" badge from the hero sections. */
-export function GoogleRatingBadge({ className = "mt-3" }: { className?: string }) {
-  const { googleRating } = site.business;
+export async function GoogleRatingBadge({ className = "mt-3" }: { className?: string }) {
+  const { googleRating } = (await getSite()).business;
   return (
     <div className={`badge ${className}`} style={{ minHeight: "unset" }}>
       <div className="badge__content">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
 import type { IconName } from "@/lib/iconSprite";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/db/site";
 
 type CtaType = "solid" | "outline" | "outlined";
 type CtaLevel = "primary" | "secondary";
@@ -30,7 +30,7 @@ export type CtaProps = {
   schedule?: boolean;
 };
 
-export function Cta({
+export async function Cta({
   href,
   children,
   type = "solid",
@@ -66,7 +66,7 @@ export function Cta({
     </>
   );
 
-  const resolvedHref = schedule ? site.business.scheduleUrl : href ?? "#";
+  const resolvedHref = schedule ? (await getSite()).business.scheduleUrl : href ?? "#";
   const isExternal =
     resolvedHref.startsWith("tel:") ||
     resolvedHref.startsWith("mailto:") ||

@@ -1,16 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // All images are self-hosted from /public/images (mirrored from the original
-  // WordPress site by scripts/extract-pages.mjs). No remotePatterns needed.
+  // Images are served from Supabase Storage (site-media bucket) via plain
+  // <img> tags, not next/image, so no remotePatterns needed.
 
-  async redirects() {
-    return [
-      // Mirror the live site's redirects.
-      { source: "/contact-us", destination: "/about-us", permanent: true },
-      { source: "/services/indoor-air-quality", destination: "/services/greenville-sc-indoor-air-quality", permanent: true },
-    ];
-  },
+  // Redirects are DB-driven (the `redirects` table) via middleware.ts, not
+  // here — that lets a content editor add one in Supabase without a
+  // redeploy. See middleware.ts for details.
 };
 
 export default nextConfig;

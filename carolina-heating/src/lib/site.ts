@@ -1,4 +1,10 @@
-import siteData from "../../content/site.json";
+/**
+ * Shared types for a brand site's global data (business info, nav, footer,
+ * service category summaries, certifications, testimonials).
+ *
+ * Data is fetched from Supabase per-request via `getSite()` in
+ * `src/lib/db/site.ts` (server-only). This file holds only the shape.
+ */
 
 export type NavLink = {
   label: string;
@@ -39,6 +45,7 @@ export type Testimonial = {
 
 export type SiteData = {
   business: {
+    domain: string;
     name: string;
     legalName: string;
     tagline: string;
@@ -67,6 +74,16 @@ export type SiteData = {
     };
     scheduleUrl: string;
     youtubeVideoId: string;
+    /**
+     * Third-party integration IDs. All optional/undefined by default — each
+     * is only rendered if present, so a brand with no values set here (e.g.
+     * a prototype/staging site) fires no external scripts at all. Fill in
+     * via the `sites` table when actually going live for a given brand.
+     */
+    schedulerId?: string;
+    schedulerApiKey?: string;
+    gtmId?: string;
+    tealiumSrc?: string;
   };
   topBanner: {
     text: string;
@@ -82,9 +99,3 @@ export type SiteData = {
   certifications: Certification[];
   testimonials: Testimonial[];
 };
-
-export const site = siteData as SiteData;
-
-export function getServiceCategorySummary(slug: string): ServiceCategorySummary | undefined {
-  return site.serviceCategories.find((category) => category.slug === slug);
-}

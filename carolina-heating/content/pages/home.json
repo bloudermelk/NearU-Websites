@@ -15,6 +15,32 @@
   },
   "promise": {
     "heading": "The Carolina Heating Promise",
+    "images": [
+      {
+        "src": "/images/2024/04/030624-CHS-3.jpg",
+        "alt": "Employees smiling and sitting around a table",
+        "width": 640,
+        "height": 428,
+        "sizeX": 4,
+        "sizeY": 4,
+        "posX": "left",
+        "posY": "top",
+        "shadow": 4,
+        "corner": 4
+      },
+      {
+        "src": "/images/2024/03/A-closeup-of-a-Carolina-Heating-Service-service-van.jpg",
+        "alt": "A closeup of a Carolina Heating Service service van",
+        "width": 640,
+        "height": 360,
+        "sizeX": 4,
+        "sizeY": 3,
+        "posX": "right",
+        "posY": "bottom",
+        "shadow": 1,
+        "corner": 3
+      }
+    ],
     "items": [
       {
         "label": "Responsive Service",
@@ -38,5 +64,12 @@
     "heading": "Who we are",
     "body": "Learn more about our team of highly qualified staff, and see why homeowners throughout the Greenville area trust Carolina Heating Service for their HVAC, plumbing, and electrical needs.",
     "href": "/about-us"
+  },
+  "ourCommunity": {
+    "mapImage": "/images/2024/03/CHS-Service-Area-Map-Highlighted-scaled.jpg"
+  },
+  "maintenanceFinancing": {
+    "maintenanceImage": "/images/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg",
+    "financingImage": "/images/2024/03/A-Carolina-Heating-Service-employee-smiling-while-sitting-at-a-desk-and-working-on-their-computer.jpg"
   }
 }

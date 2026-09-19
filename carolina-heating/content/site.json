@@ -276,5 +276,9 @@
       "rating": 5,
       "body": "The technician fixed the problem in no time and gave me a reasonable estimate for the full repairs. We have heat again and me and my pregnant wife couldn't be happier! Definitely will stick with this service!"
     }
+  ],
+  "redirects": [
+    { "source": "/contact-us", "destination": "/about-us", "permanent": true },
+    { "source": "/services/indoor-air-quality", "destination": "/services/greenville-sc-indoor-air-quality", "permanent": true }
   ]
 }

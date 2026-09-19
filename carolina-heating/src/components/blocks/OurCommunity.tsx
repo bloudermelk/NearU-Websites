@@ -1,21 +1,21 @@
 import Link from "next/link";
 import { ScheduleAndCallCta } from "../ScheduleAndCallCta";
-import { site } from "@/lib/site";
-
-const MAP_IMG = "/images/2024/03/CHS-Service-Area-Map-Highlighted-scaled.jpg";
+import { getSite } from "@/lib/db/site";
 
 /**
  * #our-community splitter: logo + "Serving the communities in Greenville..."
  * copy + schedule CTA on the left, service-area map on the right.
  */
-export function OurCommunity({
+export async function OurCommunity({
   heading = "Serving the communities in Greenville, South Carolina, for over 40 Years.",
   body = "Carolina Heating Service is known for reputable home comfort services throughout the Greenville, SC area. With a history dating back to 1981, our expertise initially focused on heating and air conditioning. Over time, we expanded to include plumbing, electrical, drains, generators, and indoor air quality systems. Our continued commitment to exceptional service and highly trained technicians reflects our dedication to customer satisfaction throughout the Upstate.",
+  mapImage = "/images/2024/03/CHS-Service-Area-Map-Highlighted-scaled.jpg",
 }: {
   heading?: string;
   body?: string;
+  mapImage?: string;
 }) {
-  const { business } = site;
+  const { business } = await getSite();
   return (
     <div
       id="our-community"
@@ -60,7 +60,7 @@ export function OurCommunity({
               loading="lazy"
               width={2560}
               height={1818}
-              src={MAP_IMG}
+              src={mapImage}
               alt="CHS Service Area Map Highlighted"
               className="wp-image-4911"
             />

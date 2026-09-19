@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "./Icon";
-import { site } from "@/lib/site";
-import type { NavTopItem } from "@/lib/site";
+import type { NavTopItem, SiteData } from "@/lib/site";
 
 /**
  * Reproduces the NearU base theme's #masthead markup and the behavior of its
@@ -12,8 +11,11 @@ import type { NavTopItem } from "@/lib/site";
  * and `data-header-nav-expanded` on <html>, plus per-item sub-menu toggle
  * buttons controlled via aria-expanded (the theme CSS shows/hides sub-menus
  * off those attributes).
+ *
+ * Client component: site data (fetched from Supabase) is passed in as a prop
+ * by the server-component layout — see src/app/layout.tsx.
  */
-export function Header() {
+export function Header({ site }: { site: SiteData }) {
   const { business, nav } = site;
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);

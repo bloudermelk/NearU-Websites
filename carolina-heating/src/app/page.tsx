@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import fs from "node:fs";
-import path from "node:path";
-import homeContent from "../../content/pages/home.json";
+import { notFound } from "next/navigation";
 import { Cta } from "@/components/Cta";
 import { ScheduleAndCallCta } from "@/components/ScheduleAndCallCta";
 import { GoogleRatingBadge } from "@/components/GoogleRatingBadge";
@@ -12,29 +10,37 @@ import { ImageStack } from "@/components/blocks/ImageStack";
 import { OurCommunity } from "@/components/blocks/OurCommunity";
 import { MaintenanceFinancing } from "@/components/blocks/MaintenanceFinancing";
 import { Certifications } from "@/components/blocks/Certifications";
-import { GoogleReviews } from "@/components/blocks/GoogleReviews";
+import { GoogleReviewsSection } from "@/components/blocks/GoogleReviewsSection";
 import { YouTubeEmbed } from "@/components/blocks/YouTubeEmbed";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/db/site";
+import { getPage } from "@/lib/db/pages";
+import type { HomePageData } from "@/lib/db/homePageData";
+import { buildPageSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: homeContent.metaTitle,
-  description: homeContent.metaDescription,
-  alternates: { canonical: "/" },
-};
+export const revalidate = 3600; // see src/app/[...slug]/page.tsx for rationale
 
-// WordPress' per-page generated layout rules for the homepage (see
-// scripts/extract-pages.mjs for how the mirrored pages get theirs).
-const HOME_INLINE_CSS = fs.readFileSync(
-  path.join(process.cwd(), "content", "pages", "home-inline.css"),
-  "utf-8"
-);
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage("/");
+  return {
+    title: page?.title ?? undefined,
+    description: page?.description ?? undefined,
+    alternates: { canonical: "/" },
+  };
+}
 
-export default function Home() {
-  const { hero, worryFree, promise, whoWeAre } = homeContent;
+export default async function Home() {
+  const [site, page] = await Promise.all([getSite(), getPage("/")]);
+  if (!page || !page.data) notFound();
+  const { hero, worryFree, promise, whoWeAre, ourCommunity, maintenanceFinancing } =
+    page.data as HomePageData;
+  const schema = buildPageSchema(site.business, { path: "/", title: page.title, description: page.description }, page.updated_at);
 
   return (
     <>
-    <style id="core-block-supports-inline-css" dangerouslySetInnerHTML={{ __html: HOME_INLINE_CSS }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    {page.inline_css && (
+      <style id="core-block-supports-inline-css" dangerouslySetInnerHTML={{ __html: page.inline_css }} />
+    )}
     <main id="primary" className="site-main | container">
       <article className="container page type-page status-publish hentry">
         <div className="entry-content | container">
@@ -137,34 +143,7 @@ export default function Home() {
             <div className="splitter-column splitter-column--left splitter-column--start mobile-full-width splitter-column--padded-edge">
               <div className="splitter-column-inner splitter-column-inner--contained splitter-column-inner--padded">
                 <div className="wp-block-group flow has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
-                  <ImageStack
-                    items={[
-                      {
-                        src: "/images/2024/04/030624-CHS-3.jpg",
-                        alt: "Employees smiling and sitting around a table",
-                        width: 640,
-                        height: 428,
-                        sizeX: 4,
-                        sizeY: 4,
-                        posX: "left",
-                        posY: "top",
-                        shadow: 4,
-                        corner: 4,
-                      },
-                      {
-                        src: "/images/2024/03/A-closeup-of-a-Carolina-Heating-Service-service-van.jpg",
-                        alt: "A closeup of a Carolina Heating Service service van",
-                        width: 640,
-                        height: 360,
-                        sizeX: 4,
-                        sizeY: 3,
-                        posX: "right",
-                        posY: "bottom",
-                        shadow: 1,
-                        corner: 3,
-                      },
-                    ]}
-                  />
+                  <ImageStack items={promise.images} />
                 </div>
               </div>
             </div>
@@ -177,7 +156,7 @@ export default function Home() {
           </div>
 
           {/* ---------- Our Community ---------- */}
-          <OurCommunity />
+          <OurCommunity mapImage={ourCommunity.mapImage} />
 
           {/* ---------- Who we are ---------- */}
           <div
@@ -212,9 +191,12 @@ export default function Home() {
             </div>
           </div>
 
-          <MaintenanceFinancing />
+          <MaintenanceFinancing
+            maintenanceImage={maintenanceFinancing.maintenanceImage}
+            financingImage={maintenanceFinancing.financingImage}
+          />
           <Certifications />
-          <GoogleReviews />
+          <GoogleReviewsSection />
         </div>
       </article>
     </main>

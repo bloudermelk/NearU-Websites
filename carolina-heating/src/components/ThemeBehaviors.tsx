@@ -10,9 +10,13 @@ import { usePathname } from "next/navigation";
  *  - carousel.js   -> .nearu-carousel prev/next/dots + scroll tracking
  *  - logocarousel  -> arrow buttons scroll the .logocarousel-list
  *  - lite-youtube  -> upgrades <lite-youtube videoid> into a click-to-play iframe
+ *  - .se-widget-button -> opens the ServiceTitan scheduler modal (falls back
+ *    to the button's normal href, e.g. /bookings, if the widget script or a
+ *    scheduler id isn't configured for this site)
  *
  * Runs on mount and re-runs on client-side navigation. Idempotent: each element
  * is tagged with data-behaviors-bound so listeners aren't attached twice.
+ * Mounted once in the root layout, so it covers every route including "/".
  */
 export function ThemeBehaviors() {
   const pathname = usePathname();
@@ -125,6 +129,27 @@ export function ThemeBehaviors() {
       el.addEventListener("click", onPlay);
       cleanups.push(() => el.removeEventListener("click", onPlay));
     });
+
+    // ---------- ServiceTitan scheduler (.se-widget-button) ----------
+    // The real theme prints onclick="_scheduler.show({schedulerId:'...'})"
+    // directly on each button (server-side, per-brand). We can't do that from
+    // a shared client component, so we delegate: read the id once from
+    // <body data-scheduler-id>, and only intercept the click if the
+    // ServiceTitan widget script has actually loaded (window._scheduler).
+    // Otherwise the link's normal href (the /bookings fallback page) applies.
+    const onSchedulerClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const button = target?.closest<HTMLElement>(".se-widget-button");
+      if (!button) return;
+      const schedulerId = document.body.dataset.schedulerId;
+      const scheduler = (window as unknown as { _scheduler?: { show: (opts: { schedulerId: string }) => void } })
+        ._scheduler;
+      if (!schedulerId || !scheduler) return; // fall back to normal navigation
+      e.preventDefault();
+      scheduler.show({ schedulerId });
+    };
+    document.addEventListener("click", onSchedulerClick);
+    cleanups.push(() => document.removeEventListener("click", onSchedulerClick));
 
     return () => cleanups.forEach((fn) => fn());
   }, [pathname]);

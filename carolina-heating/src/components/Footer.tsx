@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "./Icon";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/db/site";
 
 const LICENSE_LINES = [
   "Com/Indust/Equip Repair/Maint 2023-56064",
@@ -8,8 +8,8 @@ const LICENSE_LINES = [
   "Electrical 2023-16672",
 ];
 
-export function Footer() {
-  const { business, footer } = site;
+export async function Footer() {
+  const { business, footer } = await getSite();
   const year = new Date().getFullYear();
 
   const logo = (

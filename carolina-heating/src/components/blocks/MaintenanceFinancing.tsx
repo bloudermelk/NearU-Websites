@@ -1,10 +1,6 @@
 import { Cta } from "../Cta";
 import { Elevated } from "./Elevated";
 
-const MAINTENANCE_IMG = "/images/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg";
-const FINANCING_IMG =
-  "/images/2024/03/A-Carolina-Heating-Service-employee-smiling-while-sitting-at-a-desk-and-working-on-their-computer.jpg";
-
 const MAINTENANCE_BENEFITS = [
   "15% Off Repair",
   "Heating & Cooling Tune-Up",
@@ -23,7 +19,13 @@ const FINANCING_BENEFITS = [
 ];
 
 /** #maintenance-financing: red maintenance panel + white financing panel splitter. */
-export function MaintenanceFinancing() {
+export function MaintenanceFinancing({
+  maintenanceImage,
+  financingImage,
+}: {
+  maintenanceImage: string;
+  financingImage: string;
+}) {
   return (
     <div
       id="maintenance-financing"
@@ -41,7 +43,7 @@ export function MaintenanceFinancing() {
                   loading="lazy"
                   width={1916}
                   height={1280}
-                  src={MAINTENANCE_IMG}
+                  src={maintenanceImage}
                   alt="A Carolina Heating Service technician performing maintenance"
                   style={{ borderRadius: 0, width: 288, height: "auto" }}
                 />
@@ -77,7 +79,7 @@ export function MaintenanceFinancing() {
                   loading="lazy"
                   width={1802}
                   height={1280}
-                  src={FINANCING_IMG}
+                  src={financingImage}
                   alt="A Carolina Heating Service employee smiling while sitting at a desk and working on their computer"
                   style={{ borderRadius: 0 }}
                 />

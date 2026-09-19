@@ -4,67 +4,74 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SimpleBanner } from "@/components/SimpleBanner";
 import { ScrollbarWidth } from "@/components/ScrollbarWidth";
+import { ThemeBehaviors } from "@/components/ThemeBehaviors";
+import { CookieConsent } from "@/components/CookieConsent";
 import { ICON_SPRITE } from "@/lib/iconSprite";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/db/site";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://carolinaheating.com"),
-  title: {
-    default: `${site.business.name} | ${site.business.tagline}`,
-    template: `%s`,
-  },
-  description:
-    "Carolina Heating Service, serving the Upstate for over 40 years making homes comfortable with professional HVAC, indoor air quality, plumbing, and generators!",
-  openGraph: {
-    siteName: site.business.name,
-    images: [site.business.logo],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { business } = await getSite();
+  const base = `https://${business.domain}`;
+  return {
+    metadataBase: new URL(base),
+    title: {
+      default: `${business.name} | ${business.tagline}`,
+      template: `%s`,
+    },
+    description: `${business.legalName} — ${business.tagline}`,
+    openGraph: {
+      siteName: business.name,
+      images: [business.logo],
+    },
+  };
+}
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const site = await getSite();
+  const { business } = site;
+  const base = `https://${business.domain}`;
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://carolinaheating.com/#organization",
-        name: site.business.name,
-        description: `Greenville's Trusted HVAC & Plumbing Services Since ${site.business.foundedYear}`,
-        url: "https://carolinaheating.com/",
-        email: site.business.email,
-        telephone: site.business.phoneHref.replace("tel:", ""),
+        "@id": `${base}/#organization`,
+        name: business.name,
+        description: `${business.areaServed} — ${business.tagline}`,
+        url: `${base}/`,
+        email: business.email,
+        telephone: business.phoneHref.replace("tel:", ""),
         logo: {
           "@type": "ImageObject",
-          url: `https://carolinaheating.com${site.business.logo}`,
-          width: 3468,
-          height: 2120,
-          caption: `${site.business.name} Logo`,
+          url: business.logo,
+          caption: `${business.name} Logo`,
         },
-        sameAs: [site.business.social.facebook, site.business.social.instagram],
+        sameAs: [business.social.facebook, business.social.instagram],
         address: {
           "@type": "PostalAddress",
-          streetAddress: site.business.address.street,
-          addressLocality: site.business.address.city,
-          addressRegion: "South Carolina",
-          postalCode: site.business.address.zip,
+          streetAddress: business.address.street,
+          addressLocality: business.address.city,
+          addressRegion: business.address.state,
+          postalCode: business.address.zip,
           addressCountry: "US",
         },
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://carolinaheating.com/#localbusiness",
-        name: site.business.name,
-        url: "https://carolinaheating.com/",
-        telephone: site.business.phoneHref.replace("tel:", ""),
-        email: site.business.email,
-        image: `https://carolinaheating.com${site.business.logo}`,
-        areaServed: site.business.address.city,
+        "@id": `${base}/#localbusiness`,
+        name: business.name,
+        url: `${base}/`,
+        telephone: business.phoneHref.replace("tel:", ""),
+        email: business.email,
+        image: business.logo,
+        areaServed: business.address.city,
         address: {
           "@type": "PostalAddress",
-          streetAddress: site.business.address.street,
-          addressLocality: site.business.address.city,
-          addressRegion: "South Carolina",
-          postalCode: site.business.address.zip,
+          streetAddress: business.address.street,
+          addressLocality: business.address.city,
+          addressRegion: business.address.state,
+          postalCode: business.address.zip,
           addressCountry: "US",
         },
         openingHoursSpecification: {
@@ -84,15 +91,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       },
       {
         "@type": "WebSite",
-        "@id": "https://carolinaheating.com/#website",
-        url: "https://carolinaheating.com/",
-        name: site.business.name,
-        description: `Greenville's Trusted HVAC & Plumbing Services Since ${site.business.foundedYear}`,
+        "@id": `${base}/#website`,
+        url: `${base}/`,
+        name: business.name,
+        description: `${business.areaServed} — ${business.tagline}`,
         inLanguage: "en-US",
-        publisher: { "@id": "https://carolinaheating.com/#organization" },
+        publisher: { "@id": `${base}/#organization` },
       },
     ],
   };
+
+  const { schedulerId, schedulerApiKey, gtmId, tealiumSrc } = business;
 
   return (
     <html className="js" dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
@@ -101,8 +110,53 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/RobotoCondensed-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* Google Tag Manager — only fires if this site's `sites.gtm_id` is set.
+            Using the raw snippet (matching the live site's own implementation)
+            rather than @next/third-parties/google, which currently only
+            publishes versions tracking Next's 16.4 canary line — not worth
+            pulling a canary dependency into a production app for this. */}
+        {gtmId && (
+          // eslint-disable-next-line @next/next/next-script-for-ga
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`,
+            }}
+          />
+        )}
       </head>
-      <body className="wp-singular page-template-default page wp-custom-logo wp-theme-nearu-base wp-child-theme-chs no-sidebar">
+      <body
+        className="wp-singular page-template-default page wp-custom-logo wp-theme-nearu-base wp-child-theme-chs no-sidebar"
+        data-scheduler-id={schedulerId || undefined}
+      >
+        {gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+              title="Google Tag Manager"
+            />
+          </noscript>
+        )}
+        {/* ServiceTitan scheduler widget — only loaded if configured for this site. */}
+        {schedulerId && schedulerApiKey && (
+          <script
+            data-api-key={schedulerApiKey}
+            data-schedulerid={schedulerId}
+            defer
+            id="se-widget-embed"
+            src="https://embed.scheduler.servicetitan.com/scheduler-v1.js"
+          />
+        )}
+        {/* Tealium tag management — only loaded if configured for this site. */}
+        {tealiumSrc && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(a,b,c,d){a='${tealiumSrc}';b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/javascript';d.async=true;a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);})();`,
+            }}
+          />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -115,10 +169,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <a className="skip-link screen-reader-text" href="#primary">
             Skip to content
           </a>
-          <Header />
+          <Header site={site} />
           {children}
           <Footer />
         </div>
+        <CookieConsent />
+        <ThemeBehaviors />
       </body>
     </html>
   );

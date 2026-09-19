@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { site } from "@/lib/site";
 import type { Testimonial } from "@/lib/site";
 
 /**
@@ -9,15 +8,21 @@ import type { Testimonial } from "@/lib/site";
  * review cards with prev/next buttons and dots. Ports the theme's carousel.js
  * (scroll-snap on mobile, scrollIntoView on button/dot click, active dot
  * tracked from scroll position).
+ *
+ * Client component: site data (fetched from Supabase) is passed in as props
+ * by the server-component parent — see GoogleReviewsSection below.
  */
 export function GoogleReviews({
-  reviews = site.testimonials,
+  reviews,
+  googleRating,
+  googleReviewCount,
   className = "",
 }: {
-  reviews?: Testimonial[];
+  reviews: Testimonial[];
+  googleRating: number;
+  googleReviewCount: number;
   className?: string;
 }) {
-  const { googleRating, googleReviewCount } = site.business;
   const trackRef = useRef<HTMLDivElement>(null);
   const [slide, setSlide] = useState(1);
   const total = reviews.length;
