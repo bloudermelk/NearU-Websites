@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ScheduleAndCallCta } from "../ScheduleAndCallCta";
 import { getSite } from "@/lib/db/site";
+import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
 /**
  * #our-community splitter: logo + "Serving the communities in Greenville..."
@@ -35,6 +36,8 @@ export async function OurCommunity({
                   src={business.logo}
                   className="custom-logo"
                   alt={`${business.name} Logo`}
+                  placeholder="blur"
+                  blurDataURL={shimmerDataUrl(200, 122)}
                 />
               </Link>
             </div>
@@ -59,6 +62,8 @@ export async function OurCommunity({
               src={mapImage}
               alt="CHS Service Area Map Highlighted"
               className="wp-image-4911"
+              placeholder="blur"
+              blurDataURL={shimmerDataUrl(2560, 1818)}
             />
           </figure>
         </div>

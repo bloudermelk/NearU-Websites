@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "./Icon";
 import type { NavTopItem, SiteData } from "@/lib/site";
+import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
 /**
  * Reproduces the NearU base theme's #masthead markup and the behavior of its
@@ -65,6 +66,8 @@ export function Header({ site }: { site: SiteData }) {
               src={business.logo}
               className="custom-logo"
               alt={`${business.name} Logo`}
+              placeholder="blur"
+              blurDataURL={shimmerDataUrl(3468, 2120)}
             />
           </Link>
           <p className="site-title">

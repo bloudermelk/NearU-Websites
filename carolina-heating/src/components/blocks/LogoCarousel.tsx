@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
 export type LogoItem = {
   name: string;
@@ -41,6 +42,8 @@ export function LogoCarousel({ logos }: { logos: LogoItem[] }) {
             className="logocarousel-image"
             alt={logo.name}
             sizes="(max-width: 680px) 150px, (max-width: 820px) 128px, (max-width: 1024px) 100px, 128px"
+            placeholder="blur"
+            blurDataURL={shimmerDataUrl(logo.width, logo.height)}
           />
         </div>
       </li>

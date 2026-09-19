@@ -17,6 +17,7 @@ import { getSite } from "@/lib/db/site";
 import { getPage } from "@/lib/db/pages";
 import type { HomePageData } from "@/lib/db/homePageData";
 import { buildPageSchema } from "@/lib/schema";
+import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
 export const revalidate = 3600; // see src/app/[...slug]/page.tsx for rationale
 
@@ -86,6 +87,8 @@ export default async function Home() {
                         src={hero.image}
                         className="attachment-full size-full"
                         alt="Two technicians standing in front of truck"
+                        placeholder="blur"
+                        blurDataURL={shimmerDataUrl(2560, 1710)}
                       />
                     </figure>
                   </Elevated>
@@ -106,6 +109,8 @@ export default async function Home() {
               style={{ objectPosition: "52% 10%" }}
               data-object-fit="cover"
               data-object-position="52% 10%"
+              placeholder="blur"
+              blurDataURL={shimmerDataUrl(2284, 1280)}
             />
             <span
               aria-hidden="true"

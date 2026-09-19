@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Cta } from "../Cta";
 import { Elevated } from "./Elevated";
+import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
 const MAINTENANCE_BENEFITS = [
   "15% Off Repair",
@@ -44,6 +45,8 @@ export function MaintenanceFinancing({
                   src={maintenanceImage}
                   alt="A Carolina Heating Service technician performing maintenance"
                   style={{ borderRadius: 0, width: 288, height: "auto" }}
+                  placeholder="blur"
+                  blurDataURL={shimmerDataUrl(1916, 1280)}
                 />
               </figure>
             </Elevated>
@@ -77,6 +80,8 @@ export function MaintenanceFinancing({
                   src={financingImage}
                   alt="A Carolina Heating Service employee smiling while sitting at a desk and working on their computer"
                   style={{ borderRadius: 0 }}
+                  placeholder="blur"
+                  blurDataURL={shimmerDataUrl(1802, 1280)}
                 />
               </figure>
             </Elevated>

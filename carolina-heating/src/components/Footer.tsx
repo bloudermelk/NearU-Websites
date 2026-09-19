@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "./Icon";
 import { getSite } from "@/lib/db/site";
+import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
 const LICENSE_LINES = [
   "Com/Indust/Equip Repair/Maint 2023-56064",
@@ -14,7 +15,15 @@ export async function Footer() {
   const year = new Date().getFullYear();
 
   const logo = (
-    <Image width={3468} height={2120} src={business.logo} className="custom-logo" alt={`${business.name} Logo`} />
+    <Image
+      width={3468}
+      height={2120}
+      src={business.logo}
+      className="custom-logo"
+      alt={`${business.name} Logo`}
+      placeholder="blur"
+      blurDataURL={shimmerDataUrl(3468, 2120)}
+    />
   );
 
   return (

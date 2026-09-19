@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
 export type ImageStackItem = {
   src: string;
@@ -34,6 +35,8 @@ export function ImageStack({ items }: { items: ImageStackItem[] }) {
           data-pos-y={img.posY}
           data-shadow={img.shadow}
           data-corner={img.corner}
+          placeholder="blur"
+          blurDataURL={shimmerDataUrl(img.width, img.height)}
         />
       ))}
     </div>
