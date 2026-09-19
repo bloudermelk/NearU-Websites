@@ -1,0 +1,117 @@
+{
+  "slug": "easley-hvac-plumbing-electrical-generators",
+  "cityName": "Easley",
+  "metaTitle": "Licensed HVAC, Electrical & Plumbing Services in Easley, SC",
+  "metaDescription": "Carolina Heating Service brings HVAC, plumbing, electrical, and generator service to Easley, SC. Installs and maintenance with emergency service available.",
+  "heading": "Licensed HVAC, Plumbing, Electrical & Home Generator Services in Easley, SC",
+  "intro": [
+    "Heating, cooling, plumbing, electrical, and home generator service in Easley, SC comes from one licensed company, which means a project that crosses trades never needs a second contractor. Easley has grown into one of Pickens County's busiest markets, and its service calls split between older homes near downtown and the newer construction filling in along the Highway 123 corridor.",
+    "Carolina Heating Service has covered the Upstate since 1981. Technicians document what they find, quotes are fixed before work begins, and appointments book online or through website chat that answers at any hour."
+  ],
+  "heroImage": "/images/2024/10/A-Carolina-Heating-Service-company-portrait-featuring-all-of-the-employees-standing-in-front-of-the-Carolina-Heating-Service-building.jpg",
+  "serviceGroups": [
+    {
+      "groupIntro": "Our full service range is available in Easley: cooling services for the long humid season, plumbing services from fixtures to full repiping, electrical services for panels, wiring, and charging, and indoor air quality services for the air all that equipment moves.",
+      "items": [
+        { "title": "Heat Pump Installation & Repair in Easley", "body": "Heat pumps fit Easley's climate because one system covers both seasons efficiently. Repairs, replacements, and defrost-cycle diagnostics run across every major brand.", "href": "/services/greenville-sc-heating/heat-pumps" },
+        { "title": "Air Conditioning Services in Easley", "body": "Cooling season here stretches deep into fall, and repairs get treated with matching urgency. Installations are sized by load calculation, since an oversized unit cools fast but never wrings out the humidity.", "href": "/services/greenville-sc-cooling/air-conditioning" },
+        { "title": "HVAC Zoning Services in Easley", "body": "Zoning systems give multi-level homes separate temperature control by floor. Dampers and dedicated thermostats stop the argument between a hot upstairs and a cold main level.", "href": "/services/greenville-sc-cooling/hvac-zoning-services" },
+        { "title": "Air Scrubber Installation in Easley", "body": "Air scrubbers mount inside the ductwork and treat air continuously while the system runs. They cover the fine particles a standard one-inch filter lets through.", "href": "/services/greenville-sc-indoor-air-quality/air-scrubber" }
+      ],
+      "partnerHeading": "Your Trusted HVAC & Indoor Air Quality Partner in Easley",
+      "partnerBody": "Humidity is the constant in Easley's cooling season, and it is as much an air quality issue as a comfort one. Equipment sizing, runtime, and air treatment get evaluated as one system because that is how they behave."
+    },
+    {
+      "groupIntro": "Easley plumbing spans mill-era homes with original lines and subdivisions plumbed last year.",
+      "items": [
+        { "title": "Water Heater Installation & Repair in Easley", "body": "Water heater repair and replacement with the tank-versus-tankless decision laid out in real numbers. Recovery rate gets matched to the household instead of guessed.", "href": "/services/greenville-sc-plumbing/water-heaters" },
+        { "title": "Drain Clearing in Easley", "body": "Drain clearing that removes the blockage and identifies why it formed, since the difference decides whether it comes back. Recurring clogs get a camera look rather than a fourth clearing.", "href": "/services/greenville-sc-drains/drain-clearing" },
+        { "title": "Kitchen & Bathroom Plumbing in Easley", "body": "Kitchen and bathroom plumbing from faucet swaps to full remodel rough-ins. The rooms that use water hardest get licensed work that holds up to it.", "href": "/services/greenville-sc-plumbing/kitchen-bathroom" },
+        { "title": "Water Pressure Assessments in Easley", "body": "Water pressure assessments that isolate whether weak flow starts at the street, the pressure reducing valve, or the pipes themselves. The repair follows the measurement, not a guess.", "href": "/services/greenville-sc-plumbing/water-pressure-assessments" }
+      ],
+      "partnerHeading": "Your Trusted Plumbing Partner in Easley",
+      "partnerBody": "The same licensed crew handles both mill-era homes and new subdivisions, with quotes itemized before the first fitting comes off."
+    },
+    {
+      "groupIntro": "From panel evaluations in older neighborhoods to generator installs in new ones, licensed electricians carry Easley's electrical work on the same dispatch as its HVAC and plumbing.",
+      "items": [
+        { "title": "Wiring & Rewiring Services in Easley", "body": "Wiring and rewiring for homes whose electrical systems predate their current demand. Troubleshooting finds the fault, and rewiring replaces runs that are past correcting.", "href": "/services/greenville-sc-electrical/wiring-rewiring-services" },
+        { "title": "Circuit Breaker Services in Easley", "body": "Circuit breaker replacement and panel service, including evaluations before a renovation or major appliance adds load. Breakers that trip repeatedly are a symptom worth diagnosing, not resetting.", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+        { "title": "Ceiling Fan Installation in Easley", "body": "Ceiling fans installed on properly rated boxes with correct switch wiring. In a climate this humid, moving air lets the thermostat sit a couple of degrees higher without anyone noticing.", "href": "/services/greenville-sc-electrical/ceiling-fans" },
+        { "title": "Home Generator Installs & Repairs in Easley", "body": "Home standby generators installed, repaired, and maintained with automatic transfer on outage. Sizing follows the load calculation, from essential circuits to whole-home coverage.", "href": "/services/greenville-sc-generators/home-generators" }
+      ],
+      "partnerHeading": "Your Trusted Electrical & Home Generator Partner in Easley",
+      "partnerBody": "Licensed electricians carry Easley's electrical work on the same dispatch as its HVAC and plumbing."
+    }
+  ],
+  "sinceHeading": "Carolina Heating Service: Easley's HVAC, Plumbing & Electrical Team Since 1981",
+  "sinceIntro": "Since 1981, Carolina Heating Service has watched Pickens County's eastern edge fill in, and Easley's mechanical work now covers every equipment generation at once.",
+  "sinceCategories": [
+    {
+      "label": "HVAC",
+      "bullets": [
+        { "title": "Replacement Installations", "body": "Load-calculated systems for homes whose original equipment has aged out, with duct condition checked before new equipment inherits old problems." },
+        { "title": "Repairs Across Brands", "body": "Documented diagnostics on furnaces, heat pumps, and air conditioners of any age, with findings shown before anything is approved." },
+        { "title": "Tune-Up Programs", "body": "Twice-a-year service through the maintenance plan, timed ahead of the seasons that break equipment." }
+      ]
+    },
+    {
+      "label": "Electrical",
+      "bullets": [
+        { "title": "Service Upgrades", "body": "Panel and breaker work that brings capacity in line with what the household actually draws." },
+        { "title": "Rewiring Projects", "body": "Replacement of aging runs where troubleshooting shows correction is no longer enough." },
+        { "title": "Standby Power", "body": "Generator installation and annual service so outages stay an outdoor event." }
+      ]
+    },
+    {
+      "label": "Plumbing",
+      "bullets": [
+        { "title": "Emergency Plumbing", "body": "Emergency plumbing service answers the failures that cannot wait for a weekday slot." },
+        { "title": "Supply and Drain Lines", "body": "Pressure assessments, drain clearing, and camera inspection that put a cause behind every symptom." },
+        { "title": "Fixture Work", "body": "Kitchen, bath, and water heater service quoted before work begins." }
+      ]
+    },
+    {
+      "label": "Air Quality",
+      "bullets": [
+        { "title": "Continuous Air Treatment", "body": "In-duct scrubbers working whenever the blower does." },
+        { "title": "Duct Evaluation", "body": "Airflow and leakage checks, since treatment only reaches rooms the ducts still serve properly." },
+        { "title": "Moisture Management", "body": "Dehumidification support through the months outdoor air arrives saturated." }
+      ]
+    },
+    {
+      "label": "Process",
+      "bullets": [
+        { "title": "Findings First", "body": "The technician documents the problem before quoting the fix." },
+        { "title": "Fixed Quotes", "body": "The number approved up front is the number invoiced." },
+        { "title": "Round-the-Clock Booking", "body": "Online scheduling and 24/7 website chat, with member priority for plan holders." }
+      ]
+    }
+  ],
+  "closing": [
+    "Easley's commercial corridors get the same licensed coverage as its neighborhoods through commercial services, and residential projects that arrive before the budget does have cooling financing options available.",
+    "One call, one accountable company, four trades. Book online or open the website chat at any hour, and an Easley appointment gets confirmed with a licensed technician who documents the diagnosis and quotes the work before it starts."
+  ],
+  "faqs": [
+    {
+      "question": "Is a heat pump enough for Easley winters, or do I need backup heat?",
+      "answer": "A properly sized heat pump handles typical Upstate winters on its own, and modern units hold capacity well below freezing. Auxiliary electric strips cover the coldest snaps, and a dual fuel setup pairs the heat pump with a gas furnace for homes that want gas backup."
+    },
+    {
+      "question": "My drains clog every few months. Is repeated clearing the answer?",
+      "answer": "No, at that frequency the blockage has a structural cause. Recurring clogs usually trace to a bellied line, root intrusion, or buildup that clearing only punches through. A camera inspection finds the actual condition, and the repair gets quoted from what the camera shows."
+    },
+    {
+      "question": "Can my older Easley home's panel handle a major appliance addition?",
+      "answer": "That is exactly what a panel evaluation answers. The electrician totals the existing load, measures what capacity remains, and states whether the addition fits or the panel needs upgrading first."
+    },
+    {
+      "question": "Why does my house still feel sticky when the AC is clearly running?",
+      "answer": "Cooling removes moisture only while the system runs, so an oversized unit that satisfies the thermostat quickly leaves humidity behind. Longer run cycles, correct sizing at replacement, or dedicated dehumidification each address it at different price points."
+    },
+    {
+      "question": "Which communities near Easley do you cover?",
+      "answer": "Coverage includes Liberty, Powdersville, and Piedmont, with the rest of the Upstate footprint behind them. Feel free to call if you're unsure if we serve your home."
+    }
+  ]
+}

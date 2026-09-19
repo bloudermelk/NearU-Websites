@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Commercial - Carolina Heating Service Inc.",
+  "metaDescription": "Carolina Heating Service is the trusted local provider of commercial heating, cooling, plumbing, and generator services.",
+  "heading": "Commercial Services",
+  "intro": "Carolina Heating Service is the trusted local provider of commercial heating, cooling, plumbing, and generator services. As specialists in HVAC services, we pride ourselves on delivering top-quality solutions to meet your specific needs. Whether it's a big or small project, from installation to maintenance and repairs, we have you covered. Our team of experts is here to serve all types of commercial customers, ensuring your comfort and efficiency every step of the way.",
+  "heroImage": "/images/2024/03/An-aerial-view-of-a-commercial-building.jpg",
+  "capabilities": [
+    {
+      "title": "Install & Repair",
+      "body": "Our skilled, NATE-trained and certified technicians specialize in inspecting and repairing commercial heating and cooling equipment."
+    },
+    {
+      "title": "Installations",
+      "body": "Need reliable installation for your HVAC system? Our NATE-trained and certified experts deliver seamless commercial installations, ensuring optimal performance and comfort for your business."
+    },
+    {
+      "title": "Maintenance",
+      "body": "Ensure the longevity and efficiency of your commercial HVAC systems with our routine maintenance services. Our team keeps systems running smoothly, minimizing downtime and maximizing comfort."
+    }
+  ],
+  "services": [
+    { "title": "Heating Services in Greenville, SC", "body": "CHS delivers exceptional commercial heating services, including installation and repair of boilers, furnaces, and split systems.", "href": "/services/greenville-sc-heating" },
+    { "title": "Cooling Systems in Greenville, SC", "body": "We install and repair commercial cooling systems, ensuring efficient and reliable performance. Trust us to keep your business cool year-round.", "href": "/services/greenville-sc-cooling" },
+    { "title": "Plumbing Company in Greenville, SC", "body": "Keep your business running smoothly with our commercial plumbing services. We install and repair water heaters and plumbing systems for efficient operation.", "href": "/services/greenville-sc-plumbing" },
+    { "title": "Home Generator Installation & Repair in Greenville, SC", "body": "We install and repair commercial generators, providing reliable backup power solutions. Trust us to keep your business running, even during outages.", "href": "/services/greenville-sc-generators" }
+  ],
+  "closingHeading": "Reliable Comfort: Experts in HVAC, Electrical, Plumbing & Indoor Air Quality",
+  "closingBody": "At Carolina Heating Service, we pride ourselves on delivering reliable comfort through our expert HVAC, electrical, plumbing, and indoor air quality solutions. With years of experience in the industry, our skilled technicians are dedicated to ensuring your home remains comfortable year-round.",
+  "closingImage": "/images/2024/03/A-Carolina-Heating-Service-in-the-drivers-seat-of-a-service-truck.jpg",
+  "maintenancePlans": ["15% Off Repair", "Heating & Cooling Tune-Up", "Reduced Dispatch Fees", "Priority Service"],
+  "maintenanceImage": "/images/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg",
+  "industries": [
+    { "title": "Commercial Spaces", "body": "Offices, mixed-use, government, and retail" },
+    { "title": "Food Service", "body": "Restaurants, ensuring optimal kitchen environments" },
+    { "title": "Specialized Areas", "body": "Server rooms, guaranteeing precise climate control" },
+    { "title": "Healthcare", "body": "Critical HVAC and generator services for medical facilities, maintaining sterile environments and patient comfort" },
+    { "title": "Warehouse Solutions", "body": "Heaters and systems for efficient temperature regulation" },
+    { "title": "Pre/Post-build", "body": "Comprehensive HVAC, plumbing, and generator solutions for construction projects at any stage" }
+  ],
+  "industriesImage": "/images/2024/03/An-exterior-photograph-of-a-commercial-building.jpg"
+}

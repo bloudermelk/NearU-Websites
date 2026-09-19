@@ -1,0 +1,27 @@
+{
+  "metaTitle": "Carolina Heating Service | Serving the Upstate for 40+ Years",
+  "metaDescription": "Carolina Heating Service, serving the Upstate for over 40 years making homes comfortable with professional HVAC, indoor air quality, plumbing, and generators!",
+  "hero": {
+    "title": "Reliable HVAC, Plumbing & Electrical Service in Greenville, SC",
+    "body": "Carolina Heating Service provides heating, cooling, plumbing, electrical, and generator service throughout Greenville, SC and the Upstate, backed by decades of experience and a team ready to help the moment you need it.",
+    "image": "/images/2024/04/030624-CHS-37-scaled.jpg",
+    "secondaryImage": "/images/2024/03/An-exterior-of-a-building-with-multiple-AC-units-and-flowers.jpg",
+    "generatorCtaLabel": "Order a Home Generator",
+    "generatorCtaHref": "/generator-greenville-sc"
+  },
+  "worryFree": {
+    "title": "10 Year Worry-Free System Coverage",
+    "href": "/worry-free-service-program"
+  },
+  "story": {
+    "heading": "Serving the communities in Greenville, South Carolina, for over 40 Years.",
+    "body": "Carolina Heating Service is known for reputable home comfort services throughout the Greenville, SC area. With a history dating back to 1981, our expertise initially focused on heating and air conditioning. Over time, we expanded to include plumbing, electrical, drains, generators, and indoor air quality systems. Our continued commitment to exceptional service and highly trained technicians reflects our dedication to customer satisfaction throughout the Upstate.",
+    "mapImage": "/images/2024/03/CHS-Service-Area-Map-Highlighted-scaled.jpg"
+  },
+  "whoWeAre": {
+    "heading": "Who we are",
+    "body": "Learn more about our team of highly qualified staff, and see why homeowners throughout the Greenville area trust Carolina Heating Service for their HVAC, plumbing, and electrical needs.",
+    "href": "/about-us",
+    "image": "/images/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg"
+  }
+}

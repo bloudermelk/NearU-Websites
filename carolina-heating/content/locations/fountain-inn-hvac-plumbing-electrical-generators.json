@@ -1,0 +1,117 @@
+{
+  "slug": "fountain-inn-hvac-plumbing-electrical-generators",
+  "cityName": "Fountain Inn",
+  "metaTitle": "HVAC, Plumbing & Electrical Services in Fountain Inn, SC",
+  "metaDescription": "Trusted provider of HVAC, plumbing, electrical, and home generators in Fountain Inn, SC. Carolina Heating Service has kept Upstate homes running since 1981.",
+  "heading": "HVAC, Plumbing, Electrical & Home Generator Services in Fountain Inn, SC",
+  "intro": [
+    "One licensed company covers Fountain Inn's heating, cooling, plumbing, electrical, and home generator needs, so a failed system and the panel feeding it get fixed on the same ticket. From Fountain Inn's historic Main Street district to its fast-arriving subdivisions, all types of homes and systems are served by our knowledgeable professionals.",
+    "Carolina Heating Service has run those routes since 1981. Diagnoses come documented, pricing is set before the work starts, and booking happens online or through website chat staffed day and night."
+  ],
+  "heroImage": "/images/2024/10/A-Carolina-Heating-Service-company-portrait-featuring-all-of-the-employees-standing-in-front-of-the-Carolina-Heating-Service-building.jpg",
+  "serviceGroups": [
+    {
+      "groupIntro": "Fountain Inn homes can draw on heating services from furnace work through smart controls, cooling services for the season that carries most of the year's runtime, plumbing services across supply, fixture, and gas line work, and electrical services behind it all.",
+      "items": [
+        { "title": "Furnace Installation & Repair in Fountain Inn", "body": "Furnace repair and replacement with combustion safety checked on every visit.", "href": "/services/greenville-sc-heating/furnaces" },
+        { "title": "Heat Pump Installation & Repair in Fountain Inn", "body": "Heat pump service for the all-electric homes new construction favors here.", "href": "/services/greenville-sc-heating/heat-pumps" },
+        { "title": "Air Conditioning Services in Fountain Inn", "body": "Air conditioning repair, tune-ups, and full replacement for a cooling season that starts early and outlasts October.", "href": "/services/greenville-sc-cooling/air-conditioning" },
+        { "title": "Whole-Home Dehumidifiers in Fountain Inn", "body": "Whole-home dehumidifiers that hold indoor moisture in range independent of the cooling call.", "href": "/services/greenville-sc-indoor-air-quality/dehumidifiers" }
+      ],
+      "partnerHeading": "Your Trusted HVAC & Indoor Air Quality Partner in Fountain Inn",
+      "partnerBody": "New systems need their installations verified and older systems need honest repair math, and Fountain Inn currently has plenty of both."
+    },
+    {
+      "groupIntro": "Growth puts new plumbing in the ground here every month while the older blocks run lines laid decades ago.",
+      "items": [
+        { "title": "Water Heater Installation & Repair in Fountain Inn", "body": "Water heaters repaired, replaced, and sized to household demand.", "href": "/services/greenville-sc-plumbing/water-heaters" },
+        { "title": "Sewer Line Services in Fountain Inn", "body": "Sewer line service from camera diagnosis through repair. Slow drains across the whole house point to the main line.", "href": "/services/greenville-sc-drains/sewer-lines" },
+        { "title": "Gas Line Services in Fountain Inn", "body": "Gas line installation and repair by licensed plumbers, whether the project is a new range, a generator connection, or an outdoor kitchen.", "href": "/services/greenville-sc-plumbing/gas-lines" },
+        { "title": "Kitchen & Bathroom Plumbing in Fountain Inn", "body": "Kitchen and bathroom plumbing from leak repair to remodel rough-in.", "href": "/services/greenville-sc-plumbing/kitchen-bathroom" }
+      ],
+      "partnerHeading": "Your Trusted Plumbing Partner in Fountain Inn",
+      "partnerBody": "Licensed plumbers service both ends of that spread with the same fixed-quote process."
+    },
+    {
+      "groupIntro": "Fountain Inn's electrical work runs from century-old district homes to panels installed last spring.",
+      "items": [
+        { "title": "Outlet & Switch Repair in Fountain Inn", "body": "Outlet and switch repair for the dead receptacles, warm cover plates, and worn switches that older wiring produces.", "href": "/services/greenville-sc-electrical/outlet-switch-repair-services" },
+        { "title": "EV Charger Installation in Fountain Inn", "body": "EV charger installation with the panel capacity confirmed before the circuit goes in.", "href": "/services/greenville-sc-electrical/car-charger-installation" },
+        { "title": "Circuit Breaker Services in Fountain Inn", "body": "Circuit breaker service and panel evaluations for homes adding load the original design never anticipated.", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+        { "title": "Home Generator Installs & Repairs in Fountain Inn", "body": "Standby generators sized, installed, and maintained for automatic outage response.", "href": "/services/greenville-sc-generators/home-generators" }
+      ],
+      "partnerHeading": "Your Trusted Electrical & Home Generator Partner in Fountain Inn",
+      "partnerBody": "Licensed electricians carry all of it alongside the HVAC and plumbing trades."
+    }
+  ],
+  "sinceHeading": "Carolina Heating Service: Fountain Inn Comfort and Power Since 1981",
+  "sinceIntro": "Fountain Inn has changed more in the past decade than in the several before it, and Carolina Heating Service has serviced the Golden Strip through all of it since 1981.",
+  "sinceCategories": [
+    {
+      "label": "HVAC",
+      "bullets": [
+        { "title": "New System Installation", "body": "Load-calculated equipment for replacements and for new-home upgrades where the builder's choice never matched the house." },
+        { "title": "Diagnostic Repairs", "body": "Documented findings across brands and ages, from Main Street district homes to systems still under manufacturer warranty." },
+        { "title": "Seasonal Maintenance", "body": "Scheduled tune-ups through the maintenance program that keep warranties enforceable and surprises rare." }
+      ]
+    },
+    {
+      "label": "Electrical",
+      "bullets": [
+        { "title": "Capacity Planning", "body": "Panel evaluations before additions, chargers, or workshops commit new load." },
+        { "title": "Repair Work", "body": "Troubleshooting for circuits, outlets, and switches that have started misbehaving." },
+        { "title": "Emergency Electrical", "body": "Emergency electrical and generator service for the failures that cannot hold until morning." }
+      ]
+    },
+    {
+      "label": "Plumbing",
+      "bullets": [
+        { "title": "Water Heater Decisions", "body": "Repair-versus-replace math presented plainly, with both paths priced." },
+        { "title": "Main Line Service", "body": "Camera inspection and sewer repair when symptoms point past the fixtures." },
+        { "title": "Gas Work", "body": "Licensed gas line installation, extension, and testing for appliances and generators." }
+      ]
+    },
+    {
+      "label": "Air Quality",
+      "bullets": [
+        { "title": "Moisture Control", "body": "Whole-home dehumidification that works independent of cooling runtime." },
+        { "title": "Duct Health", "body": "Cleaning and evaluation so conditioned air arrives clean and actually arrives." },
+        { "title": "Detection Devices", "body": "Smoke and carbon monoxide service where combustion appliances run." }
+      ]
+    },
+    {
+      "label": "Process",
+      "bullets": [
+        { "title": "Documented Work", "body": "What the technician found, shown before the quote is written." },
+        { "title": "Price Certainty", "body": "Approved quotes that match final invoices." },
+        { "title": "Always-On Access", "body": "Online booking plus 24/7 website chat, with priority slots for plan members." }
+      ]
+    }
+  ],
+  "closing": [
+    "A town growing this quickly generates equipment decisions on every street, from first tune-ups in new subdivisions to full replacements near downtown. Heating financing options keep a mid-winter failure from forcing a rushed choice.",
+    "Scheduling starts online or in the website chat, whichever hour the problem announces itself. The appointment brings a licensed technician, a documented diagnosis, and a fixed quote, with HVAC, plumbing, electrical, and generator work all standing behind one company name."
+  ],
+  "faqs": [
+    {
+      "question": "We just closed on a new build in Fountain Inn. What should we do first?",
+      "answer": "Register the HVAC equipment warranty in your name, then schedule a first-year inspection. That visit verifies the builder's installation and starts the service record most manufacturer warranties require."
+    },
+    {
+      "question": "How do I know if my sewer line is the problem rather than a single drain?",
+      "answer": "Watch the pattern. One slow fixture points to its own branch line, while multiple slow drains, gurgling, or backups at the lowest fixtures point to the main."
+    },
+    {
+      "question": "Can you run a gas line for a standby generator?",
+      "answer": "Yes, and it is one licensed company for the whole project. The plumbing side installs and pressure-tests the gas supply, the electrical side sets the generator and transfer switch."
+    },
+    {
+      "question": "Why does my new, tightly built house need a dehumidifier at all?",
+      "answer": "Tight construction keeps conditioned air in, but it also keeps moisture from cooking, showers, and occupancy in with it. Dedicated dehumidification holds the range regardless."
+    },
+    {
+      "question": "What nearby areas does Carolina Heating Service cover?",
+      "answer": "Simpsonville, Mauldin, and Woodruff are all inside standard coverage along with the wider Upstate."
+    }
+  ]
+}

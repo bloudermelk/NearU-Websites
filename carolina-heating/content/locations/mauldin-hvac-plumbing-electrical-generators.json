@@ -1,0 +1,117 @@
+{
+  "slug": "mauldin-hvac-plumbing-electrical-generators",
+  "cityName": "Mauldin",
+  "metaTitle": "Expert HVAC, Plumbing & Electrical Services in Mauldin, SC",
+  "metaDescription": "HVAC, plumbing, electrical, and home generator service in Mauldin, SC. Carolina Heating Service, serving the area since 1981. Emergency services available.",
+  "heading": "HVAC, Plumbing, Electrical & Home Generator Services in Mauldin, SC",
+  "intro": [
+    "Carolina Heating Service handles Mauldin's heating, cooling, plumbing, electrical, and home generator work with one licensed team and one accountable name. Mauldin filled in as one of Greenville's first ring suburbs, and a large share of its homes have now been through at least one full equipment cycle, which makes second-replacement decisions the defining service question here. We're here to help with any of your replacement or repair needs.",
+    "The company has been part of that cycle since 1981. Findings are documented on every visit, quotes are fixed before work starts, and scheduling runs online or through website chat with no closing time."
+  ],
+  "heroImage": "/images/2024/10/A-Carolina-Heating-Service-company-portrait-featuring-all-of-the-employees-standing-in-front-of-the-Carolina-Heating-Service-building.jpg",
+  "serviceGroups": [
+    {
+      "groupIntro": "In Mauldin, we offer cooling services across repair, replacement, and control, drain services when the problem sits in the lines, electrical services for panels carrying more than they were drawn for, and heating services to keep you warm through the winter months.",
+      "items": [
+        { "title": "Air Conditioning Services in Mauldin", "body": "Air conditioning service for systems at every point in their lifespan, with second replacements treated differently than first ones. By then the ductwork is as old as the house and gets tested rather than trusted.", "href": "/services/greenville-sc-cooling/air-conditioning" },
+        { "title": "Heat Pump Installation & Repair in Mauldin", "body": "Heat pump repair and installation, including conversions for homes consolidating onto one electric system. Sizing comes from a load calculation run on the house as it stands today.", "href": "/services/greenville-sc-heating/heat-pumps" },
+        { "title": "HVAC Zoning Services in Mauldin", "body": "Zoning for the split-levels and two-stories that never cooled evenly on a single thermostat. Dampers and per-zone control end the upstairs-versus-downstairs standoff.", "href": "/services/greenville-sc-cooling/hvac-zoning-services" },
+        { "title": "Air Duct Cleaning in Mauldin", "body": "Duct cleaning for runs that have moved air since the neighborhood was new. Decades of accumulation keep circulating until they are physically removed.", "href": "/services/greenville-sc-indoor-air-quality/air-ducts" }
+      ],
+      "partnerHeading": "Your Trusted HVAC & Indoor Air Quality Partner in Mauldin",
+      "partnerBody": "When equipment and ductwork share a birthday decades back, comfort problems rarely have a single cause. Whole-system evaluation is the Mauldin default because piecemeal fixes here disappoint."
+    },
+    {
+      "groupIntro": "Mauldin plumbing is largely original to homes built decades ago, and the honest question on many calls is whether to fix the symptom or retire the system.",
+      "items": [
+        { "title": "Repiping Services in Mauldin", "body": "Repiping for homes whose original supply lines have entered their leak years. Materials common to Mauldin's construction era are known quantities, and one planned project beats serial patching.", "href": "/services/greenville-sc-drains/repiping" },
+        { "title": "Water Heater Installation & Repair in Mauldin", "body": "Water heater repair and replacement with age treated as data. A tank past its expected span gets both paths priced, and the decision stays with the homeowner.", "href": "/services/greenville-sc-plumbing/water-heaters" },
+        { "title": "Kitchen & Bathroom Plumbing in Mauldin", "body": "Kitchen and bathroom plumbing, from the drip that will not quit to remodel rough-in. Licensed work in the rooms that punish shortcuts hardest.", "href": "/services/greenville-sc-plumbing/kitchen-bathroom" },
+        { "title": "Drain Clearing in Mauldin", "body": "Drain clearing with cause identification, and camera inspection when clogs recur. Established lines need an assessment if you're experiencing recurring clogs.", "href": "/services/greenville-sc-drains/drain-clearing" }
+      ],
+      "partnerHeading": "Your Trusted Plumbing Partner in Mauldin",
+      "partnerBody": "Both answers come with numbers. Licensed plumbers work from documented findings, not assumptions."
+    },
+    {
+      "groupIntro": "Panels and wiring from Mauldin's build-out decades meet modern demand every day.",
+      "items": [
+        { "title": "Circuit Breaker Services in Mauldin", "body": "Breaker and panel service for electrical systems designed around a different era's load. Evaluations state what the panel carries safely before chargers or additions ask for more.", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+        { "title": "Ceiling Fan Installation in Mauldin", "body": "Ceiling fan installation done to code on rated boxes. Fans stretch cooling comfort in the rooms families actually occupy through Upstate summers.", "href": "/services/greenville-sc-electrical/ceiling-fans" },
+        { "title": "Outlet & Switch Repair in Mauldin", "body": "Outlet and switch repair, with grounded and GFCI updates where original receptacles lag current safety standards.", "href": "/services/greenville-sc-electrical/outlet-switch-repair-services" },
+        { "title": "Home Generator Installs & Repairs in Mauldin", "body": "Standby generator installation and maintenance with automatic transfer. Sized to the circuits that matter or to the whole house, with both quoted.", "href": "/services/greenville-sc-generators/home-generators" }
+      ],
+      "partnerHeading": "Your Trusted Electrical & Home Generator Partner in Mauldin",
+      "partnerBody": "Licensed electricians manage panels and wiring from Mauldin's build-out decades safely on the same dispatch as the other trades."
+    }
+  ],
+  "sinceHeading": "Carolina Heating Service: Mauldin's Full-Service Trades Partner Since 1981",
+  "sinceIntro": "Carolina Heating Service predates most of Mauldin's subdivisions, and the HVAC work here reflects a suburb moving through its second full equipment cycle since 1981.",
+  "sinceCategories": [
+    {
+      "label": "HVAC",
+      "bullets": [
+        { "title": "Second-Cycle Replacements", "body": "Installations that test duct leakage and static pressure first, because new equipment on failing ducts underdelivers from day one." },
+        { "title": "Documented Repairs", "body": "Cross-brand diagnostics with evidence shown before approval is requested." },
+        { "title": "Maintenance Rhythm", "body": "Spring and fall service through the maintenance plan, catching the wear items each season targets." }
+      ]
+    },
+    {
+      "label": "Electrical",
+      "bullets": [
+        { "title": "Panel Evaluations", "body": "Clear statements of existing load and remaining headroom before anything new connects." },
+        { "title": "Safety Corrections", "body": "GFCI, grounding, and receptacle updates measured against current standards." },
+        { "title": "Generator Work", "body": "Standby sizing, installation, and annual readiness service." }
+      ]
+    },
+    {
+      "label": "Plumbing",
+      "bullets": [
+        { "title": "Emergency Cooling and Plumbing", "body": "Emergency cooling service covers summer failures, with urgent plumbing on the same rapid dispatch." },
+        { "title": "Repiping Decisions", "body": "Whole-home supply replacement quoted when leak frequency makes the case." },
+        { "title": "Line Diagnostics", "body": "Camera inspection that shows the pipe's condition instead of guessing at it." }
+      ]
+    },
+    {
+      "label": "Air Quality",
+      "bullets": [
+        { "title": "Stored-Load Removal", "body": "Duct cleaning that clears what decades of cycles deposited." },
+        { "title": "Better Capture", "body": "Filtration upgrades matched to blower capability." },
+        { "title": "Moisture Balance", "body": "Humidity management for the sticky months cooling alone cannot dry." }
+      ]
+    },
+    {
+      "label": "Process",
+      "bullets": [
+        { "title": "Evidence Before Quotes", "body": "Documented findings on every call." },
+        { "title": "Stable Pricing", "body": "Approval and invoice carry the same number." },
+        { "title": "Always Bookable", "body": "Online scheduling, 24/7 chat, member priority." }
+      ]
+    }
+  ],
+  "closing": [
+    "A second equipment cycle is a chance to fix what the first one lived with, from starved ducts to undersized returns. Plumbing financing options extend the same planning room to the repiping projects this housing era eventually requires.",
+    "Booking is online or through chat at any hour. The licensed technician who arrives documents the diagnosis, prices the work before starting, and belongs to the same company whether the fix is mechanical, electrical, or plumbed."
+  ],
+  "faqs": [
+    {
+      "question": "What makes a second AC replacement different from the first in a Mauldin home?",
+      "answer": "The ductwork. By a second replacement the ducts have served as long as the house, and leakage or undersized returns will throttle new equipment exactly as they throttled the old. Testing static pressure and sealing or correcting the runs first protects the value of the new system."
+    },
+    {
+      "question": "How do I know when repiping beats another leak repair?",
+      "answer": "Track frequency and spread. One leak is a repair; leaks appearing at different points across the system mean the material itself is failing, and each patch buys less time. A whole-home assessment prices the repiping so the comparison is real numbers against a known repair pattern."
+    },
+    {
+      "question": "Our split-level has never cooled evenly. Is that fixable without new equipment?",
+      "answer": "Usually, yes. Balancing corrects modest unevenness, and zoning with dampers and per-level thermostats solves the structural version of the problem. Equipment replacement only enters the conversation if the diagnostic shows the unit itself is failing or badly missized."
+    },
+    {
+      "question": "Are the original outlets in my older Mauldin house actually a safety issue?",
+      "answer": "They can be. Ungrounded receptacles, absent GFCI protection near water, and worn contacts that grip plugs loosely each carry real risk. An electrician can update the highest-priority locations first, which puts most of the protection in place quickly."
+    },
+    {
+      "question": "Which nearby communities do you also serve?",
+      "answer": "Simpsonville, Five Forks, and Fountain Inn share Mauldin's routes, and the chat team can confirm any Golden Strip address in minutes."
+    }
+  ]
+}

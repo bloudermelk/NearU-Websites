@@ -1,0 +1,117 @@
+{
+  "slug": "liberty-hvac-plumbing-electrical-generators",
+  "cityName": "Liberty",
+  "metaTitle": "Liberty, SC HVAC, Plumbing & Electrical | Carolina Heating",
+  "metaDescription": "Expert HVAC, plumbing, electrical, and generator services in Liberty, SC. Carolina Heating Service brings licensed Upstate trades to Pickens County homes.",
+  "heading": "HVAC, Plumbing, Electrical & Home Generator Services in Liberty, SC",
+  "intro": [
+    "Liberty, SC homes get licensed heating, cooling, plumbing, electrical, and generator service from one company, with repair and replacement quoted honestly on equipment of any age. Liberty grew up as a Pickens County textile town, and many of its homes have been standing since the mill era, which makes experienced diagnosis worth it to best tailor a solution that fits your unique home's needs.",
+    "Carolina Heating Service has worked these roads since 1981. Findings get documented on every call, quotes get fixed before tools come out, and appointments book online or through chat staffed around the clock."
+  ],
+  "heroImage": "/images/2024/10/A-Carolina-Heating-Service-company-portrait-featuring-all-of-the-employees-standing-in-front-of-the-Carolina-Heating-Service-building.jpg",
+  "serviceGroups": [
+    {
+      "groupIntro": "In Liberty, we offer heating services for equipment old and new, cooling services through humid Pickens County summers, plumbing services down to the original supply lines, and electrical services for systems installed across very different decades.",
+      "items": [
+        { "title": "Furnace Installation & Repair in Liberty", "body": "Furnace service with combustion and heat exchanger checks on every heating visit, which matters most on units with real years behind them.", "href": "/services/greenville-sc-heating/furnaces" },
+        { "title": "Mini-Split Installation & Repair in Liberty", "body": "Mini-splits that bring modern heating and cooling to rooms and additions that never had ductwork.", "href": "/services/greenville-sc-cooling/mini-split" },
+        { "title": "Heat Pump Installation & Repair in Liberty", "body": "Heat pump repair and installation for homes moving off aging equipment onto one system that handles both seasons.", "href": "/services/greenville-sc-heating/heat-pumps" },
+        { "title": "Air Conditioning Services in Liberty", "body": "Central cooling service for homes at every stage, including first installations replacing a lineup of window units.", "href": "/services/greenville-sc-cooling/air-conditioning" }
+      ],
+      "partnerHeading": "Your Trusted HVAC & Indoor Air Quality Partner in Liberty",
+      "partnerBody": "Older equipment deserves an honest read, not an automatic replacement pitch. Documented findings and side-by-side pricing let Liberty homeowners decide from the actual condition of what they own."
+    },
+    {
+      "groupIntro": "Plumbing that has run since the mill era needs licensed hands and straight answers about what still has life left.",
+      "items": [
+        { "title": "Water Heater Installation & Repair in Liberty", "body": "Water heater repair and replacement with venting and location constraints of older homes factored into the quote.", "href": "/services/greenville-sc-plumbing/water-heaters" },
+        { "title": "Pipes & General Plumbing in Liberty", "body": "General plumbing and pipe repair for supply systems that have served for generations.", "href": "/services/greenville-sc-plumbing/pipes-and-general-plumbing" },
+        { "title": "Drain Clearing in Liberty", "body": "Drain clearing with the cause identified, not just the symptom pushed through.", "href": "/services/greenville-sc-drains/drain-clearing" },
+        { "title": "Frozen & Burst Pipe Repair in Liberty", "body": "Frozen and burst pipe response for the cold snaps that catch crawl-space plumbing unprotected.", "href": "/services/greenville-sc-plumbing/frozen-burst-pipe-repair" }
+      ],
+      "partnerHeading": "Your Trusted Plumbing Partner in Liberty",
+      "partnerBody": "Licensed hands and straight answers about what still has life left come standard on every Liberty call."
+    },
+    {
+      "groupIntro": "Liberty's electrical work is mostly about bringing older systems safely up to present demand.",
+      "items": [
+        { "title": "Wiring & Rewiring Services in Liberty", "body": "Wiring evaluation and rewiring for electrical systems that predate modern demand.", "href": "/services/greenville-sc-electrical/wiring-rewiring-services" },
+        { "title": "Outlet & Switch Repair in Liberty", "body": "Outlet and switch repair, including grounded replacements where older receptacles have none.", "href": "/services/greenville-sc-electrical/outlet-switch-repair-services" },
+        { "title": "Circuit Breaker Services in Liberty", "body": "Breaker and panel service, with capacity evaluations before any new appliance or circuit adds load.", "href": "/services/greenville-sc-electrical/circuit-breakers" },
+        { "title": "Home Generator Installs & Repairs in Liberty", "body": "Home standby generators installed and maintained for automatic response when the grid drops.", "href": "/services/greenville-sc-generators/home-generators" }
+      ],
+      "partnerHeading": "Your Trusted Electrical & Home Generator Partner in Liberty",
+      "partnerBody": "Licensed electricians handle it with the same documentation the other trades use."
+    }
+  ],
+  "sinceHeading": "Carolina Heating Service: Liberty and Pickens County Since 1981",
+  "sinceIntro": "Carolina Heating Service has served Pickens County towns since 1981, and Liberty's mix of long-standing homes and newer arrivals sets a clear HVAC agenda.",
+  "sinceCategories": [
+    {
+      "label": "HVAC",
+      "bullets": [
+        { "title": "Honest Replacement Math", "body": "Repair and replacement priced together on aging equipment, with the trade-offs stated rather than implied." },
+        { "title": "First-Time Central Systems", "body": "Ductless and ducted options for homes that have run on window units and space heat until now." },
+        { "title": "Ongoing Maintenance", "body": "Seasonal service through the maintenance plan that stretches the working life of equipment already earning its age." }
+      ]
+    },
+    {
+      "label": "Electrical",
+      "bullets": [
+        { "title": "System Evaluations", "body": "Panel and wiring assessments that establish what exists before anything new connects to it." },
+        { "title": "Targeted Rewiring", "body": "Replacement of the runs that diagnosis shows are past safe service." },
+        { "title": "Standby Generators", "body": "Sizing, installation, and annual readiness service for outage-prone stretches." }
+      ]
+    },
+    {
+      "label": "Plumbing",
+      "bullets": [
+        { "title": "Emergency Heating and Plumbing", "body": "Emergency heating service covers winter failures, and urgent plumbing rides the same rapid dispatch." },
+        { "title": "Supply Line Work", "body": "Repair, and repiping when patching has stopped being economical." },
+        { "title": "Drain Diagnosis", "body": "Clearing plus camera inspection when the pattern says structural." }
+      ]
+    },
+    {
+      "label": "Air Quality",
+      "bullets": [
+        { "title": "Winter Moisture", "body": "Whole-home humidification against the dryness leakier construction amplifies." },
+        { "title": "Duct Attention", "body": "Evaluation and cleaning for runs that have served for decades." },
+        { "title": "Safe Combustion", "body": "Smoke and CO detection service wherever fuel-burning equipment runs." }
+      ]
+    },
+    {
+      "label": "Process",
+      "bullets": [
+        { "title": "Documented Findings", "body": "Evidence first, quote second." },
+        { "title": "No Moving Numbers", "body": "Approved pricing is final pricing." },
+        { "title": "Easy Access", "body": "Online booking, 24/7 website chat, and priority scheduling for members." }
+      ]
+    }
+  ],
+  "closing": [
+    "Equipment in Liberty tends to serve long past the averages, and the right moment to replace it deserves planning rather than panic. Heating financing options exist for the winter when a long-serving furnace finally states its case.",
+    "Start online or in the chat window, any hour. The visit brings a licensed technician who documents what is actually wrong, quotes the fix before starting it, and answers for the work under one company name across all four trades."
+  ],
+  "faqs": [
+    {
+      "question": "Is it worth putting central heat and air in an older Liberty home for the first time?",
+      "answer": "Often yes, and ductless systems changed that math. Mini-splits deliver modern efficiency without the cost and disruption of retrofitting full ductwork into a house never built for it."
+    },
+    {
+      "question": "How can I tell if my home's wiring needs replacing rather than repairing?",
+      "answer": "The pattern tells more than any single symptom. One faulty outlet is a repair; recurring trips, warmth at multiple receptacles, and flickering across rooms point to the runs or the panel."
+    },
+    {
+      "question": "What should I do the moment I suspect a frozen pipe?",
+      "answer": "Shut off water at the main and open the affected faucets to relieve pressure, then get a plumber moving. A frozen pipe that has not burst can often be thawed safely."
+    },
+    {
+      "question": "Why is my house so dry every winter?",
+      "answer": "Heating drops indoor relative humidity, and older construction compounds it by exchanging more air with the cold, dry outdoors. A whole-home humidifier meters it back at the equipment."
+    },
+    {
+      "question": "Do you serve the communities around Liberty?",
+      "answer": "Yes. Easley, Powdersville, and Piedmont sit on the same routes, and the website chat can confirm any Pickens County address quickly."
+    }
+  ]
+}

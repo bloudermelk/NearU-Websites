@@ -1,0 +1,94 @@
+{
+  "slug": "greenville-sc-electrical",
+  "title": "Electrical Services in Greenville, SC",
+  "metaTitle": "Electrical Services Greenville, SC | Carolina Heating",
+  "metaDescription": "Electrical wiring, panel upgrades, and lighting services in Greenville, SC from Carolina Heating Service. Schedule today.",
+  "heroImage": "/images/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-circuit-box.jpg",
+  "heroSubtitle": "Electrical wiring, panel upgrades and replacement, and lighting maintenance from licensed electricians throughout Greenville, SC.",
+  "intro": [
+    "Whether you need electrical wiring services for a renovation, an electrical panel upgrade to support more power, or routine lighting maintenance, Carolina Heating Service provides licensed electrical services throughout Greenville, SC. Electricians diagnose the actual problem, explain your options, and complete the work safely and up to code.",
+    "Older homes throughout the Greenville area often have electrical panels and wiring that weren't built for the number of devices and appliances in a modern household, which shows up as tripped breakers, flickering lights, or a panel that simply can't support an upgrade like an EV charger. An electrical panel replacement or upgrade addresses the actual capacity issue instead of managing around it room by room."
+  ],
+  "subServices": [
+    {
+      "title": "EV Charger Installation in Greenville, SC",
+      "description": "Trust us for reliable and efficient car charger installations. We ensure a seamless installation process, from assessing your electrical system to selecting the right charger.",
+      "image": "/images/2024/09/electrical-services-car-charger-installation.jpg",
+      "href": "/services/greenville-sc-electrical/car-charger-installation"
+    },
+    {
+      "title": "Switch and Outlet Repair in Greenville, SC",
+      "description": "Are you in need of expert switch and outlet repair services in Greenville, SC? Look no further than Carolina Heating Services.",
+      "image": "/images/2024/11/outlet-switch-repair-image.jpg",
+      "href": "/services/greenville-sc-electrical/outlet-switch-repair-services"
+    },
+    {
+      "title": "Wiring and Rewiring Services in Greenville, SC",
+      "description": "When it comes to reliable wiring and rewiring services in Greenville, SC, Carolina Heating Services stands out as the go-to choice.",
+      "image": "/images/2024/10/rewiring-image.webp",
+      "href": "/services/greenville-sc-electrical/wiring-rewiring-services"
+    },
+    {
+      "title": "Ceiling Fan Installation in Greenville, SC",
+      "description": "Our electricians have the expertise to install ceiling fans efficiently and with precision. From wiring to mounting, we ensure a seamless installation.",
+      "image": "/images/2024/03/A-ceiling-fan-installed-on-the-ceiling-of-a-homes-room.jpg",
+      "href": "/services/greenville-sc-electrical/ceiling-fans"
+    },
+    {
+      "title": "Circuit Breaker Panel Services in Greenville, SC",
+      "description": "We pride ourselves on precision work, using high-quality materials, and adhering to industry safety standards.",
+      "image": "/images/2024/03/A-Carolina-Heating-Service-technician-working-on-an-electrical-panel.jpg",
+      "href": "/services/greenville-sc-electrical/circuit-breakers"
+    }
+  ],
+  "involves": {
+    "heading": "What Electrical Service Involves",
+    "body": "Electrical service covers everything from a single outlet repair to a full panel replacement, and the right scope depends on what's actually going on with your system. Electrical wiring services address problems inside walls and ceilings, while an electrical panel handles how power is distributed to every circuit in your home, so panel issues tend to affect multiple rooms at once. Carolina Heating Service provides:",
+    "bullets": [
+      "Electrical wiring and rewiring services for renovations, repairs, and older homes",
+      "Electrical panel upgrades and replacement for added capacity and safety",
+      "Electrical lighting maintenance and repair for fixtures, switches, and outlets",
+      "Specialty electrical services including EV charger installation, ceiling fans, and circuit breakers"
+    ]
+  },
+  "signs": {
+    "heading": "Signs You Need an Electrical Panel Upgrade or Replacement",
+    "body": "Frequently tripped breakers, flickering or dimming lights when appliances turn on, warm or discolored outlets, and a panel that's more than 20 to 25 years old are all signs it's time for an inspection. If you're planning an addition, a major appliance upgrade, or an EV charger installation, checking whether your panel has enough capacity before you commit to the upgrade can save you from a bigger problem later."
+  },
+  "whyChooseUs": {
+    "heading": "Why Choose Carolina Heating Service for Electrical Services in Greenville, SC",
+    "intro": "Carolina Heating Service has provided electrical wiring, panel, and lighting services across Greenville, SC and the Upstate for years.",
+    "bullets": [
+      "Licensed electricians: Every job is performed by a trained, licensed professional.",
+      "Safety and code compliance: Work is completed to meet local electrical codes, not just to get the lights back on.",
+      "Trained on major manufacturer brands and models: From wiring to panel replacement, our team is trained to service the equipment already in your home.",
+      "Transparent, customer-focused service: Clear explanations and honest recommendations, not upsells.",
+      "Online scheduling and 24/7 chat: Request service anytime through the Carolina Heating Service website, even outside office hours."
+    ]
+  },
+  "process": {
+    "heading": "Our Electrical Service Process",
+    "steps": [
+      { "title": "Contact", "body": "Call, chat or schedule online. Same-day appointments are available." },
+      { "title": "Inspection", "body": "A licensed electrician diagnoses the issue or evaluates your panel and wiring." },
+      { "title": "Recommendation", "body": "You get a clear explanation of the repair, upgrade, or replacement option, with pricing, before work begins." },
+      { "title": "Work", "body": "Service is completed by a licensed electrician, up to code." },
+      { "title": "Follow-up", "body": "Get recommendations for future capacity needs as your household's electrical use changes." }
+    ]
+  },
+  "qualified": {
+    "heading": "Qualified for All Major Makes and Models",
+    "body": "Our team of expert technicians is trained to handle all makes and models of major brands with precision and care. From routine maintenance to complex repairs, we ensure top-notch service for all.",
+    "bullets": [
+      "Ensure optimal efficiency of all your systems",
+      "Lower your utility costs with energy efficiency",
+      "Extend your system's lifespan through regular maintenance",
+      "Keep you and your family comfortable and safe during all seasons"
+    ],
+    "image": "/images/2024/04/030624-CHS-13.jpg"
+  },
+  "closing": {
+    "heading": "Licensed Electricians Providing Electrical Services in Greenville and the Upstate of South Carolina",
+    "body": "At Carolina Heating Service, we promise excellence through our skilled technicians, quality workmanship, and unwavering dedication to your satisfaction. Our experienced team is committed to delivering reliable solutions that not only meet your needs but also exceed your expectations."
+  }
+}
