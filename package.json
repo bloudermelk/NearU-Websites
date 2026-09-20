@@ -1,0 +1,19 @@
+{
+  "name": "nearu-websites",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NearU Services — the family of brand websites. Each top-level brand folder is an independently deployable Next.js site; they share one codebase (packages/site-kit) and one Supabase database (supabase/).",
+  "workspaces": [
+    "packages/site-kit",
+    "carolina-heating",
+    "2nd-wind"
+  ],
+  "scripts": {
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,7 +1,7 @@
-# Carolina Heating Service
+# 2nd Wind Heating & Air Conditioning
 
-**carolinaheating.com** — a NearU brand website. This folder is a complete, independently
-deployable Next.js app; it is one Vercel project (Root Directory: `carolina-heating`).
+**2ndwindhvac.com** — a NearU brand website. This folder is a complete, independently
+deployable Next.js app; it is one Vercel project (Root Directory: `2nd-wind`).
 
 Everything that is not specific to this brand lives in
 [`packages/site-kit`](../packages/site-kit) and is shared with every other NearU
@@ -14,7 +14,7 @@ site. What *is* in this folder:
 | `content/site.json` | Brand config: business info, nav, categories, testimonials, redirects, source (live-site) settings |
 | `content/html/`, `content/images/` | Pages + images mirrored from the live WordPress site → pushed to Supabase |
 | `content/pages.txt` | URL list from the live site's sitemaps |
-| `next.config.ts` | One line: `createSiteConfig({ siteSlug: "carolina-heating" })` |
+| `next.config.ts` | One line: `createSiteConfig({ siteSlug: "2nd-wind" })` |
 
 ## Commands (run in this folder)
 
@@ -30,4 +30,4 @@ npm run db:migrate                # push content/ into Supabase (idempotent, thi
 
 Env vars (`.env.local` locally, project settings on Vercel): `SUPABASE_URL`,
 `SUPABASE_SERVICE_ROLE_KEY`, `REVALIDATE_SECRET`. The brand identity
-(`SITE_SLUG=carolina-heating`) is baked in by `next.config.ts`.
+(`SITE_SLUG=2nd-wind`) is baked in by `next.config.ts`.

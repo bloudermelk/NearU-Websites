@@ -1,0 +1,40 @@
+{
+  "name": "@nearu/site-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Everything shared by every NearU brand website: the NearU theme components, the Supabase data layer, the route implementations, and the content-migration scripts. Each brand folder is a thin Next.js app that imports this.",
+  "type": "module",
+  "exports": {
+    "./next-config": "./next-config.mjs",
+    "./globals.css": "./src/globals.css",
+    "./routes/layout": "./src/routes/layout.tsx",
+    "./routes/home": "./src/routes/home.tsx",
+    "./routes/mirrored-page": "./src/routes/mirrored-page.tsx",
+    "./routes/not-found": "./src/routes/not-found.tsx",
+    "./routes/error": "./src/routes/error.tsx",
+    "./routes/global-error": "./src/routes/global-error.tsx",
+    "./routes/sitemap": "./src/routes/sitemap.ts",
+    "./routes/robots": "./src/routes/robots.ts",
+    "./routes/api/revalidate": "./src/routes/api/revalidate.ts",
+    "./components/*": "./src/components/*.tsx",
+    "./lib/*": "./src/lib/*.ts",
+    "./types/custom-elements": "./src/types/custom-elements.d.ts",
+    "./proxy": "./src/proxy.ts"
+  },
+  "bin": {
+    "nearu-list-pages": "./scripts/list-pages.mjs",
+    "nearu-build-theme-css": "./scripts/build-theme-css.mjs",
+    "nearu-extract-pages": "./scripts/extract-pages.mjs",
+    "nearu-extract-nav": "./scripts/extract-nav.mjs",
+    "nearu-migrate": "./scripts/db/migrate-to-supabase.mjs"
+  },
+  "peerDependencies": {
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "server-only": "^0.0.1"
+  }
+}

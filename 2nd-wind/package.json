@@ -1,8 +1,8 @@
 {
-  "name": "@nearu/carolina-heating",
+  "name": "@nearu/2nd-wind",
   "version": "1.0.0",
   "private": true,
-  "description": "Carolina Heating Service — carolinaheating.com. A NearU brand website built on @nearu/site-kit.",
+  "description": "2nd Wind Heating & Air Conditioning — 2ndwindhvac.com. A NearU brand website built on @nearu/site-kit.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
