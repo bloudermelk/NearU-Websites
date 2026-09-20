@@ -33,6 +33,16 @@ export function createSiteConfig({ siteSlug }) {
       remotePatterns: supabaseHostname
         ? [{ protocol: "https", hostname: supabaseHostname, pathname: "/storage/v1/object/public/**" }]
         : [],
+      // Every raster <img> in mirrored WordPress HTML is rewritten at render
+      // time to /_next/image?url=…&w=… (see site-kit/src/lib/mirroredHtml.ts),
+      // so the widths WordPress generates (300/768/1024/1536) must be allowed
+      // here. MUST match IMAGE_WIDTHS in that file.
+      deviceSizes: [300, 640, 768, 1024, 1200, 1536, 1920, 2048, 2560, 3840],
+      imageSizes: [64, 128, 200, 256],
+      formats: ["image/webp"],
+      // Source images in Storage are immutable (1-year Cache-Control); keep
+      // optimized variants at least as long.
+      minimumCacheTTL: 60 * 60 * 24 * 365,
     },
 
     // NOTE: do NOT enable `experimental.inlineCss`. It was measured to embed

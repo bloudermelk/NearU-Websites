@@ -18,7 +18,7 @@ import { getPage } from "../lib/db/pages";
 import type { HomePageData } from "../lib/db/homePageData";
 import { buildPageSchema } from "../lib/schema";
 import { shimmerDataUrl } from "../lib/imagePlaceholder";
-import { prepareMirroredHtml } from "../lib/mirroredHtml";
+import { prepareMirroredHtml, preloadHero } from "../lib/mirroredHtml";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getPage("/");
@@ -50,13 +50,15 @@ export default async function Home() {
 
   if (page.page_type !== "home") {
     if (!page.html) notFound();
+    const html = prepareMirroredHtml(page.html);
+    preloadHero(html);
     return (
       <>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {page.inline_css && (
           <style id="core-block-supports-inline-css" dangerouslySetInnerHTML={{ __html: page.inline_css }} />
         )}
-        <main id="primary" className="site-main | container" dangerouslySetInnerHTML={{ __html: prepareMirroredHtml(page.html) }} />
+        <main id="primary" className="site-main | container" dangerouslySetInnerHTML={{ __html: html }} />
       </>
     );
   }
