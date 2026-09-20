@@ -18,11 +18,7 @@
   },
   "theme": {
     "bodyClass": "wp-child-theme-chs",
-    "preloadFonts": [
-      "Roboto-Regular.woff2",
-      "Roboto-Bold.woff2",
-      "RobotoCondensed-Medium.woff2"
-    ]
+    "preloadFonts": []
   },
   "business": {
     "domain": "carolinaheating.com",

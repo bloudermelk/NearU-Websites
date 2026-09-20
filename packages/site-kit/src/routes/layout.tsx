@@ -113,9 +113,14 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html className="js" dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
       <head>
-        {/* Self-hosted theme fonts (declared via @font-face in theme.css, materialized
-            into /public/fonts by scripts/prebuild.mjs). Preload the above-the-fold
-            ones this brand's `sites.theme.preloadFonts` lists. */}
+        {/* Theme fonts are self-hosted in the brand's /public/fonts and declared via
+            @font-face in its theme.css with `font-display: fallback`, so text paints
+            in a fallback font immediately and swaps when the font arrives.
+            `sites.theme.preloadFonts` can force high-priority preloads, but LEAVE IT
+            EMPTY by default: the theme's Roboto files are ~64KB each, and preloading
+            three of them (192KB at "high" priority) was measured to starve the 38KB
+            stylesheet the first paint depends on — several seconds slower to the H1
+            on slow connections, on every first visit. */}
         {site.theme.preloadFonts.map((f) => (
           <link key={f} rel="preload" href={`/fonts/${f}`} as="font" type="font/woff2" crossOrigin="anonymous" />
         ))}

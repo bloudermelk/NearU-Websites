@@ -12,11 +12,7 @@
   },
   "theme": {
     "bodyClass": "wp-child-theme-nru-2nd-wind",
-    "preloadFonts": [
-      "Roboto-Regular.woff2",
-      "Roboto-Bold.woff2",
-      "RobotoCondensed-Medium.woff2"
-    ]
+    "preloadFonts": []
   },
   "business": {
     "domain": "2ndwindhvac.com",
