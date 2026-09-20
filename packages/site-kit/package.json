@@ -6,7 +6,6 @@
   "type": "module",
   "exports": {
     "./next-config": "./next-config.mjs",
-    "./globals.css": "./src/globals.css",
     "./routes/layout": "./src/routes/layout.tsx",
     "./routes/home": "./src/routes/home.tsx",
     "./routes/mirrored-page": "./src/routes/mirrored-page.tsx",

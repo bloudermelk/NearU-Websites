@@ -26,7 +26,17 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+/**
+ * Small global rules shared by every brand, inlined together with the brand's
+ * theme CSS. (Loading placeholder for photos inside mirrored WordPress HTML:
+ * those <img> tags are raw markup, so they can't use next/image's blur
+ * placeholder, but they carry width/height, so a neutral background fills the
+ * correctly-sized box until the bytes arrive. Scoped to JPEGs — always opaque —
+ * so transparent PNG logos don't pick up a gray backdrop.)
+ */
+const GLOBAL_CSS = `.site-main img[src$=".jpg"],.site-main img[src$=".jpeg"]{background-color:#eee}`;
+
+export default async function RootLayout({ children, themeCss }: { children: ReactNode; themeCss: string }) {
   const site = await getSite();
   const { business } = site;
   const base = `https://${business.domain}`;
@@ -113,6 +123,17 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html className="js" dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
       <head>
+        {/* The brand's entire theme stylesheet, INLINE. Measured against the live
+            WordPress sites (which inline their critical CSS via WP Rocket): with the
+            CSS as a separate <link>, first paint waited on a second request that
+            competed on a slow link with the hero image and async JS — 1.5–2.5s
+            later to the H1. Inline here it arrives with the HTML, so the page paints
+            as soon as the document lands. The layout is only sent on the entry
+            visit; client-side navigations fetch page payloads without it (unlike
+            Next's experimental.inlineCss, which repeated the CSS in every payload).
+            Compressed cost is unchanged (~38KB brotli); the raw duplicate in the RSC
+            flight data compresses to almost nothing. */}
+        <style id="theme-css" dangerouslySetInnerHTML={{ __html: themeCss + "\n" + GLOBAL_CSS }} />
         {/* Theme fonts are self-hosted in the brand's /public/fonts and declared via
             @font-face in its theme.css with `font-display: fallback`, so text paints
             in a fallback font immediately and swaps when the font arrives.
