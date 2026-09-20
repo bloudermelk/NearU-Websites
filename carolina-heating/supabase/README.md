@@ -38,30 +38,55 @@ From that brand's repo (e.g. `carolina-heating/`), with a `.env.local`
 containing `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `SITE_SLUG`:
 
 ```bash
-npm run db:migrate
+npm run db:migrate -- --site <slug>
 ```
 
-This is **idempotent** — re-run it anytime after editing local content
-(`content/site.json`, `content/pages/home.json`, `content/html/*.json`) or
-after re-syncing from a live WordPress source (`npm run content:sync`). It
-uploads every image in `public/images/`, upserts the `sites` row, and
-replaces this site's `nav_items` / `service_categories` / `certifications` /
-`testimonials` / `pages` rows.
+This is **idempotent** — re-run it anytime after editing that brand's local
+content (`content/<slug>/site.json`, `html/*.json`, optional `home.json`) or
+after re-syncing from its live WordPress source (`npm run content:sync -- --site <slug>`).
+It uploads every image in `content/<slug>/images/`, upserts the `sites` row,
+and replaces that site's `nav_items` / `service_categories` / `certifications` /
+`testimonials` / `redirects` / `media_assets` / `pages` / `locations` /
+`sub_services` rows. No other brand's rows are touched.
 
-## 5. Onboarding brand #2 (and beyond)
+Run all migrations in `supabase/migrations/` in order (0001, 0002, 0003) on a
+fresh project.
 
-1. Copy the `carolina-heating` app folder as a starting point (or, if the new
-   brand's WordPress site follows the same NearU theme, run
-   `npx create-next-app` + copy `src/` wholesale — the components are theme
-   code, not Carolina-Heating-specific).
-2. Build that brand's `content/site.json` + `content/html/*.json` (reuse
-   `scripts/extract-pages.mjs` against the new brand's live WordPress site).
-3. Set `SITE_SLUG` to the new brand's slug, run `npm run db:migrate`.
-4. Deploy as its own Vercel project with `SUPABASE_URL`,
-   `SUPABASE_SERVICE_ROLE_KEY`, `SITE_SLUG`, and `REVALIDATE_SECRET` set.
+## 5. Onboarding a new brand (same codebase, ~30 minutes)
 
-No other brand's data is touched — every query in `src/lib/db/*` filters by
-this site's row, and every migration script only writes rows for `SITE_SLUG`.
+There is ONE Next.js app for all brands. A brand is: a `content/<slug>/`
+folder (build-time inputs + staging for Supabase), a `sites` row (+ child
+rows), and a Vercel project whose only distinguishing config is env vars.
+
+```bash
+# 1. Skeleton: content/<slug>/site.json with at least
+#    { "source": { "origin": "https://<live-site>", "extraPages": ["/bookings"],
+#                  "locationSlugSuffix": "-<city-suffix>" } }
+# 2. Page list from the live sitemaps
+npm run content:pages -- --site <slug>
+# 3. Theme CSS + fonts (child theme colors/fonts differ per brand)
+npm run content:theme-css -- --site <slug>
+# 4. Mirror every page + every image (incl. srcset variants).
+#    Prints any live-site 301s -> add them to site.json "redirects".
+npm run content:sync -- --site <slug>
+# 5. Header/footer nav -> merge into site.json (nav.primary, footer.columns)
+node scripts/extract-nav.mjs --site <slug> --out /tmp/nav.json
+# 6. Fill in the rest of site.json by hand from the live homepage
+#    (business, theme.bodyClass, serviceCategories w/ icon, testimonials,
+#    licenseLines, headerTagline, logo + logoWidth/Height). See
+#    content/2nd-wind/site.json for a complete example. Drop the brand's
+#    favicon at content/<slug>/icon.png (or favicon.ico).
+# 7. Push to Supabase
+npm run db:migrate -- --site <slug>
+# 8. Verify locally, then create the Vercel project (same repo, same root
+#    directory) with SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
+#    SITE_SLUG=<slug>, SITE_DOMAIN, REVALIDATE_SECRET.
+SITE_SLUG=<slug> npm run build && npm start
+```
+
+No `home.json` is needed: new brands' homepages are mirrored like any other
+page (`page_type='mirrored'`). Only Carolina Heating has a hand-built React
+homepage.
 
 ## Editing content after go-live
 

@@ -30,12 +30,41 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+/**
+ * The homepage row (`pages` where path='/') comes in two flavors:
+ *
+ *  - page_type='mirrored': the live WordPress homepage was extracted like every
+ *    other page and we render its HTML verbatim. This is the DEFAULT for new
+ *    brands — zero per-brand React, exact fidelity, and it copes with the
+ *    small structural differences every brand's homepage has.
+ *
+ *  - page_type='home': a hand-built React homepage driven by the jsonb `data`
+ *    column (shape: HomePageData). Only Carolina Heating uses this — it was
+ *    built before the mirrored pipeline existed and gets next/image + shimmer
+ *    placeholders on its images. Kept because it's verified and working, not
+ *    because new brands should copy it.
+ */
 export default async function Home() {
   const [site, page] = await Promise.all([getSite(), getPage("/")]);
-  if (!page || !page.data) notFound();
+  if (!page) notFound();
+  const schema = buildPageSchema(site.business, { path: "/", title: page.title, description: page.description }, page.updated_at);
+
+  if (page.page_type !== "home") {
+    if (!page.html) notFound();
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        {page.inline_css && (
+          <style id="core-block-supports-inline-css" dangerouslySetInnerHTML={{ __html: page.inline_css }} />
+        )}
+        <main id="primary" className="site-main | container" dangerouslySetInnerHTML={{ __html: page.html }} />
+      </>
+    );
+  }
+
+  if (!page.data) notFound();
   const { hero, worryFree, promise, whoWeAre, ourCommunity, maintenanceFinancing } =
     page.data as HomePageData;
-  const schema = buildPageSchema(site.business, { path: "/", title: page.title, description: page.description }, page.updated_at);
 
   return (
     <>

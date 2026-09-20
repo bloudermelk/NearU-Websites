@@ -103,7 +103,10 @@ export const getSite = cache(async (): Promise<SiteData> => {
     shortTitle: c.short_title,
     summary: c.summary,
     image: mediaUrl(c.image_path),
+    icon: c.icon ?? null,
   }));
+
+  const theme = (site.theme ?? {}) as Partial<SiteData["theme"]>;
 
   const certifications: Certification[] = (certRows ?? []).map((c) => ({
     name: c.name,
@@ -124,6 +127,8 @@ export const getSite = cache(async (): Promise<SiteData> => {
       name: site.name,
       legalName: site.legal_name,
       tagline: site.tagline ?? "",
+      headerTagline: site.header_tagline ?? "",
+      licenseLines: Array.isArray(site.license_lines) ? site.license_lines : [],
       phone: site.phone ?? "",
       phoneHref: site.phone_href ?? "",
       email: site.email ?? "",
@@ -132,6 +137,8 @@ export const getSite = cache(async (): Promise<SiteData> => {
       locationLabel: site.location_label ?? "",
       mapUrl: site.map_url ?? "",
       logo: mediaUrl(site.logo_path),
+      logoWidth: site.logo_width ?? 3468,
+      logoHeight: site.logo_height ?? 2120,
       foundedYear: site.founded_year,
       yearsInBusiness: site.years_in_business,
       googleRating: Number(site.google_rating),
@@ -145,6 +152,10 @@ export const getSite = cache(async (): Promise<SiteData> => {
       tealiumSrc: site.tealium_src ?? undefined,
     },
     topBanner: { text: site.top_banner_text ?? "", href: site.top_banner_href ?? "" },
+    theme: {
+      bodyClass: theme.bodyClass ?? "",
+      preloadFonts: theme.preloadFonts ?? [],
+    },
     nav: { primary: buildPrimaryNav(primaryRows) },
     footer: { columns: buildFooterNav(footerRows) },
     serviceCategories,

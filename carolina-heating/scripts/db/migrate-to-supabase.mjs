@@ -1,32 +1,32 @@
 /**
- * One-time (and re-runnable) migration: pushes this site's local content
- * (content/site.json, content/pages/home.json + home-inline.css,
- * content/html/*.json) and all images in public/images/ into the shared
- * Supabase project — scoped to SITE_SLUG.
+ * One-time (and re-runnable) migration: pushes one brand's local content
+ * (content/<slug>/site.json, optional home.json + home-inline.css,
+ * html/*.json, images/**) into the shared Supabase project — scoped to that
+ * brand's `sites` row.
  *
  * Idempotent: re-running upserts the `sites` row and replaces all of this
  * site's rows in the other tables (safe to run again after editing local
  * content, or to re-sync after `node scripts/extract-pages.mjs`).
  *
  * Requires (env or .env.local): SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
- * SITE_SLUG (defaults to "carolina-heating").
+ * and the brand via `--site <slug>` or SITE_SLUG. SITE_DOMAIN is taken from
+ * site.json `business.domain` (falls back to the SITE_DOMAIN env var).
  *
  * Usage:
- *   node scripts/db/migrate-to-supabase.mjs                 # content + images
- *   node scripts/db/migrate-to-supabase.mjs --skip-images    # content only (fast re-runs)
+ *   node scripts/db/migrate-to-supabase.mjs --site <slug>                # content + images
+ *   node scripts/db/migrate-to-supabase.mjs --site <slug> --skip-images  # content only (fast re-runs)
  */
 import { createClient } from "@supabase/supabase-js";
-import { readFileSync, readdirSync, statSync } from "node:fs";
-import { extname, join, relative, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { extname, join, relative } from "node:path";
+import { brandDir, loadEnvLocal, loadSiteJson, resolveSiteSlug } from "../lib/env.mjs";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, "..", "..");
-const CONTENT_DIR = join(ROOT, "content");
-const PUBLIC_DIR = join(ROOT, "public");
+loadEnvLocal();
+const SITE_SLUG = resolveSiteSlug();
+const BRAND_DIR = brandDir(SITE_SLUG);
+const IMAGES_DIR = join(BRAND_DIR, "images");
 const BUCKET = "site-media";
 
-const SITE_SLUG = process.env.SITE_SLUG || "carolina-heating";
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const SKIP_IMAGES = process.argv.includes("--skip-images");
@@ -66,11 +66,16 @@ function walk(dir) {
  * actual upload — content-only re-runs still need correct URLs to rewrite
  * into page HTML/jsonb.
  */
+/** content/<slug>/images/2024/08/logo.png -> "/images/2024/08/logo.png" (the path used inside content). */
+function relImagePath(full) {
+  return "/images/" + relative(IMAGES_DIR, full).split("\\").join("/");
+}
+
 function buildImageMap(files) {
   const map = new Map();
   for (const full of files) {
-    const relPath = "/" + relative(PUBLIC_DIR, full).split("\\").join("/"); // "/images/2024/08/logo.png"
-    const storagePath = `${SITE_SLUG}${relPath}`; // "carolina-heating/images/2024/08/logo.png"
+    const relPath = relImagePath(full);
+    const storagePath = `${SITE_SLUG}${relPath}`; // "<slug>/images/2024/08/logo.png"
     const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(storagePath);
     map.set(relPath, pub.publicUrl);
   }
@@ -90,7 +95,7 @@ async function uploadImages(files, map) {
 
   let uploaded = 0;
   for (const full of files) {
-    const relPath = "/" + relative(PUBLIC_DIR, full).split("\\").join("/");
+    const relPath = relImagePath(full);
     const storagePath = `${SITE_SLUG}${relPath}`;
     if (!map.has(relPath)) continue;
     const contentType = CONTENT_TYPES[extname(full).toLowerCase()] ?? "application/octet-stream";
@@ -141,10 +146,9 @@ function lookupImage(localPath, map) {
 async function replaceMediaAssets(siteId, files) {
   await supabase.from("media_assets").delete().eq("site_id", siteId);
   const rows = files.map((full) => {
-    const relPath = "/" + relative(PUBLIC_DIR, full).split("\\").join("/");
     return {
       site_id: siteId,
-      storage_path: `${SITE_SLUG}${relPath}`,
+      storage_path: `${SITE_SLUG}${relImagePath(full)}`,
       original_url: null,
       alt: null,
     };
@@ -180,16 +184,22 @@ async function replaceRedirects(siteId, siteJson) {
  * why this is intentionally a thin index rather than full structured
  * extraction). Cross-linking/sitemap use only; not used to render the pages.
  */
-async function replaceLocationsAndSubServices(siteId, categoryRows, imageMap) {
-  const dir = join(CONTENT_DIR, "html");
+async function replaceLocationsAndSubServices(siteId, siteJson, categoryRows, imageMap) {
+  const dir = join(BRAND_DIR, "html");
   const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
   const pages = files.map((f) => JSON.parse(readFileSync(join(dir, f), "utf-8")));
 
-  // ---------- locations: /<city-slug>-hvac-plumbing-electrical-generators ----------
+  // ---------- locations ----------
+  // Each brand's location pages follow a slug convention like
+  // "/<city>-hvac-plumbing-electrical-generators" (Carolina Heating) or
+  // "/<city>-sc-hvac-plumbing-generator" (2nd Wind). site.json declares the
+  // suffix so we can both match the pages and recover the city name.
   await supabase.from("locations").delete().eq("site_id", siteId);
-  const locationPages = pages.filter((p) => /^\/[a-z0-9-]+-hvac-plumbing-electrical-generators$/.test(p.path));
+  const suffix = siteJson.source?.locationSlugSuffix;
+  const locationPages = suffix ? pages.filter((p) => /^\/[a-z0-9-]+$/.test(p.path) && p.path.endsWith(suffix)) : [];
+  if (!suffix) console.log("  (no source.locationSlugSuffix in site.json — skipping locations index)");
   const locationRows = locationPages.map((p, i) => {
-    const citySlugPart = p.path.replace(/^\//, "").replace(/-hvac-plumbing-electrical-generators$/, "");
+    const citySlugPart = p.path.replace(/^\//, "").slice(0, -suffix.length);
     const cityName = citySlugPart
       .split("-")
       .map((w) => w[0].toUpperCase() + w.slice(1))
@@ -245,10 +255,14 @@ async function upsertSite(siteJson, imageMap) {
   const b = siteJson.business;
   const row = {
     slug: SITE_SLUG,
-    domain: process.env.SITE_DOMAIN || null,
+    domain: b.domain || process.env.SITE_DOMAIN || null,
     name: b.name,
     legal_name: b.legalName,
     tagline: b.tagline,
+    header_tagline: b.headerTagline ?? null,
+    license_lines: b.licenseLines ?? [],
+    theme: siteJson.theme ?? {},
+    source_origin: siteJson.source?.origin ?? null,
     phone: b.phone,
     phone_href: b.phoneHref,
     email: b.email,
@@ -257,6 +271,8 @@ async function upsertSite(siteJson, imageMap) {
     location_label: b.locationLabel,
     map_url: b.mapUrl,
     logo_path: lookupImage(b.logo, imageMap),
+    logo_width: b.logoWidth ?? null,
+    logo_height: b.logoHeight ?? null,
     founded_year: b.foundedYear,
     years_in_business: b.yearsInBusiness,
     google_rating: b.googleRating,
@@ -379,6 +395,7 @@ async function replaceServiceCategories(siteId, siteJson, imageMap) {
     short_title: c.shortTitle,
     summary: c.summary,
     image_path: lookupImage(c.image, imageMap),
+    icon: c.icon ?? null, // theme icon-sprite id (e.g. "heating"), used by ServicesList
     sort_order: i,
   }));
   let inserted = [];
@@ -424,9 +441,23 @@ async function replaceTestimonials(siteId, siteJson) {
   console.log(`Inserted ${rows.length} testimonials.`);
 }
 
-async function upsertHomePage(siteId, imageMap) {
-  const homeJson = JSON.parse(readFileSync(join(CONTENT_DIR, "pages", "home.json"), "utf-8"));
-  const inlineCss = readFileSync(join(CONTENT_DIR, "pages", "home-inline.css"), "utf-8");
+/**
+ * Two kinds of homepage:
+ *  - hand-built (page_type='home'): content/<slug>/home.json + home-inline.css
+ *    drive the React blocks in src/app/page.tsx (Carolina Heating).
+ *  - mirrored (page_type='mirrored'): the live homepage was extracted like any
+ *    other page into content/<slug>/html/index.json, and page.tsx renders its
+ *    HTML. This is the default for new brands — no per-brand React needed.
+ * If home.json exists it wins; otherwise upsertMirroredPages handles "/".
+ */
+async function upsertHomePage(siteId, siteJson, imageMap) {
+  const homeFile = join(BRAND_DIR, "home.json");
+  if (!existsSync(homeFile)) {
+    console.log("No home.json — homepage will be the mirrored html/index.json (page_type=mirrored).");
+    return false;
+  }
+  const homeJson = JSON.parse(readFileSync(homeFile, "utf-8"));
+  const inlineCss = readFileSync(join(BRAND_DIR, "home-inline.css"), "utf-8");
   const data = rewriteDeep(homeJson, imageMap);
   const { metaTitle, metaDescription, ...rest } = data;
 
@@ -440,21 +471,24 @@ async function upsertHomePage(siteId, imageMap) {
     inline_css: inlineCss,
     html: null,
     data: rest,
-    source_url: "https://carolinaheating.com/",
+    source_url: (siteJson.source?.origin ?? "") + "/",
     extracted_at: new Date().toISOString(),
   };
   const { error } = await supabase.from("pages").upsert(row, { onConflict: "site_id,path" });
   if (error) throw new Error(`upsert home page: ${error.message}`);
-  console.log("Upserted home page.");
+  console.log("Upserted hand-built home page (page_type=home).");
+  return true;
 }
 
-async function upsertMirroredPages(siteId, imageMap) {
-  const dir = join(CONTENT_DIR, "html");
+async function upsertMirroredPages(siteId, imageMap, { skipHome }) {
+  const dir = join(BRAND_DIR, "html");
   const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
-  console.log(`Upserting ${files.length} mirrored pages...`);
+  const pages = files
+    .map((f) => JSON.parse(readFileSync(join(dir, f), "utf-8")))
+    .filter((json) => !(skipHome && json.path === "/"));
+  console.log(`Upserting ${pages.length} mirrored pages...`);
 
-  const rows = files.map((f) => {
-    const json = JSON.parse(readFileSync(join(dir, f), "utf-8"));
+  const rows = pages.map((json) => {
     const isBlogPost =
       json.path.startsWith("/about-us/blog/") && json.path !== "/about-us/blog";
     return {
@@ -484,10 +518,9 @@ async function upsertMirroredPages(siteId, imageMap) {
 }
 
 async function main() {
-  console.log(`Migrating "${SITE_SLUG}" content into Supabase (${SUPABASE_URL})...\n`);
+  console.log(`Migrating "${SITE_SLUG}" (content/${SITE_SLUG}/) into Supabase (${SUPABASE_URL})...\n`);
 
-  const imagesDir = join(PUBLIC_DIR, "images");
-  const files = walk(imagesDir);
+  const files = existsSync(IMAGES_DIR) ? walk(IMAGES_DIR) : [];
   const imageMap = buildImageMap(files);
   if (SKIP_IMAGES) {
     console.log(`--skip-images passed: reusing computed Storage URLs for ${files.length} images without re-uploading.\n`);
@@ -495,7 +528,7 @@ async function main() {
     await uploadImages(files, imageMap);
   }
 
-  const siteJson = JSON.parse(readFileSync(join(CONTENT_DIR, "site.json"), "utf-8"));
+  const siteJson = loadSiteJson(SITE_SLUG);
   const siteId = await upsertSite(siteJson, imageMap);
 
   await replaceNavItems(siteId, siteJson);
@@ -504,9 +537,9 @@ async function main() {
   await replaceTestimonials(siteId, siteJson);
   await replaceRedirects(siteId, siteJson);
   await replaceMediaAssets(siteId, files);
-  await upsertHomePage(siteId, imageMap);
-  await upsertMirroredPages(siteId, imageMap);
-  await replaceLocationsAndSubServices(siteId, categoryRows, imageMap);
+  const hasHandBuiltHome = await upsertHomePage(siteId, siteJson, imageMap);
+  await upsertMirroredPages(siteId, imageMap, { skipHome: hasHandBuiltHome });
+  await replaceLocationsAndSubServices(siteId, siteJson, categoryRows, imageMap);
 
   console.log("\nDone.");
 }

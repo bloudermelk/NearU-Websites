@@ -1,17 +1,12 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
-import type { IconName } from "@/lib/iconSprite";
+import { ICON_NAMES, type IconName } from "@/lib/iconSprite";
 import { getSite } from "@/lib/db/site";
 
-const CATEGORY_ICON: Record<string, IconName> = {
-  "greenville-sc-heating": "heating",
-  "greenville-sc-cooling": "cooling",
-  "greenville-sc-indoor-air-quality": "indoor-air-quality",
-  "greenville-sc-plumbing": "plumbing",
-  "greenville-sc-drains": "drains",
-  "greenville-sc-electrical": "electrical",
-  "greenville-sc-generators": "generator",
-};
+/** `service_categories.icon` is free text in the DB; only render ids the sprite actually has. */
+function iconFor(icon: string | null): IconName {
+  return icon && (ICON_NAMES as readonly string[]).includes(icon) ? (icon as IconName) : "hvac";
+}
 
 /**
  * The "Our Services" icon-card grid (#our-services on the homepage).
@@ -46,7 +41,7 @@ export async function ServicesList({
                   data-padding="3"
                   data-display="block"
                 >
-                  <Icon name={CATEGORY_ICON[cat.slug] ?? "hvac"} />
+                  <Icon name={iconFor(cat.icon)} />
                 </div>
                 <h2 className="wp-block-heading my-2">{cat.title}</h2>
                 <Link

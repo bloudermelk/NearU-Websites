@@ -40,3 +40,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# per-brand build assets materialized by scripts/prebuild.mjs from
+# content/<SITE_SLUG>/ — derived, never edit or commit these directly
+/src/app/theme.css
+/src/app/favicon.ico
+/src/app/icon.png
+/public/fonts/
+
+# local 
+ext start logs from verification runs
+/next-start*.log

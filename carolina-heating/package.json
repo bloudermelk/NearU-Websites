@@ -1,14 +1,17 @@
 {
-  "name": "carolina-heating",
-  "version": "0.1.0",
+  "name": "nearu-site",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/prebuild.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/prebuild.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:migrate": "node --env-file=.env.local scripts/db/migrate-to-supabase.mjs",
-    "db:migrate:content-only": "node --env-file=.env.local scripts/db/migrate-to-supabase.mjs --skip-images",
+    "db:migrate": "node scripts/db/migrate-to-supabase.mjs",
+    "db:migrate:content-only": "node scripts/db/migrate-to-supabase.mjs --skip-images",
+    "content:pages": "node scripts/list-pages.mjs",
     "content:sync": "node scripts/extract-pages.mjs",
     "content:theme-css": "node scripts/build-theme-css.mjs"
   },

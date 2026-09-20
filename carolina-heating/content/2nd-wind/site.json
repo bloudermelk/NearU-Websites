@@ -1,0 +1,483 @@
+{
+  "source": {
+    "origin": "https://2ndwindhvac.com",
+    "imageHosts": [],
+    "urlRewrites": [],
+    "extraPages": [
+      "/bookings"
+    ],
+    "locationSlugSuffix": "-sc-hvac-plumbing-generator"
+  },
+  "theme": {
+    "bodyClass": "wp-child-theme-nru-2nd-wind",
+    "preloadFonts": [
+      "Roboto-Regular.woff2",
+      "Roboto-Bold.woff2",
+      "RobotoCondensed-Medium.woff2"
+    ]
+  },
+  "business": {
+    "domain": "2ndwindhvac.com",
+    "name": "2nd Wind Heating & Air Conditioning",
+    "legalName": "2nd Wind HVAC",
+    "tagline": "HVAC, Plumbing, and Generators in Columbia, SC",
+    "headerTagline": "Serving the communities in the Columbia, SC area since 1985",
+    "licenseLines": [
+      "License #M-116444"
+    ],
+    "phone": "(803) 392-1513",
+    "phoneHref": "tel:+18033921513",
+    "email": "service@2ndwindhvac.com",
+    "address": {
+      "street": "6130 Shakespeare Road",
+      "city": "Columbia",
+      "state": "SC",
+      "zip": "29223"
+    },
+    "areaServed": "Columbia, SC and the Midlands",
+    "locationLabel": "Columbia, SC",
+    "mapUrl": "https://www.google.com/maps/place/2nd+Wind+Heating+%26+Air+Conditioning/@34.058626,-80.9744505,15z/data=!4m6!3m5!1s0x88f8af6f143fcc7b:0xe99bacafa46810b2!8m2!3d34.058626!4d-80.9744505!16s%2Fg%2F1v2pr1kz?entry=ttu",
+    "logo": "/images/2025/05/cropped-2nd-Wind_Logo-NearU-1-1.png",
+    "logoWidth": 3189,
+    "logoHeight": 1279,
+    "foundedYear": 1985,
+    "yearsInBusiness": 40,
+    "googleRating": 5,
+    "googleReviewCount": 18,
+    "social": {
+      "facebook": "https://www.facebook.com/2ndwindhvac/",
+      "instagram": "https://www.instagram.com/2ndwindhvac/",
+      "linkedin": "https://www.linkedin.com/company/2nd-wind",
+      "youtube": ""
+    },
+    "scheduleUrl": "/bookings",
+    "youtubeVideoId": ""
+  },
+  "topBanner": {
+    "text": "",
+    "href": ""
+  },
+  "nav": {
+    "primary": [
+      {
+        "label": "Special Offers",
+        "href": "/special-coupon-offers-and-promotions"
+      },
+      {
+        "label": "Services",
+        "groups": [
+          {
+            "label": "Heating",
+            "items": [
+              {
+                "label": "Furnaces",
+                "href": "/services/heating-columbia-sc/furnaces"
+              },
+              {
+                "label": "Heat Pumps",
+                "href": "/services/heating-columbia-sc/heat-pumps"
+              },
+              {
+                "label": "Smart Thermostat Installation",
+                "href": "/services/heating-columbia-sc/smart-thermostats"
+              }
+            ]
+          },
+          {
+            "label": "Cooling",
+            "items": [
+              {
+                "label": "Air Conditioning",
+                "href": "/services/cooling-columbia-sc/air-conditioning"
+              },
+              {
+                "label": "Dual Fuel Hybrid Systems",
+                "href": "/services/heating-columbia-sc/dual-fuel-hybrid-systems"
+              },
+              {
+                "label": "Gas Packs",
+                "href": "/services/cooling-columbia-sc/gas-packs"
+              },
+              {
+                "label": "Ductless Mini Splits",
+                "href": "/services/cooling-columbia-sc/mini-split"
+              },
+              {
+                "label": "Heat Pumps",
+                "href": "/services/heating-columbia-sc/heat-pumps"
+              },
+              {
+                "label": "Smart Thermostat Installation",
+                "href": "/services/heating-columbia-sc/smart-thermostats"
+              }
+            ]
+          },
+          {
+            "label": "Indoor Air Quality",
+            "items": [
+              {
+                "label": "Air Duct Services",
+                "href": "/services/indoor-air-quality-columbia-sc/air-ducts"
+              },
+              {
+                "label": "Air Scrubbers",
+                "href": "/services/indoor-air-quality-columbia-sc/air-scrubbers"
+              },
+              {
+                "label": "Dehumidifiers",
+                "href": "/services/indoor-air-quality-columbia-sc/dehumidifiers"
+              },
+              {
+                "label": "Humidifiers",
+                "href": "/services/indoor-air-quality-columbia-sc/humidifiers"
+              },
+              {
+                "label": "Dryer Vent Cleaning",
+                "href": "/services/indoor-air-quality-columbia-sc/dryer-vent-cleaning"
+              }
+            ]
+          },
+          {
+            "label": "Drains",
+            "items": [
+              {
+                "label": "Drain Cleaning",
+                "href": "/services/drains-columbia-sc/drain-cleaning"
+              },
+              {
+                "label": "Sewer Line Services",
+                "href": "/services/drains-columbia-sc/sewer-lines"
+              }
+            ]
+          },
+          {
+            "label": "Generators",
+            "items": [
+              {
+                "label": "Home Generators",
+                "href": "/services/home-generators-columbia-sc/home-generators"
+              }
+            ]
+          },
+          {
+            "label": "Plumbing",
+            "items": [
+              {
+                "label": "Pipes & General Plumbing",
+                "href": "/services/plumbing-columbia-sc/pipes-and-general-plumbing"
+              },
+              {
+                "label": "Frozen and Burst Pipe Repair",
+                "href": "/services/plumbing-columbia-sc/frozen-burst-pipe-repair"
+              },
+              {
+                "label": "Sump Pumps",
+                "href": "/services/plumbing-columbia-sc/sump-pumps"
+              },
+              {
+                "label": "Gas Lines",
+                "href": "/services/plumbing-columbia-sc/gas-lines"
+              },
+              {
+                "label": "Repiping",
+                "href": "/services/plumbing-columbia-sc/repiping"
+              },
+              {
+                "label": "Water Leak Detection",
+                "href": "/services/plumbing-columbia-sc/leak-detection"
+              },
+              {
+                "label": "Kitchen and Bathroom Plumbing",
+                "href": "/services/plumbing-columbia-sc/kitchen-bathroom"
+              },
+              {
+                "label": "Water Filtration",
+                "href": "/services/plumbing-columbia-sc/water-filtration"
+              },
+              {
+                "label": "Water Softening",
+                "href": "/services/plumbing-columbia-sc/water-softeners"
+              },
+              {
+                "label": "Water Pressure Assessments",
+                "href": "/services/plumbing-columbia-sc/water-pressure-assessments"
+              }
+            ]
+          },
+          {
+            "label": "Water Heaters",
+            "items": [
+              {
+                "label": "Water Heaters",
+                "href": "/services/plumbing-columbia-sc/water-heaters"
+              },
+              {
+                "label": "Tankless Water Heaters",
+                "href": "/services/plumbing-columbia-sc/tankless-water-heater"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Commercial",
+        "href": "/commercial"
+      },
+      {
+        "label": "Maintenance",
+        "href": "/maintenance"
+      },
+      {
+        "label": "Financing",
+        "href": "/financing"
+      },
+      {
+        "label": "Service Areas",
+        "groups": [
+          {
+            "label": "Columbia & Lexington County",
+            "items": [
+              {
+                "label": "Cayce",
+                "href": "/cayce-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Chapin",
+                "href": "/chapin-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Gaston",
+                "href": "/gaston-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Hopkins",
+                "href": "/hopkins-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Irmo",
+                "href": "/irmo-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Lexington",
+                "href": "/lexington-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Pelion",
+                "href": "/pelion-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "West Columbia",
+                "href": "/west-columbia-sc-hvac-plumbing-generator"
+              }
+            ]
+          },
+          {
+            "label": "Kershaw County",
+            "items": [
+              {
+                "label": "Camden",
+                "href": "/camden-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Elgin",
+                "href": "/elgin-sc-hvac-plumbing-generator"
+              },
+              {
+                "label": "Lugoff",
+                "href": "/lugoff-sc-hvac-plumbing-generator"
+              }
+            ]
+          },
+          {
+            "label": "Sumter County",
+            "items": [
+              {
+                "label": "Sumter",
+                "href": "/sumter-sc-hvac-plumbing-generator"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "About Us",
+        "groups": [
+          {
+            "items": [
+              {
+                "label": "About Us",
+                "href": "/about-us"
+              },
+              {
+                "label": "Blog",
+                "href": "/about-us/blog"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "columns": [
+      [
+        {
+          "label": "Heating Services",
+          "href": "/services/heating-columbia-sc"
+        },
+        {
+          "label": "Cooling Services",
+          "href": "/services/cooling-columbia-sc"
+        },
+        {
+          "label": "Indoor Air Quality Services",
+          "href": "/services/indoor-air-quality-columbia-sc"
+        },
+        {
+          "label": "Plumbing Services",
+          "href": "/services/plumbing-columbia-sc"
+        },
+        {
+          "label": "Drain Services",
+          "href": "/services/drains-columbia-sc"
+        },
+        {
+          "label": "Generator Services",
+          "href": "/services/home-generators-columbia-sc"
+        },
+        {
+          "label": "Commercial",
+          "href": "/commercial"
+        }
+      ],
+      [
+        {
+          "label": "Maintenance",
+          "href": "/maintenance"
+        },
+        {
+          "label": "Financing",
+          "href": "/financing"
+        },
+        {
+          "label": "About Us",
+          "href": "/about-us"
+        },
+        {
+          "label": "Careers",
+          "href": "https://jobs.dayforcehcm.com/en-US/nearu/2ndwind"
+        }
+      ]
+    ]
+  },
+  "serviceCategories": [
+    {
+      "slug": "heating-columbia-sc",
+      "title": "Heating Services in Columbia, SC",
+      "shortTitle": "Heating",
+      "summary": "Furnaces, heat pumps, dual fuel systems, and smart thermostat installation and repair.",
+      "image": "/images/2024/08/2nd-Wind_Logo-NearU-1-1.png",
+      "icon": "heating"
+    },
+    {
+      "slug": "cooling-columbia-sc",
+      "title": "Cooling Services in Columbia, SC",
+      "shortTitle": "Cooling",
+      "summary": "AC repair and installation, gas packs, and ductless mini splits.",
+      "image": "/images/2024/08/2nd-Wind_Logo-NearU-1-1.png",
+      "icon": "cooling"
+    },
+    {
+      "slug": "indoor-air-quality-columbia-sc",
+      "title": "Indoor Air Quality Services in Columbia, SC",
+      "shortTitle": "Indoor Air Quality",
+      "summary": "Air ducts, air scrubbers, dehumidifiers, humidifiers, and dryer vent cleaning.",
+      "image": "/images/2024/08/2nd-Wind_Logo-NearU-1-1.png",
+      "icon": "indoor-air-quality"
+    },
+    {
+      "slug": "plumbing-columbia-sc",
+      "title": "Plumbing Services in Columbia, SC",
+      "shortTitle": "Plumbing",
+      "summary": "Water heaters, leaks, repiping, fixtures, gas lines, and water treatment.",
+      "image": "/images/2024/08/2nd-Wind_Logo-NearU-1-1.png",
+      "icon": "plumbing"
+    },
+    {
+      "slug": "drains-columbia-sc",
+      "title": "Drain Services in Columbia, SC",
+      "shortTitle": "Drains",
+      "summary": "Drain cleaning, camera inspection, and sewer line services.",
+      "image": "/images/2024/08/2nd-Wind_Logo-NearU-1-1.png",
+      "icon": "drains"
+    },
+    {
+      "slug": "home-generators-columbia-sc",
+      "title": "Generator Services in Columbia, SC",
+      "shortTitle": "Generators",
+      "summary": "Standby generator selection, installation, and maintenance.",
+      "image": "/images/2024/08/2nd-Wind_Logo-NearU-1-1.png",
+      "icon": "generator"
+    }
+  ],
+  "certifications": [],
+  "testimonials": [
+    {
+      "author": "Rick Sheider",
+      "rating": 5,
+      "body": "Arrived on time, told me what service was to be performed, and went straight to work. Answered my questions as he worked and kept me inform of how much longer until complete. Excellent experience."
+    },
+    {
+      "author": "Robert Lcsd",
+      "rating": 5,
+      "body": "Been a customer for 20 plus years and have always had great service. Everyone I’ve dealt with either on the phone or in person has been very helpful and courteous. Keep up the great work."
+    },
+    {
+      "author": "Outward Hounds",
+      "rating": 5,
+      "body": "When a tree limb fell on our HVAC unit, we called 2nd Wind and they were here within the hour. Unfortunately, the unit could not be fixed. Our technician got on the phone and found a replacement unit at the best possible price. He also asked if we needed a window unit to help since they wouldn’t be able to get the replacement done until Monday. He was very professional and very helpful."
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/careers",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/lake-murray-shores-sc-hvac-plumbing-generator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pontiac-sc-hvac-plumbing-generator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/red-bank-sc-hvac-plumbing-generator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/shaw-air-force-base-sc-hvac-plumbing-generator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/snug-harbor-sc-hvac-plumbing-generator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/white-rock-sc-hvac-plumbing-generator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/yacht-cove-sc-hvac-plumbing-generator",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

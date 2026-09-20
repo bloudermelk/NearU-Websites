@@ -1,0 +1,10 @@
+{
+  "path": "/schedule-request-confirmation",
+  "sourceUrl": "https://carolinaheating.com/schedule-request-confirmation/",
+  "title": "Appointment Request Confirmed - Carolina Heating Service Inc.",
+  "description": "",
+  "ogImage": "/images/2024/08/Carolina-Heating_Logo-NearU-1-1.png",
+  "extractedAt": "2026-09-20T15:49:33.336Z",
+  "inlineCss": ".wp-elements-1 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--black);}\n/*# sourceURL=core-block-supports-inline-css */",
+  "html": "<article id=\"post-2714\" class=\"container post-2714 page type-page status-publish hentry\">\n\n\t<div class=\"entry-content | container\">\n\n</p>\n\n<div class=\"wp-block-group flow py-5 has-global-padding is-layout-constrained wp-block-group-is-layout-constrained\">\n<h2 class=\"wp-block-heading has-secondary-color has-text-color has-x-large-font-size\">Scheduling Failed</h2>\n\n<p class=\"wp-block-paragraph\">An error occurred while attempting to schedule your appointment, or you landed on this page without submitting the form.</p>\n\n<a href=\"\" data-cta-gap=\"md\" data-cta-type=\"solid\" data-cta-content=\"mixed\" data-cta-level=\"primary\" data-cta-minwidth=\"true\" class=\"cta\">\n    <svg class=\"icon cta-icon\" width=\"16\" height=\"16\" aria-hidden=\"true\"><use xlink:href=\"#icon-event\" /></svg><span >Go to Scheduling</span>\n        <svg class=\"icon cta-icon\" width=\"16\" height=\"16\" aria-hidden=\"true\"><use xlink:href=\"#icon-chevronright\" /></svg>\n</a></div>\n\n<p>\n\t</div>\n\t</article><!-- #post-2714 -->"
+}

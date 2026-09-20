@@ -61,13 +61,13 @@ export function Header({ site }: { site: SiteData }) {
           <Link href="/" className="custom-logo-link" rel="home">
             <Image
               priority
-              width={3468}
-              height={2120}
+              width={business.logoWidth}
+              height={business.logoHeight}
               src={business.logo}
               className="custom-logo"
               alt={`${business.name} Logo`}
               placeholder="blur"
-              blurDataURL={shimmerDataUrl(3468, 2120)}
+              blurDataURL={shimmerDataUrl(business.logoWidth, business.logoHeight)}
             />
           </Link>
           <p className="site-title">
@@ -75,9 +75,7 @@ export function Header({ site }: { site: SiteData }) {
               {business.legalName}
             </Link>
           </p>
-          <p className="site-description">
-            Greenville&rsquo;s Trusted HVAC &amp; Plumbing Services Since {business.foundedYear}
-          </p>
+          {business.headerTagline && <p className="site-description">{business.headerTagline}</p>}
         </div>
 
         <div className="site-header-strip">

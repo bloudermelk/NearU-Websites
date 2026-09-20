@@ -4,25 +4,20 @@ import { Icon } from "./Icon";
 import { getSite } from "@/lib/db/site";
 import { shimmerDataUrl } from "@/lib/imagePlaceholder";
 
-const LICENSE_LINES = [
-  "Com/Indust/Equip Repair/Maint 2023-56064",
-  "HVAC 2023-410",
-  "Electrical 2023-16672",
-];
-
 export async function Footer() {
   const { business, footer } = await getSite();
   const year = new Date().getFullYear();
+  const licenseLines = business.licenseLines;
 
   const logo = (
     <Image
-      width={3468}
-      height={2120}
+      width={business.logoWidth}
+      height={business.logoHeight}
       src={business.logo}
       className="custom-logo"
       alt={`${business.name} Logo`}
       placeholder="blur"
-      blurDataURL={shimmerDataUrl(3468, 2120)}
+      blurDataURL={shimmerDataUrl(business.logoWidth, business.logoHeight)}
     />
   );
 
@@ -33,14 +28,16 @@ export async function Footer() {
           <Link href="/" className="custom-logo-link" rel="home">
             {logo}
           </Link>
-          <p className="site-footer-licence">
-            {LICENSE_LINES.map((line, i) => (
-              <span key={line}>
-                {line}
-                {i < LICENSE_LINES.length - 1 && <br />}
-              </span>
-            ))}
-          </p>
+          {licenseLines.length > 0 && (
+            <p className="site-footer-licence">
+              {licenseLines.map((line, i) => (
+                <span key={line}>
+                  {line}
+                  {i < licenseLines.length - 1 && <br />}
+                </span>
+              ))}
+            </p>
+          )}
         </div>
 
         <div className="site-footer-nav">
@@ -88,26 +85,34 @@ export async function Footer() {
             </p>
           </div>
           <ul className="footer-social-list | flex-row flex-gap">
-            <li>
-              <a href={business.social.facebook} target="_blank" rel="noreferrer" title="Facebook">
-                <Icon name="facebook" /> <span className="visually-hidden">Find us on Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href={business.social.instagram} target="_blank" rel="noreferrer" title="Instagram">
-                <Icon name="instagram" /> <span className="visually-hidden">Find us on Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a href={business.social.linkedin} target="_blank" rel="noreferrer" title="LinkedIn">
-                <Icon name="linkedin" /> <span className="visually-hidden">Find us on LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a href={business.social.youtube} target="_blank" rel="noreferrer" title="Social Media">
-                <Icon name="web" /> <span className="visually-hidden">Find us on Social Media</span>
-              </a>
-            </li>
+            {business.social.facebook && (
+              <li>
+                <a href={business.social.facebook} target="_blank" rel="noreferrer" title="Facebook">
+                  <Icon name="facebook" /> <span className="visually-hidden">Find us on Facebook</span>
+                </a>
+              </li>
+            )}
+            {business.social.instagram && (
+              <li>
+                <a href={business.social.instagram} target="_blank" rel="noreferrer" title="Instagram">
+                  <Icon name="instagram" /> <span className="visually-hidden">Find us on Instagram</span>
+                </a>
+              </li>
+            )}
+            {business.social.linkedin && (
+              <li>
+                <a href={business.social.linkedin} target="_blank" rel="noreferrer" title="LinkedIn">
+                  <Icon name="linkedin" /> <span className="visually-hidden">Find us on LinkedIn</span>
+                </a>
+              </li>
+            )}
+            {business.social.youtube && (
+              <li>
+                <a href={business.social.youtube} target="_blank" rel="noreferrer" title="Social Media">
+                  <Icon name="web" /> <span className="visually-hidden">Find us on Social Media</span>
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </div>
@@ -132,7 +137,9 @@ export async function Footer() {
           <Link className="inline-footer-menu-item" href="/sitemap">
             Sitemap
           </Link>{" "}
-          <span className="site-footer-copyright__p__license">| {LICENSE_LINES.join(" ")}</span>
+          {licenseLines.length > 0 && (
+            <span className="site-footer-copyright__p__license">| {licenseLines.join(" ")}</span>
+          )}
         </div>
       </div>
     </footer>

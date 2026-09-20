@@ -102,14 +102,23 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   };
 
   const { schedulerId, schedulerApiKey, gtmId, tealiumSrc } = business;
+  const bodyClass = [
+    "wp-singular page-template-default page wp-custom-logo wp-theme-nearu-base",
+    site.theme.bodyClass,
+    "no-sidebar",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <html className="js" dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
       <head>
-        {/* Self-hosted theme fonts (declared via @font-face in theme.css). Preload the two used above the fold. */}
-        <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/RobotoCondensed-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* Self-hosted theme fonts (declared via @font-face in theme.css, materialized
+            into /public/fonts by scripts/prebuild.mjs). Preload the above-the-fold
+            ones this brand's `sites.theme.preloadFonts` lists. */}
+        {site.theme.preloadFonts.map((f) => (
+          <link key={f} rel="preload" href={`/fonts/${f}`} as="font" type="font/woff2" crossOrigin="anonymous" />
+        ))}
         {/* Most page content (the 106 mirrored WordPress pages) embeds raw
             <img src="https://<project>.supabase.co/..."> tags that the browser
             fetches directly (they're not next/image-optimized — see AGENTS.md).
@@ -131,10 +140,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           />
         )}
       </head>
-      <body
-        className="wp-singular page-template-default page wp-custom-logo wp-theme-nearu-base wp-child-theme-chs no-sidebar"
-        data-scheduler-id={schedulerId || undefined}
-      >
+      <body className={bodyClass} data-scheduler-id={schedulerId || undefined}>
         {gtmId && (
           <noscript>
             <iframe

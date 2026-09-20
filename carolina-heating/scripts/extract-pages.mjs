@@ -1,35 +1,50 @@
 /**
- * Extracts page content from the live carolinaheating.com WordPress site and
- * writes it into content/html/<slug>.json for the Next.js catch-all route to
- * render. Also downloads every referenced image into public/images/.
+ * Extracts page content from a brand's live WordPress site and writes it
+ * into content/<slug>/html/<page>.json for the Next.js catch-all route (and,
+ * for brands whose homepage is mirrored rather than hand-built, "/" too).
+ * Also downloads every referenced image — including every `srcset`
+ * responsive variant WordPress generated — into content/<slug>/images/.
  *
  * Usage:
- *   node scripts/extract-pages.mjs              # all URLs in scripts/pages.txt
- *   node scripts/extract-pages.mjs <url> [...]  # specific URLs
+ *   node scripts/extract-pages.mjs --site <slug>              # all URLs in content/<slug>/pages.txt
+ *   node scripts/extract-pages.mjs --site <slug> <url> [...]  # specific URLs
+ *
+ * Reads content/<slug>/site.json:
+ *   source.origin      https://<live-site>            (required)
+ *   source.imageHosts  extra hosts whose /wp-content/uploads/ we mirror
+ *                      (the origin host and its *.mojopsg.xyz staging alias
+ *                      are always included; sister-brand hosts go here)
+ *   business.scheduleUrl  where ServiceTitan "Schedule Now" buttons should
+ *                      link when the widget isn't configured (default /bookings)
  *
  * Each output JSON contains:
- *   { path, title, description, ogImage, html, extractedAt }
+ *   { path, sourceUrl, title, description, ogImage, extractedAt, inlineCss, html }
  * where `html` is the inner content of the original <main> element with
  * WordPress/WP-Rocket cruft removed and all URLs rewritten to local paths.
- *
- * The homepage is NOT extracted here; it is hand-built in src/app/page.tsx.
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { brandDir, loadSiteJson, resolveSiteSlug } from "./lib/env.mjs";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, "..");
-const OUT_DIR = join(ROOT, "content", "html");
+const SLUG = resolveSiteSlug();
+const SITE = loadSiteJson(SLUG);
+const ORIGIN = SITE.source?.origin?.replace(/\/$/, "");
+if (!ORIGIN) {
+  console.error(`content/${SLUG}/site.json needs "source": { "origin": "https://..." }`);
+  process.exit(1);
+}
+const ORIGIN_HOST = new URL(ORIGIN).hostname;
+const BRAND_DIR = brandDir(SLUG);
+const OUT_DIR = join(BRAND_DIR, "html");
+const IMAGES_DIR = join(BRAND_DIR, "images");
+const SCHEDULE_FALLBACK = SITE.business?.scheduleUrl || "/bookings";
 
-// Hosts whose /wp-content/uploads/... images we mirror locally.
-const IMAGE_HOSTS = [
-  "carolinaheating.com",
-  "carolinaheating.mojopsg.xyz",
-  "energysaversair.com",
-  "happyhomeheatingandcooling.com",
-  "premiumacservice.mojopsg.xyz",
-];
+// Hosts whose /wp-content/uploads/... images we mirror. The brand's own host
+// (and NearU's *.mojopsg.xyz staging alias for it, which WP sometimes leaks
+// into src attributes) are "primary" and map to /images/...; any other host
+// (shared sister-brand assets) maps to /images/ext/<host>/... to avoid clashes.
+const PRIMARY_HOSTS = new Set([ORIGIN_HOST, `${ORIGIN_HOST.split(".")[0]}.mojopsg.xyz`]);
+const IMAGE_HOSTS = new Set([...PRIMARY_HOSTS, ...(SITE.source?.imageHosts ?? [])]);
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
@@ -56,18 +71,17 @@ function pathFromUrl(url) {
  */
 function localImagePath(remoteUrl) {
   const u = new URL(remoteUrl);
-  const m = u.pathname.match(/\/wp-content\/uploads\/sites\/\d+\/(.+)$/);
+  const m = u.pathname.match(/\/wp-content\/uploads\/(?:sites\/\d+\/)?(.+)$/);
   if (!m) return null;
   const rel = m[1];
-  const primary = u.hostname === "carolinaheating.com" || u.hostname === "carolinaheating.mojopsg.xyz";
-  return primary ? `/images/${rel}` : `/images/ext/${u.hostname}/${rel}`;
+  return PRIMARY_HOSTS.has(u.hostname) ? `/images/${rel}` : `/images/ext/${u.hostname}/${rel}`;
 }
 
 async function downloadImage(remoteUrl) {
   if (downloaded.has(remoteUrl)) return downloaded.get(remoteUrl);
   const local = localImagePath(remoteUrl);
   if (!local) return null;
-  const dest = join(ROOT, "public", local.replace(/^\//, "").split("/").join("/"));
+  const dest = join(IMAGES_DIR, local.replace(/^\/images\//, "").split("/").join("/"));
   if (existsSync(dest)) {
     downloaded.set(remoteUrl, local);
     return local;
@@ -109,20 +123,33 @@ function decodeEntities(s) {
 async function cleanHtml(mainInner) {
   let html = mainInner;
 
-  // 1. Remove WP Rocket lazy-load placeholders: promote data-lazy-src -> src,
-  //    drop data-lazy-srcset/sizes, drop <noscript> duplicates.
+  // 1. Remove WP Rocket lazy-load placeholders: promote data-lazy-src(set) ->
+  //    src(set), drop <noscript> duplicates. We KEEP the real srcset/sizes so
+  //    browsers pick the right-sized variant (these mirrored images can't go
+  //    through next/image, so WordPress's own responsive variants are how they
+  //    get right-sizing — see AGENTS.md).
   html = html.replace(/<noscript>[\s\S]*?<\/noscript>/gi, "");
   html = html.replace(/\ssrc="data:image\/svg\+xml[^"]*"/gi, "");
+  html = html.replace(/\ssrcset="[^"]*"(?=[^>]*data-lazy-srcset=)/gi, ""); // drop placeholder srcset when a lazy one exists
   html = html.replace(/\sdata-lazy-src="/gi, ' src="');
-  html = html.replace(/\s(data-lazy-srcset|data-lazy-sizes|srcset|sizes)="[^"]*"/gi, "");
+  html = html.replace(/\sdata-lazy-srcset="/gi, ' srcset="');
+  html = html.replace(/\sdata-lazy-sizes="/gi, ' sizes="');
+  // WP 6.7+ emits sizes="auto, ..." which older browsers choke on; plain list is equivalent.
+  html = html.replace(/\ssizes="auto,\s*/gi, ' sizes="');
 
-  // 2. Drop WordPress editor comments and title="" tooltips (WP media titles).
+  // 2. Drop WordPress editor comments and title="" tooltips (WP media titles
+  //    end in " - <Site Name>").
   html = html.replace(/<!--\s*\/?wp:[^>]*-->/g, "");
-  html = html.replace(/\stitle="[^"]*- Carolina Heating Service Inc\."/g, "");
+  html = html.replace(/\stitle="[^"]*? - [^"]*"/g, (m) => {
+    // Only strip the WP-media-title pattern, not meaningful link titles.
+    return /- [^"]*(Inc\.|HVAC|Heating|Air|Service)[^"]*"$/.test(m) ? "" : m;
+  });
 
   // 3. Schedule buttons: the live site opens a ServiceTitan modal via
-  //    _scheduler.show(...). Route to /bookings instead.
-  html = html.replace(/<a\s+onclick="_scheduler\.show\([^"]*\)"/gi, '<a href="/bookings"');
+  //    _scheduler.show(...). Give them a real href so they work as plain links;
+  //    ThemeBehaviors.tsx upgrades .se-widget-button clicks to the widget when
+  //    it's configured for this site.
+  html = html.replace(/<a\s+onclick="_scheduler\.show\([^"]*\)"/gi, `<a href="${SCHEDULE_FALLBACK}"`);
   html = html.replace(/\sonclick="_scheduler\.show\([^"]*\)"/gi, "");
 
   // 4. Remove inline JSON-LD from inside main (we emit schema from the layout),
@@ -132,38 +159,36 @@ async function cleanHtml(mainInner) {
   html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, "");
   html = html.replace(/<script[^>]*rocketlazyloadscript[^>]*>[\s\S]*?<\/script>/gi, "");
 
-  // 5. Remove lite-youtube's fallback wrapper noise but keep the element.
-  //    (lite-yt-embed.js is loaded globally in the layout.)
+  // 5. Per-brand URL fixups declared in site.json (e.g. a sister-site asset
+  //    that 404s on the live site but exists under this brand's uploads).
+  for (const { from, to } of SITE.source?.urlRewrites ?? []) {
+    html = html.split(from).join(to);
+  }
 
-  // 5b. Known-broken sister-site asset: the financing pages reference an
-  //     Upgrade-logo.png on energysaversair.com that 404s on the live site.
-  //     The identical file exists on carolinaheating.com.
-  html = html.replace(
-    /https:\/\/energysaversair\.com\/wp-content\/uploads\/sites\/27\/2024\/03\/Upgrade-logo\.png/g,
-    "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Upgrade-logo.png"
-  );
-
-  // 6. Download images and rewrite their URLs to local paths.
-  const imgRe = /(src|href)="(https?:\/\/[^"]+\/wp-content\/uploads\/[^"]+)"/gi;
-  const seen = new Set();
-  const matches = [...html.matchAll(imgRe)];
-  for (const m of matches) {
-    const remote = m[2];
-    if (seen.has(remote)) continue;
-    seen.add(remote);
-    const u = new URL(remote);
-    if (!IMAGE_HOSTS.includes(u.hostname)) continue;
-    // Prefer the original-size file; WP serves "-WxH" derivatives.
-    let local = await downloadImage(stripSizeSuffix(remote));
-    if (!local) local = await downloadImage(remote); // fall back to sized variant
-    if (local) {
-      html = html.split(remote).join(local);
+  // 6. Download every referenced upload (src/href AND each srcset candidate)
+  //    verbatim and rewrite its URL to the local path. We used to collapse
+  //    to the original-size file only; now that srcset is preserved, each
+  //    variant is mirrored as-is so the browser's choice actually exists.
+  const urls = new Set();
+  for (const m of html.matchAll(/(?:src|href)="(https?:\/\/[^"]+\/wp-content\/uploads\/[^"]+)"/gi)) urls.add(m[1]);
+  for (const m of html.matchAll(/srcset="([^"]+)"/gi)) {
+    for (const cand of m[1].split(",")) {
+      const u = cand.trim().split(/\s+/)[0];
+      if (/^https?:\/\/.+\/wp-content\/uploads\//.test(u)) urls.add(u);
     }
+  }
+  // Longest first so "foo-300x200.jpg" is replaced before "foo.jpg" could clobber it.
+  for (const remote of [...urls].sort((a, b) => b.length - a.length)) {
+    if (!IMAGE_HOSTS.has(new URL(remote).hostname)) continue;
+    let local = await downloadImage(remote);
+    if (!local && remote !== stripSizeSuffix(remote)) local = await downloadImage(stripSizeSuffix(remote));
+    if (local) html = html.split(remote).join(local);
   }
 
   // 7. Rewrite internal absolute links to root-relative, without trailing slash.
-  html = html.replace(/href="https?:\/\/carolinaheating\.com\/?"/gi, 'href="/"');
-  html = html.replace(/href="https?:\/\/carolinaheating\.com\/([^"#?]*?)\/?(#[^"]*)?(\?[^"]*)?"/gi, (_, p, hash = "", q = "") => {
+  const originRe = ORIGIN.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/^https:/, "https?:");
+  html = html.replace(new RegExp(`href="${originRe}/?"`, "gi"), 'href="/"');
+  html = html.replace(new RegExp(`href="${originRe}/([^"#?]*?)/?(#[^"]*)?(\\?[^"]*)?"`, "gi"), (_, p, hash = "", q = "") => {
     return `href="/${p}${q}${hash}"`;
   });
   // Also normalize root-relative links that still carry trailing slashes.
@@ -201,12 +226,28 @@ function extractPerPageCss(fullHtml) {
   return m ? m[1].trim() : "";
 }
 
+const redirects = []; // { source, destination } discovered while extracting
+
 async function processUrl(url) {
   // ?nowprocket=1 bypasses WP Rocket (no lazy-load placeholders, no inlined
   // "used CSS", no deferred scripts) so we get the canonical WordPress output.
   const fetchUrl = url + (url.includes("?") ? "&" : "?") + "nowprocket=1";
   const res = await fetch(fetchUrl, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+  // Sitemaps routinely list URLs that 301 elsewhere (retired location pages
+  // pointing at "/", /careers -> /about-us, ...). Mirroring the destination's
+  // HTML under the old path would create duplicate pages; record a redirect
+  // for the `redirects` table instead and skip the page.
+  // (pathFromUrl ignores the query string, so a same-path redirect that only
+  // adds a param — e.g. /bookings -> /bookings/?directRouter=true — is not
+  // treated as a redirect; the page is extracted normally.)
+  const finalPath = pathFromUrl(res.url);
+  if (finalPath !== pathFromUrl(url)) {
+    redirects.push({ source: pathFromUrl(url), destination: finalPath });
+    return { path: pathFromUrl(url), redirectedTo: finalPath };
+  }
+
   const fullHtml = await res.text();
   const meta = extractMeta(fullHtml);
   const mainInner = extractMainInner(fullHtml);
@@ -238,19 +279,24 @@ async function processUrl(url) {
 }
 
 async function main() {
-  const args = process.argv.slice(2);
+  // Positional args (after stripping --site <slug>) are explicit URLs.
+  const args = process.argv.slice(2).filter((a, i, all) => a !== "--site" && all[i - 1] !== "--site");
   const urls = args.length
     ? args
-    : readFileSync(join(__dirname, "pages.txt"), "utf8")
+    : readFileSync(join(BRAND_DIR, "pages.txt"), "utf8")
         .split(/\r?\n/)
         .map((s) => s.trim())
         .filter(Boolean);
 
-  console.log(`Extracting ${urls.length} page(s)...`);
+  console.log(`Extracting ${urls.length} page(s) for "${SLUG}" from ${ORIGIN}...`);
   let ok = 0;
   for (const url of urls) {
     try {
       const r = await processUrl(url);
+      if (r.redirectedTo) {
+        console.log(`  301  ${r.path}  ->  ${r.redirectedTo}  (recorded as redirect, not mirrored)`);
+        continue;
+      }
       ok++;
       console.log(`  OK   ${r.path}  (${r.bytes} chars)`);
     } catch (err) {
@@ -258,6 +304,10 @@ async function main() {
     }
   }
   console.log(`\nDone: ${ok}/${urls.length} pages, ${downloaded.size} images mirrored.`);
+  if (redirects.length) {
+    console.log(`\n${redirects.length} URL(s) redirect on the live site. Add these to content/${SLUG}/site.json "redirects" (and remove any stale html/*.json for them):`);
+    for (const r of redirects) console.log(`  { "source": "${r.source}", "destination": "${r.destination}", "permanent": true },`);
+  }
   if (failedImages.length) {
     console.log(`\n${failedImages.length} image(s) failed to download:`);
     for (const f of failedImages) console.log("  " + f);

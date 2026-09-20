@@ -1,6 +1,12 @@
 /**
- * Assembles src/app/theme.css from the ORIGINAL (un-optimized) stylesheets of
- * the live WordPress site, in the exact order WordPress enqueues them.
+ * Assembles content/<slug>/theme.css from the ORIGINAL (un-optimized)
+ * stylesheets of a brand's live WordPress site, in the exact order WordPress
+ * enqueues them. (scripts/prebuild.mjs later copies the active brand's file
+ * to src/app/theme.css for Next to bundle.)
+ *
+ * Usage: node scripts/build-theme-css.mjs --site <slug>
+ *   Reads content/<slug>/site.json `source.origin` for the live site URL and
+ *   content/<slug>/pages.txt for the page list to union block styles across.
  *
  * We fetch every page with `?nowprocket=1`, which bypasses WP Rocket's
  * "Remove Unused CSS" so we see the real <link>/<style> tags in <head>:
@@ -17,30 +23,48 @@
  *     rules (.wp-container-*, .wp-elements-*). These are NOT merged here; the
  *     page extractor stores each page's block in its JSON and the route emits
  *     it as a per-page <style>, exactly like WordPress does.
- *
- * Usage: node scripts/build-theme-css.mjs
  */
-import { readFileSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { join, basename } from "node:path";
+import { brandDir, loadSiteJson, resolveSiteSlug } from "./lib/env.mjs";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, "..");
-const OUT = join(ROOT, "src", "app", "theme.css");
-const ORIGIN = "https://carolinaheating.com";
+const SLUG = resolveSiteSlug();
+const SITE = loadSiteJson(SLUG);
+const ORIGIN = SITE.source?.origin?.replace(/\/$/, "");
+if (!ORIGIN) {
+  console.error(`content/${SLUG}/site.json needs "source": { "origin": "https://..." }`);
+  process.exit(1);
+}
+const BRAND_DIR = brandDir(SLUG);
+const OUT = join(BRAND_DIR, "theme.css");
+const FONTS_DIR = join(BRAND_DIR, "fonts");
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
 const PER_PAGE_IDS = new Set(["core-block-supports-inline-css"]);
-const SKIP_IDS = new Set(["wp-emoji-styles-inline-css", "simple-banner-site-custom-css-dummy"]);
+const SKIP_IDS = new Set([
+  "wp-emoji-styles-inline-css",
+  "simple-banner-site-custom-css-dummy",
+  // WP Rocket artifacts that leak through when a page happens to be served
+  // from Rocket's cache despite ?nowprocket=1: the "used CSS" blob duplicates
+  // the entire stylesheet, and the lazyload-nojs rules are irrelevant here.
+  "wpr-usedcss",
+  "rocket-lazyload-nojs-css",
+]);
 
-function rewriteUrls(css) {
-  return css
-    .replace(/https:\/\/carolinaheating\.com\/wp-content\/themes\/chs\/fonts\//g, "/fonts/")
-    .replace(/https:\/\/carolinaheating\.com\/wp-content\/themes\/nearu-base\/fonts\//g, "/fonts/")
-    // theme css references fonts relatively (../fonts/...) from dist/css/
-    .replace(/url\((['"]?)\.\.\/fonts\//g, "url($1/fonts/")
-    .replace(/url\((['"]?)\.\.\/\.\.\/fonts\//g, "url($1/fonts/");
+/** Every font file the theme CSS references, so we can mirror them into content/<slug>/fonts/. */
+const fontUrls = new Set();
+
+/**
+ * Rewrites font URLs (absolute theme URLs or relative ../fonts/ paths) to
+ * /fonts/<file>, recording the absolute source URL for download.
+ */
+function rewriteUrls(css, baseUrl) {
+  return css.replace(/url\((['"]?)([^'")]+\.(?:woff2?|ttf|otf|eot)(?:[?#][^'")]*)?)\1\)/gi, (_, q, ref) => {
+    const abs = new URL(ref, baseUrl).href;
+    fontUrls.add(abs);
+    return `url(${q}/fonts/${basename(new URL(abs).pathname)}${q})`;
+  });
 }
 
 async function fetchText(url) {
@@ -71,13 +95,11 @@ function parseHead(html) {
 }
 
 async function main() {
-  const urls = [
-    ORIGIN + "/",
-    ...readFileSync(join(__dirname, "pages.txt"), "utf8")
-      .split(/\r?\n/)
-      .map((s) => s.trim())
-      .filter(Boolean),
-  ];
+  const listed = existsSync(join(BRAND_DIR, "pages.txt"))
+    ? readFileSync(join(BRAND_DIR, "pages.txt"), "utf8").split(/\r?\n/).map((s) => s.trim()).filter(Boolean)
+    : [];
+  const urls = [...new Set([ORIGIN + "/", ...listed])];
+  console.log(`Building theme.css for "${SLUG}" from ${ORIGIN} (${urls.length} pages)...`);
 
   // Ordered list of unique resources, first-seen order across pages. The
   // homepage goes first so its ordering forms the backbone; other pages only
@@ -137,18 +159,35 @@ async function main() {
         }
         linkCache.set(item.href, css);
       }
-      parts.push(`/* ===== ${item.href.replace(ORIGIN, "")} ===== */\n${rewriteUrls(css)}`);
+      parts.push(`/* ===== ${item.href.replace(ORIGIN, "")} ===== */\n${rewriteUrls(css, item.href)}`);
     } else {
-      parts.push(`/* ===== <style id="${item.id || "(inline)"}"> ===== */\n${rewriteUrls(item.body)}`);
+      parts.push(`/* ===== <style id="${item.id || "(inline)"}"> ===== */\n${rewriteUrls(item.body, ORIGIN + "/")}`);
     }
   }
 
-  const header = `/*\n * Carolina Heating Service theme CSS.\n * Assembled by scripts/build-theme-css.mjs from the ORIGINAL stylesheets of the\n * live WordPress site (fetched with ?nowprocket=1 to bypass WP Rocket), in\n * WordPress enqueue order: core block styles -> theme.json presets -> plugins\n * -> NearU base theme -> CHS child theme -> customizer CSS.\n * Per-page generated rules (core-block-supports) are stored with each page in\n * content/html/*.json and emitted per page, not here.\n * Font URLs rewritten to /fonts/. Do not hand-edit; re-run the script to sync.\n */\n`;
+  const header = `/*\n * ${SITE.business?.name ?? SLUG} theme CSS.\n * Assembled by scripts/build-theme-css.mjs --site ${SLUG} from the ORIGINAL\n * stylesheets of ${ORIGIN} (fetched with ?nowprocket=1 to bypass WP Rocket), in\n * WordPress enqueue order: core block styles -> theme.json presets -> plugins\n * -> NearU base theme -> child theme -> customizer CSS.\n * Per-page generated rules (core-block-supports) are stored with each page in\n * content/${SLUG}/html/*.json and emitted per page, not here.\n * Font URLs rewritten to /fonts/ (files mirrored to content/${SLUG}/fonts/).\n * Do not hand-edit; re-run the script to sync.\n */\n`;
   const out = header + parts.join("\n\n");
   writeFileSync(OUT, out, "utf8");
   console.log(`\nWrote ${OUT}: ${ordered.length} resources, ${out.length} chars.`);
   console.log("Order:");
   ordered.forEach((o) => console.log("  " + (o.kind === "link" ? o.href.replace(ORIGIN, "") : `<style id="${o.id || "(inline)"}">`)));
+
+  // Mirror referenced font files.
+  mkdirSync(FONTS_DIR, { recursive: true });
+  let fonts = 0;
+  for (const url of fontUrls) {
+    const dest = join(FONTS_DIR, basename(new URL(url).pathname));
+    if (existsSync(dest)) { fonts++; continue; }
+    try {
+      const res = await fetch(url, { headers: { "User-Agent": UA } });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
+      fonts++;
+    } catch (e) {
+      console.log(`  FAIL font ${url}: ${e.message}`);
+    }
+  }
+  console.log(`Fonts: ${fonts}/${fontUrls.size} in ${FONTS_DIR}`);
 }
 
 main().catch((e) => {

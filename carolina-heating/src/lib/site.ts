@@ -28,6 +28,8 @@ export type ServiceCategorySummary = {
   shortTitle: string;
   summary: string;
   image: string;
+  /** Theme icon-sprite id (see src/lib/iconSprite.ts), e.g. "heating". */
+  icon: string | null;
 };
 
 export type Certification = {
@@ -49,6 +51,10 @@ export type SiteData = {
     name: string;
     legalName: string;
     tagline: string;
+    /** Header strapline under the logo; empty string hides it. */
+    headerTagline: string;
+    /** Footer license line(s), e.g. ["License #M-116444"]. */
+    licenseLines: string[];
     phone: string;
     phoneHref: string;
     email: string;
@@ -62,6 +68,9 @@ export type SiteData = {
     locationLabel: string;
     mapUrl: string;
     logo: string;
+    /** Intrinsic pixel size of `logo` (for next/image aspect ratio). */
+    logoWidth: number;
+    logoHeight: number;
     foundedYear: number;
     yearsInBusiness: number;
     googleRating: number;
@@ -88,6 +97,17 @@ export type SiteData = {
   topBanner: {
     text: string;
     href: string;
+  };
+  /**
+   * Build/markup hints from `sites.theme` (jsonb). The theme CSS itself is
+   * bundled at build time from content/<slug>/theme.css (see
+   * scripts/prebuild.mjs); this is just what the layout needs at runtime.
+   */
+  theme: {
+    /** WordPress child-theme body class, e.g. "wp-child-theme-chs". */
+    bodyClass: string;
+    /** Above-the-fold font files (in /fonts/) to <link rel="preload">. */
+    preloadFonts: string[];
   };
   nav: {
     primary: NavTopItem[];
