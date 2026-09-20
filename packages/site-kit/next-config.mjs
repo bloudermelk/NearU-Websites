@@ -35,14 +35,11 @@ export function createSiteConfig({ siteSlug }) {
         : [],
     },
 
-    experimental: {
-      // Inline the (single, ~220KB raw / ~30KB compressed) theme stylesheet
-      // into the HTML instead of a render-blocking <link>. On a cold entry
-      // visit this removes a full network round trip before first paint — the
-      // same trick WP Rocket uses on the live WordPress sites. Subsequent
-      // navigations are client-side and don't reload CSS at all.
-      inlineCss: true,
-    },
+    // NOTE: do NOT enable `experimental.inlineCss`. It was measured to embed
+    // the ~220KB theme stylesheet 3x in every HTML document and 2x in every
+    // RSC payload, quadrupling the cost of client-side navigations (568KB vs
+    // ~130KB). As an immutable, hashed <link> the stylesheet costs one round
+    // trip on the entry visit and nothing on any navigation after it.
 
     // Redirects are resolved from the shared database at BUILD time and
     // compiled into the deployment, so the CDN answers them directly — no
