@@ -71,7 +71,9 @@ export function ThemeBehaviors() {
       prefetched.add(path);
       router.prefetch(path);
     };
-    const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>("main a[href^='/'], footer a[href^='/']"));
+    const anchors = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>(".simple-banner a[href^='/'], main a[href^='/'], footer a[href^='/']")
+    );
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(
         (entries) => {

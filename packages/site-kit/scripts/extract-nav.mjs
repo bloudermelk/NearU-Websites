@@ -111,7 +111,21 @@ const columns = [...footer.matchAll(/<ul[^>]*id="secondary-menu-\d+"[^>]*>([\s\S
   [...m[1].matchAll(/<a[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)].map((a) => ({ label: decode(a[2].replace(/<[^>]+>/g, "")), href: toLocal(a[1]) }))
 );
 
-const out = { nav: { primary }, footer: { columns } };
+// ---- Simple Banner (sticky promo bar) ----
+// The plugin renders the banner with JS from a JSON config blob in the page,
+// so the static HTML only has an empty hidden div. Pull the text from
+// `simple_banner_text`, unescape it, drop the <p> wrapper, and make links
+// root-relative. Result is HTML (a banner may be all-link or text + link).
+let topBanner = { html: "" };
+const sb = html.match(/"simple_banner_text":"((?:[^"\\]|\\.)*)"/);
+if (sb) {
+  const raw = JSON.parse(`"${sb[1]}"`); // JSON-unescape (\/ and \")
+  const inner = raw.replace(/^\s*<p>([\s\S]*?)<\/p>\s*$/i, "$1").trim();
+  const relative = inner.replace(/href="([^"]+)"/g, (_, h) => `href="${toLocal(h)}"`);
+  topBanner = { html: decode(relative.replace(/&amp;/g, "&")) ? relative : "" };
+}
+
+const out = { topBanner, nav: { primary }, footer: { columns } };
 const outArg = process.argv.indexOf("--out");
 if (outArg >= 0 && process.argv[outArg + 1]) {
   const { writeFileSync } = await import("node:fs");

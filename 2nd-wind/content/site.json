@@ -56,8 +56,7 @@
     "youtubeVideoId": ""
   },
   "topBanner": {
-    "text": "",
-    "href": ""
+    "html": "Check Out All Our Special Coupon Offers and Promotions <a href=\"/special-coupon-offers-and-promotions\">SAVE NOW</a>"
   },
   "nav": {
     "primary": [

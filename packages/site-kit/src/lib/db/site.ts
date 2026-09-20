@@ -160,7 +160,16 @@ export const getSite = cache(async (): Promise<SiteData> => {
       gtmId: site.gtm_id ?? undefined,
       tealiumSrc: site.tealium_src ?? undefined,
     },
-    topBanner: { text: site.top_banner_text ?? "", href: site.top_banner_href ?? "" },
+    // Legacy rows may hold plain text + a separate href; normalise to HTML.
+    topBanner: {
+      html: site.top_banner_text
+        ? /<a\b/i.test(site.top_banner_text)
+          ? site.top_banner_text
+          : site.top_banner_href
+            ? `<a href="${site.top_banner_href}">${site.top_banner_text}</a>`
+            : site.top_banner_text
+        : "",
+    },
     theme: {
       bodyClass: theme.bodyClass ?? "",
       preloadFonts: theme.preloadFonts ?? [],

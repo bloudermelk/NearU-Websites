@@ -295,8 +295,17 @@ async function upsertSite(siteJson, imageMap) {
     social: b.social,
     schedule_url: b.scheduleUrl,
     youtube_video_id: b.youtubeVideoId,
-    top_banner_text: siteJson.topBanner?.text ?? null,
-    top_banner_href: siteJson.topBanner?.href ?? null,
+    // Banner is stored as inner HTML (from `npm run content:nav`'s topBanner.html);
+    // older site.json files with {text, href} are converted to the same shape.
+    top_banner_text:
+      siteJson.topBanner?.html ??
+      (siteJson.topBanner?.text
+        ? siteJson.topBanner.href
+          ? `<a href="${siteJson.topBanner.href}">${siteJson.topBanner.text}</a>`
+          : siteJson.topBanner.text
+        : null) ??
+      null,
+    top_banner_href: null,
     // Third-party integration IDs (nullable by design — see AGENTS.md).
     // Not set in content/site.json for this prototype; add them there
     // (schedulerId/schedulerApiKey/gtmId/tealiumSrc under "business") when

@@ -64,8 +64,7 @@
     "youtubeVideoId": "rmtPmKx4NeY"
   },
   "topBanner": {
-    "text": "Order Your Home Generator!",
-    "href": "/generator-greenville-sc"
+    "html": "<a href=\"/generator-greenville-sc\">Order Your Home Generator!</a>"
   },
   "nav": {
     "primary": [

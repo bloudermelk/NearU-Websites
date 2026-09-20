@@ -110,9 +110,9 @@ export type SiteData = {
     gtmId?: string;
     tealiumSrc?: string;
   };
+  /** Sticky promo bar. `html` is the banner's inner HTML (may contain an <a>); empty = no banner. */
   topBanner: {
-    text: string;
-    href: string;
+    html: string;
   };
   /**
    * Build/markup hints from `sites.theme` (jsonb). The theme CSS itself is
