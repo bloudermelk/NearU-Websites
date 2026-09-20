@@ -112,13 +112,12 @@ export default async function RootLayout({ children, themeCss }: { children: Rea
   };
 
   const { schedulerId, schedulerApiKey, gtmId, tealiumSrc } = business;
-  const bodyClass = [
-    "wp-singular page-template-default page wp-custom-logo wp-theme-nearu-base",
-    site.theme.bodyClass,
-    "no-sidebar",
-  ]
-    .filter(Boolean)
-    .join(" ");
+  // WordPress's boilerplate body classes (wp-singular, wp-theme-*, wp-child-theme-*,
+  // no-sidebar, …) were verified unused by every rule in both brands' theme CSS,
+  // so they're not emitted: they were inert bytes and a "this is WordPress"
+  // fingerprint for tech-stack detectors. `sites.theme.bodyClass` remains for a
+  // brand whose CSS genuinely needs a body hook.
+  const bodyClass = site.theme.bodyClass || undefined;
 
   return (
     <html className="js" dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">

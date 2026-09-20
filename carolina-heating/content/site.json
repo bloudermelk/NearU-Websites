@@ -14,10 +14,11 @@
         "to": "https://carolinaheating.com/wp-content/uploads/sites/7/2024/03/Upgrade-logo.png"
       }
     ],
-    "locationSlugSuffix": "-hvac-plumbing-electrical-generators"
+    "locationSlugSuffix": "-hvac-plumbing-electrical-generators",
+    "wpSiteId": 7
   },
   "theme": {
-    "bodyClass": "wp-child-theme-chs",
+    "bodyClass": "",
     "preloadFonts": []
   },
   "business": {

@@ -44,8 +44,25 @@ const SCHEDULE_FALLBACK = SITE.business?.scheduleUrl || "/bookings";
 // (and NearU's *.mojopsg.xyz staging alias for it, which WP sometimes leaks
 // into src attributes) are "primary" and map to /images/...; any other host
 // (shared sister-brand assets) maps to /images/ext/<host>/... to avoid clashes.
+//
+// NearU runs WordPress multisite, so a brand's uploads live under
+// /wp-content/uploads/sites/<N>/ and can be served from ANY of the network's
+// hostnames (e.g. 2nd Wind's site 30 assets showing up as
+// carolinaheating.mojopsg.xyz/.../sites/30/...). `source.wpSiteId` in site.json
+// lets us recognise those as our own regardless of host.
 const PRIMARY_HOSTS = new Set([ORIGIN_HOST, `${ORIGIN_HOST.split(".")[0]}.mojopsg.xyz`]);
+const WP_SITE_ID = SITE.source?.wpSiteId ? String(SITE.source.wpSiteId) : null;
 const IMAGE_HOSTS = new Set([...PRIMARY_HOSTS, ...(SITE.source?.imageHosts ?? [])]);
+
+/** Our own upload? (own host, or any NearU host serving our multisite id) */
+function isPrimaryUpload(u) {
+  if (PRIMARY_HOSTS.has(u.hostname)) return true;
+  return !!WP_SITE_ID && /\.mojopsg\.xyz$/.test(u.hostname) && u.pathname.includes(`/wp-content/uploads/sites/${WP_SITE_ID}/`);
+}
+/** Anything we mirror at all: our uploads, or a declared sister-brand host. */
+function isMirroredUpload(u) {
+  return isPrimaryUpload(u) || IMAGE_HOSTS.has(u.hostname);
+}
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
@@ -75,7 +92,7 @@ function localImagePath(remoteUrl) {
   const m = u.pathname.match(/\/wp-content\/uploads\/(?:sites\/\d+\/)?(.+)$/);
   if (!m) return null;
   const rel = m[1];
-  return PRIMARY_HOSTS.has(u.hostname) ? `/images/${rel}` : `/images/ext/${u.hostname}/${rel}`;
+  return isPrimaryUpload(u) ? `/images/${rel}` : `/images/ext/${u.hostname}/${rel}`;
 }
 
 async function downloadImage(remoteUrl) {
@@ -171,7 +188,9 @@ async function cleanHtml(mainInner) {
   //    to the original-size file only; now that srcset is preserved, each
   //    variant is mirrored as-is so the browser's choice actually exists.
   const urls = new Set();
+  // Quoted and (a WordPress quirk) unquoted attribute values.
   for (const m of html.matchAll(/(?:src|href)="(https?:\/\/[^"]+\/wp-content\/uploads\/[^"]+)"/gi)) urls.add(m[1]);
+  for (const m of html.matchAll(/(?:src|href)=(https?:\/\/[^\s"'>]+\/wp-content\/uploads\/[^\s"'>]+)/gi)) urls.add(m[1]);
   for (const m of html.matchAll(/srcset="([^"]+)"/gi)) {
     for (const cand of m[1].split(",")) {
       const u = cand.trim().split(/\s+/)[0];
@@ -180,7 +199,7 @@ async function cleanHtml(mainInner) {
   }
   // Longest first so "foo-300x200.jpg" is replaced before "foo.jpg" could clobber it.
   for (const remote of [...urls].sort((a, b) => b.length - a.length)) {
-    if (!IMAGE_HOSTS.has(new URL(remote).hostname)) continue;
+    if (!isMirroredUpload(new URL(remote))) continue;
     let local = await downloadImage(remote);
     if (!local && remote !== stripSizeSuffix(remote)) local = await downloadImage(stripSizeSuffix(remote));
     if (local) html = html.split(remote).join(local);

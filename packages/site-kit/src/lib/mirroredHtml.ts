@@ -6,6 +6,11 @@ import { preload } from "react-dom";
  * cheaper to apply here than to re-migrate every brand for.
  */
 
+/** Drops CSS comments (WordPress's per-page CSS ends in a "sourceURL=core-block-supports-inline-css" marker). */
+export function stripCssComments(css: string): string {
+  return css.replace(/\/\*[\s\S]*?\*\//g, "").trim();
+}
+
 /** Drops HTML comments (WordPress leaves commented-out blocks in page output — dead bytes). */
 export function stripHtmlComments(html: string): string {
   return html.replace(/<!--[\s\S]*?-->/g, "");

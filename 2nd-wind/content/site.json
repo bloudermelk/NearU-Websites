@@ -3,15 +3,18 @@
   "company": "nearu",
   "source": {
     "origin": "https://2ndwindhvac.com",
-    "imageHosts": [],
+    "imageHosts": [
+      "premiumacservice.mojopsg.xyz"
+    ],
     "urlRewrites": [],
     "extraPages": [
       "/bookings"
     ],
-    "locationSlugSuffix": "-sc-hvac-plumbing-generator"
+    "locationSlugSuffix": "-sc-hvac-plumbing-generator",
+    "wpSiteId": 30
   },
   "theme": {
-    "bodyClass": "wp-child-theme-nru-2nd-wind",
+    "bodyClass": "",
     "preloadFonts": []
   },
   "business": {

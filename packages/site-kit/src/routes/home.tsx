@@ -18,7 +18,7 @@ import { getPage } from "../lib/db/pages";
 import type { HomePageData } from "../lib/db/homePageData";
 import { buildPageSchema } from "../lib/schema";
 import { shimmerDataUrl } from "../lib/imagePlaceholder";
-import { prepareMirroredHtml, preloadHero } from "../lib/mirroredHtml";
+import { prepareMirroredHtml, preloadHero, stripCssComments } from "../lib/mirroredHtml";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getPage("/");
@@ -56,7 +56,7 @@ export default async function Home() {
       <>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {page.inline_css && (
-          <style id="core-block-supports-inline-css" dangerouslySetInnerHTML={{ __html: page.inline_css }} />
+          <style id="page-layout-css" dangerouslySetInnerHTML={{ __html: stripCssComments(page.inline_css) }} />
         )}
         <main id="primary" className="site-main | container" dangerouslySetInnerHTML={{ __html: html }} />
       </>
@@ -71,7 +71,7 @@ export default async function Home() {
     <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     {page.inline_css && (
-      <style id="core-block-supports-inline-css" dangerouslySetInnerHTML={{ __html: page.inline_css }} />
+      <style id="page-layout-css" dangerouslySetInnerHTML={{ __html: stripCssComments(page.inline_css) }} />
     )}
     <main id="primary" className="site-main | container">
       <article className="container page type-page status-publish hentry">
