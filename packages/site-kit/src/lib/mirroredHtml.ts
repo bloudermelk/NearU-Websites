@@ -10,19 +10,23 @@ export function stripHtmlComments(html: string): string {
 }
 
 /** How many leading images stay eager when WordPress gave the page no lazy-loading hints. */
-const EAGER_IMAGE_COUNT = 2;
+const EAGER_IMAGE_COUNT = 1;
 
 /**
- * Image loading strategy:
+ * Image loading strategy, measured against the live WordPress sites on a
+ * throttled connection (where the hero image is the LCP element):
  *  - The first <img> is the hero / LCP candidate: `fetchpriority="high"` so
- *    the browser fetches it before render-blocking resources finish.
- *  - If WordPress annotated the page with `loading="lazy"` (it does on most
- *    page templates — e.g. 20 of 25 images on the homepage), its choices are
- *    respected.
- *  - If it didn't (the service-page template ships every image eager —
- *    measured at 37–42 images / ~2MB downloading on arrival, competing with
- *    the render), everything after the first EAGER_IMAGE_COUNT images becomes
- *    `loading="lazy" decoding="async"`.
+ *    the browser fetches it ahead of everything else on the image origin.
+ *  - EVERY other image gets `fetchpriority="low"`. Native `loading="lazy"`
+ *    alone is not enough: on slow connections Chrome pre-loads "lazy" images
+ *    up to ~2500px below the fold, so 3–4 photos of 70–100KB each were
+ *    downloading alongside the hero and delaying it by seconds. Low priority
+ *    makes them queue behind the hero on the same connection instead.
+ *  - If WordPress annotated the page with `loading="lazy"` (most page
+ *    templates — e.g. 20 of 25 images on the homepage), its choices are kept.
+ *    If it didn't (the service-page template ships every image eager: 37–42
+ *    images / ~2MB on arrival), everything after the first EAGER_IMAGE_COUNT
+ *    images also becomes `loading="lazy" decoding="async"`.
  */
 export function tuneImages(html: string): string {
   const pageHasLazyHints = /\sloading=/i.test(html);
@@ -30,11 +34,14 @@ export function tuneImages(html: string): string {
   return html.replace(/<img\b[^>]*>/gi, (tag) => {
     const i = index++;
     let out = tag;
-    if (i === 0 && !/fetchpriority=/i.test(out) && !/loading="lazy"/i.test(out)) {
-      out = out.replace(/^<img\b/i, '<img fetchpriority="high"');
-    }
-    if (!pageHasLazyHints && i >= EAGER_IMAGE_COUNT && !/\sloading=/i.test(out)) {
-      out = out.replace(/^<img\b/i, '<img loading="lazy"');
+    const hasPriority = /fetchpriority=/i.test(out);
+    if (i === 0) {
+      if (!hasPriority && !/loading="lazy"/i.test(out)) out = out.replace(/^<img\b/i, '<img fetchpriority="high"');
+    } else {
+      if (!hasPriority) out = out.replace(/^<img\b/i, '<img fetchpriority="low"');
+      if (!pageHasLazyHints && i >= EAGER_IMAGE_COUNT && !/\sloading=/i.test(out)) {
+        out = out.replace(/^<img\b/i, '<img loading="lazy"');
+      }
       if (!/\sdecoding=/i.test(out)) out = out.replace(/^<img\b/i, '<img decoding="async"');
     }
     return out;
