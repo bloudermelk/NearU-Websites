@@ -63,6 +63,18 @@ No per-brand env vars are needed: the site's identity comes from its
 `next.config.ts`. Pull-request preview deployments work for every brand
 automatically.
 
+**Order matters when creating a project:** push the brand folder to `main`
+*first*, then create the Vercel project and set its Root Directory. If the
+folder doesn't exist yet when the project is created, Vercel can't detect
+Next.js and defaults the Framework Preset to "Other" — the build then
+"succeeds" but every URL returns a platform 404. If that happens, set
+Settings → Build and Deployment → Framework Preset to **Next.js** and redeploy.
+The tell in a healthy build log is the line `Detected Next.js version: …`.
+
+Redirects (the `redirects` table) are compiled in at build time. After adding
+one in Supabase, trigger a rebuild with the project's **Deploy Hook**
+(Settings → Git → Deploy Hooks) — no code change needed.
+
 ## Adding a brand
 
 See [`supabase/README.md` → Onboarding a new brand](supabase/README.md#onboarding-a-new-brand-30-minutes).

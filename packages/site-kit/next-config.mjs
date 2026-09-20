@@ -10,10 +10,13 @@
 export function createSiteConfig({ siteSlug }) {
   if (!siteSlug) throw new Error("createSiteConfig: siteSlug is required");
 
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
   // Images live in Supabase Storage. Allow next/image to optimize them —
   // hostname derived from SUPABASE_URL so the same config works for every
   // brand and every Supabase project.
-  const supabaseHostname = process.env.SUPABASE_URL ? new URL(process.env.SUPABASE_URL).hostname : undefined;
+  const supabaseHostname = supabaseUrl ? new URL(supabaseUrl).hostname : undefined;
 
   /** @type {import("next").NextConfig} */
   const config = {
@@ -32,7 +35,34 @@ export function createSiteConfig({ siteSlug }) {
         : [],
     },
 
-    // Redirects are DB-driven (the `redirects` table) via middleware, not here.
+    experimental: {
+      // Inline the (single, ~220KB raw / ~30KB compressed) theme stylesheet
+      // into the HTML instead of a render-blocking <link>. On a cold entry
+      // visit this removes a full network round trip before first paint — the
+      // same trick WP Rocket uses on the live WordPress sites. Subsequent
+      // navigations are client-side and don't reload CSS at all.
+      inlineCss: true,
+    },
+
+    // Redirects are resolved from the shared database at BUILD time and
+    // compiled into the deployment, so the CDN answers them directly — no
+    // per-request edge function, no database round trip on cold isolates.
+    // Trade-off: a redirect added in Supabase takes effect on the next deploy
+    // (trigger one with the project's Vercel Deploy Hook).
+    async redirects() {
+      if (!supabaseUrl || !serviceKey) return []; // e.g. CI typecheck without credentials
+      const url =
+        `${supabaseUrl}/rest/v1/redirects?select=source,destination,permanent,sites!inner(slug)` +
+        `&sites.slug=eq.${encodeURIComponent(siteSlug)}`;
+      const res = await fetch(url, { headers: { apikey: serviceKey, Authorization: `Bearer ${serviceKey}` } });
+      if (!res.ok) {
+        console.warn(`[site-kit] could not load redirects for ${siteSlug}: HTTP ${res.status}`);
+        return [];
+      }
+      const rows = await res.json();
+      console.log(`[site-kit] ${rows.length} redirect(s) compiled for ${siteSlug}`);
+      return rows.map((r) => ({ source: r.source, destination: r.destination, permanent: r.permanent !== false }));
+    },
   };
   return config;
 }

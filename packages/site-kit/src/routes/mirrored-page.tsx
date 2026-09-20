@@ -4,6 +4,7 @@ import { getAllPagePaths, getPage } from "../lib/db/pages";
 import { mediaUrl } from "../lib/supabase/server";
 import { getSite } from "../lib/db/site";
 import { buildPageSchema } from "../lib/schema";
+import { prepareMirroredHtml } from "../lib/mirroredHtml";
 
 /**
  * Catch-all route that serves every page stored in Supabase for this site's
@@ -62,7 +63,7 @@ export default async function MirroredPage({ params }: { params: Promise<{ slug:
       {page.inline_css && (
         <style id="core-block-supports-inline-css" dangerouslySetInnerHTML={{ __html: page.inline_css }} />
       )}
-      <main id="primary" className="site-main | container" dangerouslySetInnerHTML={{ __html: page.html }} />
+      <main id="primary" className="site-main | container" dangerouslySetInnerHTML={{ __html: prepareMirroredHtml(page.html) }} />
     </>
   );
 }

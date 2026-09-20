@@ -18,8 +18,7 @@
     "./routes/api/revalidate": "./src/routes/api/revalidate.ts",
     "./components/*": "./src/components/*.tsx",
     "./lib/*": "./src/lib/*.ts",
-    "./types/custom-elements": "./src/types/custom-elements.d.ts",
-    "./proxy": "./src/proxy.ts"
+    "./types/custom-elements": "./src/types/custom-elements.d.ts"
   },
   "bin": {
     "nearu-list-pages": "./scripts/list-pages.mjs",
