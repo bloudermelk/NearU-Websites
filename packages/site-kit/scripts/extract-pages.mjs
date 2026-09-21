@@ -327,6 +327,8 @@ async function main() {
   if (redirects.length) {
     console.log(`\n${redirects.length} URL(s) redirect on the live site. Add these to content/site.json "redirects" (and remove any stale html/*.json for them):`);
     for (const r of redirects) console.log(`  { "source": "${r.source}", "destination": "${r.destination}", "permanent": true },`);
+    // Also persisted for tooling (new-brand.mjs merges this into site.json).
+    writeFileSync(join(BRAND_DIR, "redirects.json"), JSON.stringify(redirects.map((r) => ({ ...r, permanent: true })), null, 2) + "\n");
   }
   if (failedImages.length) {
     console.log(`\n${failedImages.length} image(s) failed to download:`);

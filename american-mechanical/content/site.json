@@ -1,0 +1,575 @@
+{
+  "slug": "american-mechanical",
+  "company": "nearu",
+  "source": {
+    "origin": "https://americanmechanicalva.com",
+    "imageHosts": [
+      "premiumacservice.mojopsg.xyz"
+    ],
+    "urlRewrites": [],
+    "extraPages": [
+      "/bookings"
+    ],
+    "locationSlugSuffix": "-va-hvac-plumbing-electrical",
+    "wpSiteId": 31
+  },
+  "theme": {
+    "bodyClass": "",
+    "preloadFonts": []
+  },
+  "business": {
+    "domain": "americanmechanicalva.com",
+    "name": "Russell's American Mechanical",
+    "legalName": "Russell’s American Mechanical",
+    "tagline": "Virginia Beach HVAC, Plumbing, and Electrical Technicians",
+    "headerTagline": "Virginia Beach HVAC, Plumbing, and Electrical Technicians",
+    "licenseLines": [
+      "Contractor license 2705 18 1489A"
+    ],
+    "phone": "(757) 525-4911",
+    "phoneHref": "tel:+17575254911",
+    "email": "Info@russellshvac.com",
+    "address": {
+      "street": "1122 Executive Blvd., Ste A",
+      "city": "Chesapeake",
+      "state": "VA",
+      "zip": "23320"
+    },
+    "areaServed": "Chesapeake",
+    "locationLabel": "Chesapeake, VA",
+    "mapUrl": "https://www.google.com/maps/place/?q=place_id:ChIJt7E5Y4-8uokR35pVjzv_4iI",
+    "logo": "/images/2024/04/cropped-russells_ammech_combo-scaled-1.jpg",
+    "logoWidth": 2560,
+    "logoHeight": 1181,
+    "foundedYear": 1977,
+    "yearsInBusiness": 49,
+    "googleRating": 5,
+    "googleReviewCount": 18,
+    "social": {
+      "facebook": "https://www.facebook.com/AmericanMechanical",
+      "instagram": "https://www.instagram.com/russellsamericanmechanical/",
+      "linkedin": "https://www.linkedin.com/company/russell's-heating-&-cooling",
+      "youtube": ""
+    },
+    "scheduleUrl": "/bookings",
+    "youtubeVideoId": ""
+  },
+  "topBanner": {
+    "html": "We’re Hiring — Join the Best in the Business. <a href=\"https://jobs.dayforcehcm.com/en-US/nearu/Russells\" target=\"_blank\">Apply Today</a>"
+  },
+  "nav": {
+    "primary": [
+      {
+        "label": "Special Offers",
+        "href": "/special-coupon-offers-and-promotions"
+      },
+      {
+        "label": "HVAC",
+        "groups": [
+          {
+            "label": "Cooling",
+            "items": [
+              {
+                "label": "All Cooling",
+                "href": "/services/cooling-chesapeake-va"
+              },
+              {
+                "label": "Emergency Cooling Services",
+                "href": "/emergency-hvac-cooling-services"
+              },
+              {
+                "label": "Air Conditioning Repair & Installation",
+                "href": "/services/cooling-chesapeake-va/air-conditioning"
+              },
+              {
+                "label": "Ductless Mini Split Installation & Repair",
+                "href": "/services/cooling-chesapeake-va/mini-split"
+              },
+              {
+                "label": "HVAC Zoning System Repair & Installation",
+                "href": "/services/cooling-chesapeake-va/zoning-control-systems"
+              },
+              {
+                "label": "Dual-Fuel Hybrid HVAC System Installation",
+                "href": "/services/cooling-chesapeake-va/dual-fuel-hybrid-systems"
+              },
+              {
+                "label": "Gas Pack HVAC Repair & Replacement",
+                "href": "/services/cooling-chesapeake-va/gas-packs"
+              }
+            ]
+          },
+          {
+            "label": "Heating",
+            "items": [
+              {
+                "label": "All Heating",
+                "href": "/services/heating-chesapeake-va"
+              },
+              {
+                "label": "Emergency Heating Services",
+                "href": "/emergency-hvac-heating-services"
+              },
+              {
+                "label": "Gas Furnace Repair & Replacement Services",
+                "href": "/services/heating-chesapeake-va/furnaces"
+              },
+              {
+                "label": "Geothermal Heat Pump Repair & Installation",
+                "href": "/services/heating-chesapeake-va/geothermal-systems"
+              },
+              {
+                "label": "Boiler Installation & Repair",
+                "href": "/services/heating-chesapeake-va/boilers"
+              },
+              {
+                "label": "Home Insulation Installation",
+                "href": "/services/heating-chesapeake-va/insulation"
+              },
+              {
+                "label": "Smart Thermostat Installation & WiFi Control",
+                "href": "/services/heating-chesapeake-va/smart-thermostats"
+              }
+            ]
+          },
+          {
+            "label": "Indoor Air Quality",
+            "items": [
+              {
+                "label": "Air Duct Cleaning Services",
+                "href": "/services/indoor-air-quality-chesapeake-va/air-duct-cleaning"
+              },
+              {
+                "label": "Air Scrubber & Air Purifiers",
+                "href": "/services/indoor-air-quality-chesapeake-va/air-scrubbers"
+              },
+              {
+                "label": "Whole-House Air Filtration Systems",
+                "href": "/services/indoor-air-quality-chesapeake-va/air-filter-systems"
+              },
+              {
+                "label": "Whole-Home Dehumidifier Installation",
+                "href": "/services/indoor-air-quality-chesapeake-va/dehumidifiers"
+              },
+              {
+                "label": "Whole-House Humidifier Installation",
+                "href": "/services/indoor-air-quality-chesapeake-va/humidifiers"
+              },
+              {
+                "label": "Professional Dryer Vent Cleaning Services",
+                "href": "/services/indoor-air-quality-chesapeake-va/dryer-vent-cleaning"
+              },
+              {
+                "label": "Smoke & CO Services",
+                "href": "/services/indoor-air-quality-chesapeake-va/smoke-and-co-services"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Plumbing",
+        "groups": [
+          {
+            "label": "General Plumbing",
+            "items": [
+              {
+                "label": "Pipes & General Plumbing",
+                "href": "/services/plumbing-chesapeake-va/pipes-and-general-plumbing"
+              },
+              {
+                "label": "Emergency Services",
+                "href": "/emergency-plumbing-services"
+              },
+              {
+                "label": "Frozen/Burst Pipes",
+                "href": "/services/plumbing-chesapeake-va/frozen-burst-pipe-repair"
+              },
+              {
+                "label": "Whole-Home Repiping",
+                "href": "/services/plumbing-chesapeake-va/repiping"
+              },
+              {
+                "label": "Gas Line Installation and Repair",
+                "href": "/services/plumbing-chesapeake-va/gas-lines"
+              },
+              {
+                "label": "Sump Pump Installation & Repair",
+                "href": "/services/plumbing-chesapeake-va/sump-pumps"
+              },
+              {
+                "label": "Toilet Repair and Installation",
+                "href": "/services/plumbing-chesapeake-va/kitchen-bathroom/toilet-repair"
+              },
+              {
+                "label": "Faucet Repair and Installation",
+                "href": "/services/plumbing-chesapeake-va/kitchen-bathroom/faucet-repair"
+              },
+              {
+                "label": "Trap and Pipe Cleaning",
+                "href": "/services/plumbing-chesapeake-va/trap-and-pipe-cleaning"
+              }
+            ]
+          },
+          {
+            "label": "Water Heaters",
+            "items": [
+              {
+                "label": "Water Heaters",
+                "href": "/services/plumbing-chesapeake-va/water-heaters"
+              },
+              {
+                "label": "Tankless Water Heaters",
+                "href": "/services/plumbing-chesapeake-va/tankless-water-heaters"
+              }
+            ]
+          },
+          {
+            "label": "Drain & Sewer",
+            "items": [
+              {
+                "label": "Rooter Service",
+                "href": "/services/plumbing-chesapeake-va/rooter-services"
+              },
+              {
+                "label": "Sewer Lines",
+                "href": "/services/plumbing-chesapeake-va/sewer-lines"
+              },
+              {
+                "label": "Drain Cleaning Services",
+                "href": "/services/plumbing-chesapeake-va/drain-clearing"
+              },
+              {
+                "label": "Camera and Video Pipe Inspection",
+                "href": "/services/plumbing-chesapeake-va/camera-video-inspection"
+              }
+            ]
+          },
+          {
+            "label": "Water Quality & Pressure",
+            "items": [
+              {
+                "label": "Water Filtration & Treatment Systems",
+                "href": "/services/plumbing-chesapeake-va/water-filtration"
+              },
+              {
+                "label": "Water Pressure Assessments",
+                "href": "/services/plumbing-chesapeake-va/water-pressure-assessments"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Electrical",
+        "groups": [
+          {
+            "items": [
+              {
+                "label": "Home Generator Installation & Repair",
+                "href": "/services/generators-chesapeake-va/home-generators"
+              },
+              {
+                "label": "Ceiling Fan Installation",
+                "href": "/services/electrical-chesapeake-va/ceiling-fans"
+              },
+              {
+                "label": "Whole Home Surge Protector Installation",
+                "href": "/services/electrical-chesapeake-va/whole-home-surge-protection"
+              },
+              {
+                "label": "Lighting Services",
+                "href": "/services/electrical-chesapeake-va/lighting-services"
+              },
+              {
+                "label": "Circuit Breaker Replacement and Repair",
+                "href": "/services/electrical-chesapeake-va/circuit-breakers"
+              },
+              {
+                "label": "Circuit Panels",
+                "href": "/services/electrical-chesapeake-va/circuit-panel-upgrade"
+              },
+              {
+                "label": "Electric Vehicle Charger Installation",
+                "href": "/services/electrical-chesapeake-va/electric-vehicle-chargers"
+              },
+              {
+                "label": "Switch and Outlet Repair and Installation",
+                "href": "/services/electrical-chesapeake-va/switch-outlet-install-repair"
+              },
+              {
+                "label": "Wiring and Rewiring Services",
+                "href": "/services/electrical-chesapeake-va/wiring-services"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Maintenance",
+        "href": "/maintenance"
+      },
+      {
+        "label": "Financing",
+        "href": "/financing",
+        "groups": [
+          {
+            "items": [
+              {
+                "label": "Indoor Air Quality Options",
+                "href": "/financing/indoor-air-quality-services-financing-options"
+              },
+              {
+                "label": "Plumbing Options",
+                "href": "/financing/plumbing-services-financing-options"
+              },
+              {
+                "label": "Heating Service Options",
+                "href": "/financing/heating-services-financing-options"
+              },
+              {
+                "label": "Cooling Service Options",
+                "href": "/financing/cooling-services-financing-options"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Service Areas",
+        "groups": [
+          {
+            "label": "Chesapeake / Southside",
+            "items": [
+              {
+                "label": "Norfolk",
+                "href": "/norfolk-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Portsmouth",
+                "href": "/portsmouth-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Suffolk",
+                "href": "/suffolk-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Virginia Beach",
+                "href": "/virginia-beach-va-hvac-plumbing-electrical"
+              }
+            ]
+          },
+          {
+            "label": "Peninsula",
+            "items": [
+              {
+                "label": "Gloucester Point",
+                "href": "/gloucester-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Hampton",
+                "href": "/hampton-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Newport News",
+                "href": "/newport-news-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Poquoson",
+                "href": "/poquoson-va-hvac-plumbing-electrical"
+              }
+            ]
+          },
+          {
+            "label": "Historic Triangle",
+            "items": [
+              {
+                "label": "Toano",
+                "href": "/toano-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Williamsburg",
+                "href": "/williamsburg-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Yorktown",
+                "href": "/yorktown-va-hvac-plumbing-electrical"
+              }
+            ]
+          },
+          {
+            "label": "Western Tidewater",
+            "items": [
+              {
+                "label": "Carrollton",
+                "href": "/carrollton-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Franklin",
+                "href": "/franklin-va-hvac-plumbing-electrical"
+              },
+              {
+                "label": "Smithfield",
+                "href": "/smithfield-va-hvac-plumbing-electrical"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "About Us",
+        "groups": [
+          {
+            "items": [
+              {
+                "label": "About Us",
+                "href": "/about-us"
+              },
+              {
+                "label": "Worry-Free Program",
+                "href": "/worry-free-service-program"
+              },
+              {
+                "label": "Careers",
+                "href": "/careers"
+              },
+              {
+                "label": "Blog",
+                "href": "/about-us/blog"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "columns": [
+      [
+        {
+          "label": "Heating",
+          "href": "/services/heating-chesapeake-va"
+        },
+        {
+          "label": "Cooling",
+          "href": "/services/cooling-chesapeake-va"
+        },
+        {
+          "label": "Indoor Air Quality",
+          "href": "/services/indoor-air-quality-chesapeake-va"
+        },
+        {
+          "label": "Plumbing Services",
+          "href": "/services/plumbing-chesapeake-va"
+        },
+        {
+          "label": "Drain Services",
+          "href": "/services/plumbing-chesapeake-va/drains"
+        },
+        {
+          "label": "Electrical",
+          "href": "/services/electrical-chesapeake-va"
+        },
+        {
+          "label": "Generators",
+          "href": "/services/generators-chesapeake-va"
+        },
+        {
+          "label": "Commercial",
+          "href": "/commercial"
+        }
+      ],
+      [
+        {
+          "label": "Maintenance",
+          "href": "/maintenance"
+        },
+        {
+          "label": "Financing",
+          "href": "/financing"
+        },
+        {
+          "label": "About Us",
+          "href": "/about-us"
+        },
+        {
+          "label": "Blog",
+          "href": "/about-us/blog"
+        },
+        {
+          "label": "Careers",
+          "href": "https://jobs.dayforcehcm.com/en-US/nearu/Russells"
+        }
+      ]
+    ]
+  },
+  "serviceCategories": [
+    {
+      "slug": "heating-chesapeake-va",
+      "title": "Heating",
+      "shortTitle": "Heating",
+      "summary": "",
+      "image": "",
+      "icon": "heating"
+    },
+    {
+      "slug": "cooling-chesapeake-va",
+      "title": "Cooling",
+      "shortTitle": "Cooling",
+      "summary": "",
+      "image": "",
+      "icon": "cooling"
+    },
+    {
+      "slug": "electrical-chesapeake-va",
+      "title": "Electrical",
+      "shortTitle": "Electrical",
+      "summary": "",
+      "image": "",
+      "icon": "electrical"
+    },
+    {
+      "slug": "plumbing-chesapeake-va",
+      "title": "Plumbing Services",
+      "shortTitle": "Plumbing Services",
+      "summary": "",
+      "image": "",
+      "icon": "plumbing"
+    },
+    {
+      "slug": "indoor-air-quality-chesapeake-va",
+      "title": "Indoor Air Quality",
+      "shortTitle": "Indoor Air Quality",
+      "summary": "",
+      "image": "",
+      "icon": "indoor-air-quality"
+    },
+    {
+      "slug": "generators-chesapeake-va",
+      "title": "Generators",
+      "shortTitle": "Generators",
+      "summary": "",
+      "image": "",
+      "icon": "generator"
+    }
+  ],
+  "certifications": [],
+  "testimonials": [
+    {
+      "author": "Jackie",
+      "rating": 5,
+      "body": "This is a fantastic company. They did excellent work replacing one of our units. The staff is friendly, respectful, knowledgeable, hard-working, and they really went above and beyond to take care of our unit replacement. I would highly recommend this company."
+    },
+    {
+      "author": "John Sutphln",
+      "rating": 5,
+      "body": "They did a great job and cleaned up after themselves! Great company. They were very responsive when I called to get an estimate for plumbing repair. Very please with the company. Came back to fix the plumbing and everything seems to be working well!"
+    },
+    {
+      "author": "Janene Harris",
+      "rating": 5,
+      "body": "We've been dealing with a leak for a few years, had different companies come out and no one could properly find or fix the issue. Russell’s-American Mechanical came out and found and fixed the problem in no time. The technician was honest, considerate and informed us on other things as well. Will definitely continue with Russell’s-American Mechanical for all future projects."
+    }
+  ],
+  "redirects": []
+}

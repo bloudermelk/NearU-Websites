@@ -8,6 +8,8 @@ codebase and one database.
 NearU-Websites/
 ├── carolina-heating/     carolinaheating.com   — brand site (own Vercel project)
 ├── 2nd-wind/             2ndwindhvac.com       — brand site (own Vercel project)
+├── happy-home/           happyhomeheatingandcooling.com — brand site (own Vercel project)
+├── american-mechanical/  americanmechanicalva.com       — brand site (own Vercel project)
 ├── …                     one folder per brand (23 planned)
 ├── packages/site-kit/    @nearu/site-kit — everything shared: theme components,
 │                         Supabase data layer, route implementations, content scripts
@@ -71,17 +73,37 @@ Next.js and defaults the Framework Preset to "Other" — the build then
 Settings → Build and Deployment → Framework Preset to **Next.js** and redeploy.
 The tell in a healthy build log is the line `Detected Next.js version: …`.
 
+**Builds are isolated per brand.** Every site folder has a `vercel.json`
+`ignoreCommand` so a push only rebuilds the projects it touches: a brand's
+own folder, or the shared kit's runtime code (`packages/site-kit/src`,
+`next-config.mjs`, its `package.json`). Adding brand #5 does not redeploy
+brands #1–4; a fix in the kit deploys to all of them (that's the point of
+sharing it). Changes to `packages/site-kit/scripts` (content tooling) or the
+root workspace files rebuild nothing.
+
 Redirects (the `redirects` table) are compiled in at build time. After adding
 one in Supabase, trigger a rebuild with the project's **Deploy Hook**
 (Settings → Git → Deploy Hooks) — no code change needed.
 
 ## Adding a brand
 
-See [`supabase/README.md` → Onboarding a new brand](supabase/README.md#onboarding-a-new-brand-30-minutes).
-Short version: copy a brand folder, point `content/site.json` at the live
-site, run the four `content:*` scripts, fill in the business details, run
-`npm run db:migrate`, add the folder to the root `workspaces`, create the
-Vercel project.
+One command onboards a brand from its live WordPress site — scaffolds the
+folder from the shared template, composes `content/site.json` from the live
+site (business details, logo, nav, footer, promo banner, service cards,
+testimonials, licence, socials, location-page pattern), mirrors every page and
+image, mirrors sister-brand assets, and adds the folder to the workspaces:
+
+```bash
+node packages/site-kit/scripts/new-brand.mjs --slug <slug> --origin https://<live-site>
+cd <slug>
+npm run db:migrate            # push content to Supabase (this brand's rows only)
+npm run build && npm start    # verify locally
+```
+
+Review any `TODO` lines it prints, then commit, push, and create the Vercel
+project (Root Directory = `<slug>`, shared env vars). Details and the manual
+fallback: [`supabase/README.md`](supabase/README.md#onboarding-a-new-brand-30-minutes).
+
 
 ## Conventions
 

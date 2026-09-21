@@ -158,7 +158,51 @@ export function tuneImages(html: string): string {
 /** @deprecated use tuneImages — kept for callers/tests. */
 export const prioritizeHeroImage = tuneImages;
 
+// ---------------------------------------------------------------------------
+// Scripts inside mirrored WordPress content
+// ---------------------------------------------------------------------------
+
+/**
+ * Some WordPress pages embed a Google Maps JavaScript-API map of the service
+ * area (Happy Home: 48 pages), drawn from a Google My Maps KML layer:
+ *
+ *   <div id="map"></div>
+ *   <script>function initMap(){ … new google.maps.KmlLayer({ url: ".../kml?mid=<MID>" }) … }</script>
+ *   <script src="https://maps.googleapis.com/maps/api/js?key=…&callback=initMap">
+ *
+ * The API key is HTTP-referrer-locked to the WordPress domain, so on any other
+ * host Google renders "Oops! Something went wrong" (and the page's own code
+ * would alert() on KML failure). Google My Maps has a keyless iframe embed of
+ * the very same map, so we swap the div for that — same content, no key, no
+ * script. The page's own <style> for #map (600px box, rounded, shadow) still
+ * applies because we keep the id.
+ */
+export function replaceKeyedGoogleMap(html: string): string {
+  const mid = (html.match(/google\.maps\.KmlLayer\(\s*\{[^}]*?\burl:\s*"[^"]*[?&]mid=([^"&]+)"/) || [])[1];
+  if (!mid || !/<div id="map"><\/div>/.test(html)) return html;
+  const iframe =
+    `<div id="map"><iframe src="https://www.google.com/maps/d/embed?mid=${mid}&ehbc=2E312F" ` +
+    `title="Service area map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ` +
+    `style="width:100%;height:100%;border:0;border-radius:inherit"></iframe></div>`;
+  return html.replace(/<div id="map"><\/div>/, iframe);
+}
+
+/**
+ * Drops every <script> from mirrored content. What's been found in them
+ * across four brands: the keyed Google Maps loader above (replaced first),
+ * a Mailchimp form-validation helper (progressive enhancement over a plain
+ * form POST), a ServiceTitan scheduler form helper, and a third-party review
+ * widget loader (RealWork Labs). None are ours to run: they're either locked to
+ * the WordPress domain, tracking/embeds that belong in `sites` config, or
+ * enhancements the plain HTML works without. Third-party embeds a brand
+ * genuinely wants become nullable per-site config (like the scheduler), not
+ * inline scripts in page content.
+ */
+export function stripScripts(html: string): string {
+  return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+}
+
 /** Everything mirrored HTML gets before it's rendered. */
 export function prepareMirroredHtml(html: string): string {
-  return tuneImages(stripHtmlComments(html));
+  return tuneImages(stripScripts(replaceKeyedGoogleMap(stripHtmlComments(html))));
 }

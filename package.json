@@ -6,7 +6,9 @@
   "workspaces": [
     "packages/site-kit",
     "carolina-heating",
-    "2nd-wind"
+    "2nd-wind",
+    "happy-home",
+    "american-mechanical"
   ],
   "scripts": {
     "lint": "npm run lint --workspaces --if-present",

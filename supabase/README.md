@@ -21,7 +21,7 @@ rows. Adding brand #23 adds rows, never tables.
 | File | Purpose |
 |---|---|
 | `schema.sql` | The **full** schema (all migrations concatenated). Paste into the SQL Editor of a brand-new Supabase project to set it up in one go. |
-| `migrations/000N_*.sql` | Incremental history. On the existing project, run only the ones not yet applied. Applied so far on `nwphvamrmmsxqohwlgbm`: 0001, 0002, 0003. **0004 is pending** — see below. |
+| `migrations/000N_*.sql` | Incremental history. On the existing project, run only the ones not yet applied. All four (0001–0004) are applied on `nwphvamrmmsxqohwlgbm`. |
 | `README.md` | This file. |
 
 ## Access model
@@ -49,11 +49,6 @@ rows. Adding brand #23 adds rows, never tables.
 `brand_overview` is a view that shows, per site, how much content is loaded —
 handy after a migration: `select * from brand_overview;`
 
-## Applying migration 0004 (pending)
-
-Supabase dashboard → SQL Editor → paste `migrations/0004_company.sql` → Run.
-It creates `companies` with the NearU row, links every existing site to it,
-adds `sites.status`, hot-path indexes, and the `brand_overview` view.
 
 ## Seeding / re-syncing a brand
 
@@ -68,31 +63,30 @@ npm run db:migrate:content-only   # same, skipping the image re-upload
 Requires `.env.local` with `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. The
 site slug comes from `content/site.json` → `"slug"`.
 
-## Onboarding a new brand (~30 minutes)
+## Onboarding a new brand (~10 minutes)
 
 ```bash
-# 1. Scaffold the site folder from an existing one (copy 2nd-wind/, rename;
-#    edit package.json name, next.config.ts siteSlug, README). Delete the
-#    copied content/html, content/images, app/theme.css, public/fonts.
-# 2. Minimal content/site.json:
-#    { "slug": "<slug>", "source": { "origin": "https://<live-site>",
-#      "extraPages": ["/bookings"], "locationSlugSuffix": "-<city-suffix>" },
-#      "business": { "domain": "<domain>", "scheduleUrl": "/bookings" } }
+# From the repo root. Scaffolds <slug>/ from the shared template, composes
+# content/site.json from the live site, mirrors pages + images (+ sister-brand
+# assets), extracts nav/footer/banner, records live 301s, fetches the favicon,
+# adds the workspace and installs.
+node packages/site-kit/scripts/new-brand.mjs --slug <slug> --origin https://<live-site>
+
 cd <slug>
-npm run content:pages         # sitemaps -> content/pages.txt
-npm run content:theme-css     # live CSS -> app/theme.css, fonts -> public/fonts/
-npm run content:sync          # mirror every page + image; prints live-site 301s to add as "redirects"
-npm run content:nav -- --out nav.json   # header/footer nav -> merge into site.json
-# 3. Fill the rest of site.json by hand (see 2nd-wind/content/site.json):
-#    business.*, theme.bodyClass, serviceCategories (+icon), testimonials,
-#    licenseLines, headerTagline, logo + logoWidth/Height, redirects.
-#    Drop the favicon at app/icon.png (or app/favicon.ico).
-npm run db:migrate
-npm run build && npm start    # verify locally
-# 4. Root package.json: add "<slug>" to "workspaces".
-# 5. Vercel: new project on this repo, Root Directory = <slug>, env vars
-#    SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, REVALIDATE_SECRET.
+# Review any TODO lines printed (e.g. a site that never states "since YYYY").
+npm run db:migrate            # -> Supabase: sites row + all child rows for this brand
+npm run build && npm start    # verify locally against the live site
+# Commit + push, THEN create the Vercel project: Root Directory = <slug>,
+# env vars SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, REVALIDATE_SECRET.
+
+# Re-sync later (content changed on the WordPress side):
+npm run content:sync && npm run db:migrate
 ```
+
+The individual steps the scaffolder runs are also available as
+`npm run content:pages | content:theme-css | content:sync | content:nav`
+inside the brand folder. Brands so far: carolina-heating, 2nd-wind, happy-home,
+american-mechanical.
 
 ## Editing content after launch
 

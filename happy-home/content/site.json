@@ -1,0 +1,555 @@
+{
+  "slug": "happy-home",
+  "company": "nearu",
+  "source": {
+    "origin": "https://happyhomeheatingandcooling.com",
+    "imageHosts": [
+      "plumbv.com",
+      "2ndwindhvac.com",
+      "premiumacservice.mojopsg.xyz"
+    ],
+    "urlRewrites": [],
+    "extraPages": [
+      "/bookings"
+    ],
+    "locationSlugSuffix": "-nc-hvac-indoor-air-quality-plumbing",
+    "wpSiteId": 8
+  },
+  "theme": {
+    "bodyClass": "",
+    "preloadFonts": []
+  },
+  "business": {
+    "domain": "happyhomeheatingandcooling.com",
+    "name": "Happy Home Services",
+    "legalName": "Happy Home Services | Durham, NC",
+    "tagline": "Happy Home Services in Durham, NC, offers top-quality plumbing, HVAC, and electrical solutions to homeowners throughout the Durham, NC area.",
+    "headerTagline": "Happy Home Services in Durham, NC, offers top-quality plumbing, HVAC, and electrical solutions to homeowners throughout the Durham, NC area.",
+    "licenseLines": [
+      "License #36245"
+    ],
+    "phone": "(336) 281-9025",
+    "phoneHref": "tel:+13362819025",
+    "email": "info@happyhome",
+    "address": {
+      "street": "5112 Neal Rd",
+      "city": "Durham",
+      "state": "NC",
+      "zip": "27705"
+    },
+    "areaServed": "Durham, NC",
+    "locationLabel": "Durham, NC",
+    "mapUrl": "https://www.google.com/maps/place/?q=place_id:ChIJWfGmajrhrIkRPi8Un3QmC0U",
+    "logo": "/images/2024/03/Happy-Home-Services-logo.png",
+    "logoWidth": 800,
+    "logoHeight": 276,
+    "foundedYear": 1955,
+    "yearsInBusiness": 71,
+    "googleRating": 5,
+    "googleReviewCount": 18,
+    "social": {
+      "facebook": "https://www.facebook.com/HappyHomeServicesDurhamNC",
+      "instagram": "https://www.instagram.com/happyhomeheatingandcooling",
+      "linkedin": "https://www.linkedin.com/company/happy-home-services-nearu",
+      "youtube": ""
+    },
+    "scheduleUrl": "/bookings",
+    "youtubeVideoId": ""
+  },
+  "topBanner": {
+    "html": "Check Out All Our Special Coupon Offers and Promotions <a href=\"/special-coupon-offers-and-promotions\">SAVE NOW</a>"
+  },
+  "nav": {
+    "primary": [
+      {
+        "label": "Special Offers",
+        "href": "/special-coupon-offers-and-promotions"
+      },
+      {
+        "label": "HVAC Services",
+        "groups": [
+          {
+            "label": "Cooling",
+            "items": [
+              {
+                "label": "All Cooling",
+                "href": "/services/cooling"
+              },
+              {
+                "label": "Air Conditioning Services",
+                "href": "/services/cooling/air-conditioning"
+              },
+              {
+                "label": "AC Installation & Replacement",
+                "href": "/services/cooling/ac-installation-replacement"
+              },
+              {
+                "label": "AC Repair & Maintenance",
+                "href": "/services/cooling/ac-repair-maintenance"
+              },
+              {
+                "label": "Gas Pack Systems",
+                "href": "/services/cooling/gas-pack-systems"
+              },
+              {
+                "label": "Ductless Mini Split Systems",
+                "href": "/services/cooling/mini-split"
+              },
+              {
+                "label": "HVAC Zoning Systems",
+                "href": "/services/cooling/hvac-zoning-systems"
+              },
+              {
+                "label": "Smart Thermostats",
+                "href": "/services/heating/smart-thermostats"
+              }
+            ]
+          },
+          {
+            "label": "Heating",
+            "items": [
+              {
+                "label": "All Heating",
+                "href": "/services/heating"
+              },
+              {
+                "label": "Gas Furnace Services",
+                "href": "/services/heating/gas-furnaces"
+              },
+              {
+                "label": "Oil Furnace Services",
+                "href": "/services/heating/oil-furnaces"
+              },
+              {
+                "label": "Dual Fuel Hybrid Systems",
+                "href": "/services/cooling/dual-fuel-hybrid-systems"
+              },
+              {
+                "label": "Heat Pump Services",
+                "href": "/services/heating/heat-pumps"
+              }
+            ]
+          },
+          {
+            "label": "Indoor Air Quality",
+            "items": [
+              {
+                "label": "All Indoor Air Quality",
+                "href": "/services/indoor-air-quality"
+              },
+              {
+                "label": "Air Ducts",
+                "href": "/services/indoor-air-quality/air-ducts"
+              },
+              {
+                "label": "Air Duct Installation",
+                "href": "/services/indoor-air-quality/air-ducts/installation"
+              },
+              {
+                "label": "Air Duct Cleaning",
+                "href": "/services/indoor-air-quality/air-ducts/cleaning"
+              },
+              {
+                "label": "Dehumidifiers",
+                "href": "/services/dehumidifiers"
+              },
+              {
+                "label": "Humidifiers",
+                "href": "/services/humidifiers"
+              },
+              {
+                "label": "CO Services",
+                "href": "/services/indoor-air-quality/co-services"
+              },
+              {
+                "label": "Air Scrubbers",
+                "href": "/services/indoor-air-quality/air-scrubbers"
+              },
+              {
+                "label": "Air Filtration Systems",
+                "href": "/services/indoor-air-quality/air-purifiers"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Plumbing Services",
+        "href": "/services/plumbing",
+        "groups": [
+          {
+            "label": "General Plumbing",
+            "items": [
+              {
+                "label": "Pipes Services",
+                "href": "/services/plumbing/pipes-and-general-plumbing"
+              },
+              {
+                "label": "Repiping Services",
+                "href": "/services/plumbing/repiping-services"
+              },
+              {
+                "label": "Frozen & Burst Pipes",
+                "href": "/services/plumbing/frozen-burst-pipe-repair"
+              },
+              {
+                "label": "Trap and Pipe Cleaning",
+                "href": "/services/plumbing/trap-and-pipe-cleaning"
+              },
+              {
+                "label": "Hydro Jetting",
+                "href": "/services/drains/hydro-jetting"
+              },
+              {
+                "label": "Bathroom Plumbing",
+                "href": "/services/plumbing/bathroom-plumbing"
+              },
+              {
+                "label": "Kitchen Plumbing",
+                "href": "/services/plumbing/kitchen-plumbing"
+              },
+              {
+                "label": "Appliance Plumbing",
+                "href": "/services/plumbing/appliance-plumbing-services"
+              },
+              {
+                "label": "Gas Line Repair",
+                "href": "/services/plumbing/gas-lines"
+              },
+              {
+                "label": "Water Pressure Assessments",
+                "href": "/services/plumbing/water-pressure-assessments"
+              },
+              {
+                "label": "Camera & Video Inspection",
+                "href": "/services/plumbing/camera-video-inspection"
+              }
+            ]
+          },
+          {
+            "label": "Water Lines",
+            "items": [
+              {
+                "label": "Water Line Services",
+                "href": "/services/drains/water-lines"
+              }
+            ]
+          },
+          {
+            "label": "Water Heaters",
+            "items": [
+              {
+                "label": "Water Heater Installation",
+                "href": "/services/plumbing/water-heater-installation-replacements"
+              },
+              {
+                "label": "Water Heater Repairs",
+                "href": "/services/plumbing/water-heater-repairs-maintenance"
+              },
+              {
+                "label": "Tankless Water Heaters",
+                "href": "/services/tankless-water-heaters/installation-replacement"
+              },
+              {
+                "label": "Water Heater Flushing",
+                "href": "/services/plumbing/water-heaters-flush-service"
+              }
+            ]
+          },
+          {
+            "label": "Drains",
+            "items": [
+              {
+                "label": "All Drains",
+                "href": "/services/drains"
+              },
+              {
+                "label": "Drain Cleaning",
+                "href": "/services/drains/drain-clearing"
+              },
+              {
+                "label": "Rooter Service",
+                "href": "/services/drains/rooter-service"
+              },
+              {
+                "label": "Sewer Lines",
+                "href": "/services/drains/sewer-lines"
+              },
+              {
+                "label": "Leak Detection",
+                "href": "/services/drains/leak-detection"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Maintenance",
+        "href": "/maintenance"
+      },
+      {
+        "label": "Financing",
+        "href": "/financing"
+      },
+      {
+        "label": "Service Areas",
+        "groups": [
+          {
+            "items": [
+              {
+                "label": "Bahama",
+                "href": "/bahama-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Burlington",
+                "href": "/burlington-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Butner",
+                "href": "/butner-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Carolina Arbors",
+                "href": "/carolina-arbors-nc-hvac-indoor-air-quality-plumbing-near-me"
+              },
+              {
+                "label": "Carrboro",
+                "href": "/carrboro-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Cary",
+                "href": "/cary-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Cedar Grove",
+                "href": "/cedar-grove-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Chapel Hill",
+                "href": "/chapel-hill-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Creedmoor",
+                "href": "/creedmoor-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Durham",
+                "href": "/durham-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Efland",
+                "href": "/efland-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Gibsonville",
+                "href": "/gibsonville-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Graham",
+                "href": "/graham-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Haw River",
+                "href": "/haw-river-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Hillsborough",
+                "href": "/hillsborough-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Hurdle Mills",
+                "href": "/hurdle-mills-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Knightdale",
+                "href": "/knightdale-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Mebane",
+                "href": "/mebane-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Raleigh",
+                "href": "/raleigh-nc-hvac-plumbing-indoor-air-quality"
+              },
+              {
+                "label": "Roxboro",
+                "href": "/roxboro-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Saxapahaw",
+                "href": "/saxapahaw-nc-hvac-indoor-air-quality-plumbing"
+              },
+              {
+                "label": "Timberlake",
+                "href": "/timberlake-nc-hvac-indoor-air-quality-plumbing"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "About Us",
+        "groups": [
+          {
+            "items": [
+              {
+                "label": "About Us",
+                "href": "/about-us"
+              },
+              {
+                "label": "Blog",
+                "href": "/about-us/blog"
+              },
+              {
+                "label": "Careers",
+                "href": "/home/careers"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "columns": [
+      [
+        {
+          "label": "Heating Services",
+          "href": "/services/heating"
+        },
+        {
+          "label": "Cooling Services",
+          "href": "/services/cooling"
+        },
+        {
+          "label": "Indoor Air Quality Services",
+          "href": "/services/indoor-air-quality"
+        },
+        {
+          "label": "Plumbing Services",
+          "href": "/services/plumbing"
+        },
+        {
+          "label": "Drain Services",
+          "href": "/services/drains"
+        }
+      ],
+      [
+        {
+          "label": "Maintenance",
+          "href": "/maintenance"
+        },
+        {
+          "label": "Financing",
+          "href": "/financing"
+        },
+        {
+          "label": "About Us",
+          "href": "/about-us"
+        },
+        {
+          "label": "Careers",
+          "href": "https://jobs.dayforcehcm.com/en-us/nearu/happyhome"
+        },
+        {
+          "label": "Blog",
+          "href": "/about-us/blog"
+        }
+      ]
+    ]
+  },
+  "serviceCategories": [
+    {
+      "slug": "heating",
+      "title": "Heating Services in Durham, NC",
+      "shortTitle": "Heating",
+      "summary": "",
+      "image": "",
+      "icon": "heating"
+    },
+    {
+      "slug": "humidifiers",
+      "title": "Whole House Humidifiers in Durham, NC",
+      "shortTitle": "Whole House Humidifiers in Durham, NC",
+      "summary": "",
+      "image": "",
+      "icon": "indoor-air-quality"
+    },
+    {
+      "slug": "dehumidifiers",
+      "title": "Reduce Indoor Humidity with a Whole House Dehumidifier in Durham, NC",
+      "shortTitle": "Reduce Indoor Humidity with a Whole House Dehumidifier in Durham, NC",
+      "summary": "",
+      "image": "",
+      "icon": "indoor-air-quality"
+    },
+    {
+      "slug": "tankless-water-heaters",
+      "title": "Tankless Water Heater Services in Durham, NC",
+      "shortTitle": "Tankless Water Heater",
+      "summary": "",
+      "image": "",
+      "icon": "heating"
+    },
+    {
+      "slug": "cooling",
+      "title": "Cooling Services",
+      "shortTitle": "Cooling Services",
+      "summary": "",
+      "image": "",
+      "icon": "cooling"
+    },
+    {
+      "slug": "indoor-air-quality",
+      "title": "Indoor Air Quality Services",
+      "shortTitle": "Indoor Air Quality Services",
+      "summary": "",
+      "image": "",
+      "icon": "indoor-air-quality"
+    },
+    {
+      "slug": "plumbing",
+      "title": "Plumbing Services",
+      "shortTitle": "Plumbing Services",
+      "summary": "",
+      "image": "",
+      "icon": "plumbing"
+    },
+    {
+      "slug": "drains",
+      "title": "Drain Services",
+      "shortTitle": "Drain Services",
+      "summary": "",
+      "image": "",
+      "icon": "drains"
+    },
+    {
+      "slug": "remodel-construction-durham-nc",
+      "title": "Remodels and New Construction Plumbing",
+      "shortTitle": "Remodels and New Construction Plumbing",
+      "summary": "",
+      "image": "",
+      "icon": "technician-gears"
+    }
+  ],
+  "certifications": [],
+  "testimonials": [
+    {
+      "author": "Jan Minchew",
+      "rating": 5,
+      "body": "We have been using Happy Home for quite a few years and are always pleased with the professionalism and thorough work. The techs arrive on time and recently caught a major issue that we were unaware of. Thankfully it was still under warranty and it was repaired quickly."
+    },
+    {
+      "author": "Kaye",
+      "rating": 5,
+      "body": "The technician and supervisor were professional, knowledgeable, thorough, provided video and photo evidence of issues of concern, and overall provided exceptional trustworthy service. I will never use any other service."
+    },
+    {
+      "author": "Keisha A.",
+      "rating": 5,
+      "body": "Great customer service. They were very attentive toward our needs. Our service tech (repair man) was kind, knowledgeable and very personable. He made sure the problem was fixed prior to leaving our home. We were very pleased with his work."
+    }
+  ],
+  "redirects": []
+}
