@@ -31,6 +31,8 @@ const BUCKET = "site-media";
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const SKIP_IMAGES = process.argv.includes("--skip-images");
+/** Only refresh the `sites` row and the "/" page (content/home.json). Implies --skip-images. */
+const ONLY_HOME = process.argv.includes("--only-home");
 
 if (!SUPABASE_URL || !SERVICE_ROLE_KEY) {
   console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY environment variables.");
@@ -468,7 +470,8 @@ async function replaceTestimonials(siteId, siteJson) {
 /**
  * Two kinds of homepage:
  *  - hand-built (page_type='home'): content/home.json + home-inline.css
- *    drive the React blocks in src/app/page.tsx (Carolina Heating).
+ *    (optional) drive the conversion-first landing homepage
+ *    (src/components/landing/LandingHome.tsx; data shape: LandingPageData).
  *  - mirrored (page_type='mirrored'): the live homepage was extracted like any
  *    other page into content/html/index.json, and page.tsx renders its
  *    HTML. This is the default for new brands — no per-brand React needed.
@@ -481,7 +484,10 @@ async function upsertHomePage(siteId, siteJson, imageMap) {
     return false;
   }
   const homeJson = JSON.parse(readFileSync(homeFile, "utf-8"));
-  const inlineCss = readFileSync(join(BRAND_DIR, "home-inline.css"), "utf-8");
+  // Optional: the landing homepage ships its own scoped CSS from the component,
+  // so most brands have no home-inline.css.
+  const inlineCssFile = join(BRAND_DIR, "home-inline.css");
+  const inlineCss = existsSync(inlineCssFile) ? readFileSync(inlineCssFile, "utf-8") : null;
   const data = rewriteDeep(homeJson, imageMap);
   const { metaTitle, metaDescription, ...rest } = data;
 
@@ -546,14 +552,22 @@ async function main() {
 
   const files = existsSync(IMAGES_DIR) ? walk(IMAGES_DIR) : [];
   const imageMap = buildImageMap(files);
-  if (SKIP_IMAGES) {
-    console.log(`--skip-images passed: reusing computed Storage URLs for ${files.length} images without re-uploading.\n`);
+  if (SKIP_IMAGES || ONLY_HOME) {
+    console.log(`Reusing computed Storage URLs for ${files.length} images without re-uploading.\n`);
   } else {
     await uploadImages(files, imageMap);
   }
 
   const siteJson = loadSiteJson();
   const siteId = await upsertSite(siteJson, imageMap);
+
+  if (ONLY_HOME) {
+    // Fast path for homepage copy edits: refresh the sites row + the "/" page only.
+    const ok = await upsertHomePage(siteId, siteJson, imageMap);
+    if (!ok) throw new Error("--only-home requires content/home.json");
+    console.log("\nDone (sites + homepage only).");
+    return;
+  }
 
   await replaceNavItems(siteId, siteJson);
   const categoryRows = await replaceServiceCategories(siteId, siteJson, imageMap);

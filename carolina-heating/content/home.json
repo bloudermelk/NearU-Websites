@@ -1,54 +1,92 @@
 {
-  "metaTitle": "Carolina Heating Service | Serving the Upstate for 40+ Years",
-  "metaDescription": "Carolina Heating Service, serving the Upstate for over 40 years making homes comfortable with professional HVAC, indoor air quality, plumbing, and generators!",
+  "metaTitle": "Carolina Heating Service | Same-Day HVAC, Plumbing & Electrical in Greenville, SC",
+  "metaDescription": "Rated 5/5 on Google. Carolina Heating Service has served Greenville, SC and the Upstate since 1981 — heating, cooling, plumbing, drains, electrical & generators. Same-day appointments by phone: (864) 362-6329.",
+
   "hero": {
-    "title": "Reliable HVAC, Plumbing & Electrical Service in Greenville, SC",
+    "eyebrow": "Greenville’s trusted home services since {founded}",
+    "title": "Heating, cooling, plumbing & electrical — fixed fast, done right.",
     "body": "Carolina Heating Service provides heating, cooling, plumbing, electrical, and generator service throughout Greenville, SC and the Upstate, backed by decades of experience and a team ready to help the moment you need it.",
-    "image": "/images/2024/04/030624-CHS-37-scaled.jpg",
-    "secondaryImage": "/images/2024/03/An-exterior-of-a-building-with-multiple-AC-units-and-flowers.jpg",
-    "generatorCtaLabel": "Order a Home Generator",
-    "generatorCtaHref": "/generator-greenville-sc"
+    "image": {
+      "src": "/images/2024/04/030624-CHS-37-scaled.jpg",
+      "alt": "Two Carolina Heating Service technicians standing in front of a service truck",
+      "width": 2560,
+      "height": 1710
+    },
+    "chips": [
+      "{years}+ years in the Upstate",
+      "SC-licensed HVAC & electrical",
+      "NATE-certified technicians"
+    ]
   },
-  "worryFree": {
-    "title": "10 Year Worry-Free System Coverage",
-    "href": "/worry-free-service-program"
+
+  "form": {
+    "heading": "Request service",
+    "sub": "Tell us what's going on — we'll confirm your appointment.",
+    "submitLabel": "Get my appointment",
+    "phoneNote": "Faster by phone — same-day slots:"
   },
-  "promise": {
-    "heading": "The Carolina Heating Promise",
-    "images": [
+
+  "services": {
+    "eyebrow": "What can we fix for you today?",
+    "heading": "One call for every system in your home",
+    "body": "Seven trades, one trusted team. Pick a service to book, or call and we'll send the right technician.",
+    "callCard": {
+      "heading": "Not sure what's wrong?",
+      "body": "Describe the problem and we'll send the right technician."
+    }
+  },
+
+  "offers": {
+    "eyebrow": "Ways to save",
+    "heading": "Protect your home — and your budget",
+    "body": "Coverage, membership perks and financing designed so a breakdown never becomes a crisis.",
+    "items": [
       {
-        "src": "/images/2024/04/030624-CHS-3.jpg",
-        "alt": "Employees smiling and sitting around a table",
-        "width": 640,
-        "height": 428,
-        "sizeX": 4,
-        "sizeY": 4,
-        "posX": "left",
-        "posY": "top",
-        "shadow": 4,
-        "corner": 4
+        "icon": "maintenance",
+        "eyebrow": "System protection",
+        "title": "10 Year Worry-Free System Coverage",
+        "body": "Qualifying new systems installed by Carolina Heating Service are backed by a decade of worry-free coverage. Ask about it before your next install.",
+        "cta": "See coverage details",
+        "href": "/worry-free-service-program"
       },
       {
-        "src": "/images/2024/03/A-closeup-of-a-Carolina-Heating-Service-service-van.jpg",
-        "alt": "A closeup of a Carolina Heating Service service van",
-        "width": 640,
-        "height": 360,
-        "sizeX": 4,
-        "sizeY": 3,
-        "posX": "right",
-        "posY": "bottom",
-        "shadow": 1,
-        "corner": 3
+        "icon": "wrench",
+        "eyebrow": "Carolina Comfort Club",
+        "title": "15% off repairs, priority service, seasonal tune-ups",
+        "body": "Members get heating & cooling tune-ups, reduced dispatch fees, priority scheduling and loyalty points on every visit.",
+        "cta": "Join the Comfort Club",
+        "href": "/maintenance",
+        "featured": true
+      },
+      {
+        "icon": "credit-card",
+        "eyebrow": "Financing available",
+        "title": "Fix it now, pay over time",
+        "body": "Budget-friendly financing lets you handle urgent repairs or upgrades without draining savings or delaying the work.",
+        "cta": "Explore financing",
+        "href": "/financing"
       }
+    ]
+  },
+
+  "why": {
+    "eyebrow": "Who we are",
+    "heading": "The Carolina Heating Promise",
+    "body": "Learn more about our team of highly qualified staff, and see why homeowners throughout the Greenville area trust Carolina Heating Service for their HVAC, plumbing, and electrical needs.",
+    "stats": [
+      { "value": "{years}+", "label": "Years serving the Upstate" },
+      { "value": "{rating}", "label": "Google rating" },
+      { "value": "{serviceCount}", "label": "Home services, one team" },
+      { "value": "Same day", "label": "Appointments by phone" }
     ],
-    "items": [
+    "points": [
       {
         "label": "Responsive Service",
         "description": "Your satisfaction is our top priority. We address your HVAC, plumbing, and electrical needs promptly and efficiently, with solid solutions and support you can count on."
       },
       {
         "label": "Expert Technicians",
-        "description": "Your satisfaction is our top priority. We address your HVAC, plumbing, and electrical needs promptly and efficiently, with solid solutions and support you can count on."
+        "description": "Licensed, NATE-certified technicians who diagnose accurately and explain your options in plain English."
       },
       {
         "label": "Transparent Communication",
@@ -58,18 +96,94 @@
         "label": "Quality Workmanship",
         "description": "From installation to maintenance and repairs, we strive for excellence in every job, so your home is in capable hands."
       }
+    ],
+    "photos": [
+      {
+        "src": "/images/2024/04/030624-CHS-3.jpg",
+        "alt": "Employees smiling and sitting around a table",
+        "width": 640,
+        "height": 428
+      },
+      {
+        "src": "/images/2024/03/A-closeup-of-a-Carolina-Heating-Service-service-van.jpg",
+        "alt": "A closeup of a Carolina Heating Service service van",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "ctaLabel": "Meet the team",
+    "ctaHref": "/about-us"
+  },
+
+  "steps": {
+    "eyebrow": "How it works",
+    "heading": "From “uh-oh” to fixed in three steps",
+    "items": [
+      {
+        "title": "Book in 60 seconds",
+        "body": "Call {phone} or request service online. Same-day appointments are available by phone."
+      },
+      {
+        "title": "A pro shows up ready",
+        "body": "A trained, licensed technician arrives, diagnoses the problem and explains your options in plain English."
+      },
+      {
+        "title": "Fixed — with clear pricing",
+        "body": "You approve the work before we start. Quality workmanship, transparent communication, no surprises."
+      }
     ]
   },
-  "whoWeAre": {
-    "heading": "Who we are",
-    "body": "Learn more about our team of highly qualified staff, and see why homeowners throughout the Greenville area trust Carolina Heating Service for their HVAC, plumbing, and electrical needs.",
-    "href": "/about-us"
+
+  "reviews": {
+    "eyebrow": "Real reviews from Greenville homeowners",
+    "heading": "Why neighbors keep calling us back"
   },
-  "ourCommunity": {
-    "mapImage": "/images/2024/03/CHS-Service-Area-Map-Highlighted-scaled.jpg"
+
+  "area": {
+    "eyebrow": "Service area",
+    "heading": "Proudly serving {areaServed} since {founded}",
+    "body": "With a history dating back to {founded}, our expertise began with heating and air conditioning and grew to include plumbing, electrical, drains, generators and indoor air quality — all delivered by highly trained technicians who live and work in the Upstate.",
+    "map": {
+      "src": "/images/2024/03/CHS-Service-Area-Map-Highlighted-scaled.jpg",
+      "alt": "Carolina Heating Service service area map — Greenville, SC and the Upstate",
+      "width": 2560,
+      "height": 1818
+    }
   },
-  "maintenanceFinancing": {
-    "maintenanceImage": "/images/2024/03/A-Carolina-Heating-Service-technician-performing-maintenance.jpg",
-    "financingImage": "/images/2024/03/A-Carolina-Heating-Service-employee-smiling-while-sitting-at-a-desk-and-working-on-their-computer.jpg"
+
+  "faq": {
+    "eyebrow": "Questions",
+    "heading": "Frequently asked questions",
+    "items": [
+      {
+        "q": "Do you offer same-day service in Greenville?",
+        "a": "Yes. Same-day appointments are available by phone — call {phone} and we'll get a technician to you as quickly as possible."
+      },
+      {
+        "q": "What services does Carolina Heating Service provide?",
+        "a": "We handle heating, cooling, indoor air quality, plumbing, drains, electrical and generators for homes throughout {areaServed}."
+      },
+      {
+        "q": "What areas do you serve?",
+        "a": "We serve {areaServed}, and have since {founded}. Our office is at 1507 Antioch Church Rd, Greenville, SC 29605."
+      },
+      {
+        "q": "Do you offer financing?",
+        "a": "Yes. Financing plans are available for repairs and new installations so you can tackle necessary work without delay. Ask your technician or visit our financing page for current options."
+      },
+      {
+        "q": "Are you licensed?",
+        "a": "Yes. Carolina Heating Service Inc. holds South Carolina licenses: Com/Indust/Equip Repair/Maint 2023-56064; HVAC 2023-410; Electrical 2023-16672."
+      },
+      {
+        "q": "What is the Carolina Comfort Club?",
+        "a": "Our maintenance plan. Members receive 15% off repairs, heating and cooling tune-ups, reduced dispatch fees, priority service and loyalty points."
+      }
+    ]
+  },
+
+  "finalCta": {
+    "heading": "Ready when you are — often the same day.",
+    "body": "Call now and talk to a real person in Greenville, or book online in about a minute."
   }
 }

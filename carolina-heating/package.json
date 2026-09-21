@@ -14,7 +14,8 @@
     "content:sync": "nearu-extract-pages",
     "content:nav": "nearu-extract-nav",
     "db:migrate": "nearu-migrate",
-    "db:migrate:content-only": "nearu-migrate --skip-images"
+    "db:migrate:content-only": "nearu-migrate --skip-images",
+    "db:migrate:home": "nearu-migrate --only-home"
   },
   "dependencies": {
     "@nearu/site-kit": "*",
